@@ -1,0 +1,22 @@
+.worknotes-module{height:600px;overflow:hidden;position:relative}.worknotes-module-top{padding:30px 30px 20px 30px}.worknotes-container{overflow-y:auto;height:491px}.worknote-post-form,.worknote-post-form-body,.worknote-reply-form,.worknote-reply-form-body{overflow:hidden;zoom:1}.worknote-post-form{display:none;margin:0}.worknote-reply-form{padding:10px 30px;margin:0}.worknote-post-form>.pull-left,.worknote-reply-form>.pull-left{margin-right:10px}.worknote-post-form textarea,.worknote-reply-form textarea{margin-bottom:10px;resize:none;height:90px}.worknote-reply-form .cancel{padding:5px;float:right;margin-right:10px;background:transparent;opacity:.2}.show-form .worknotes-container{height:365px}.show-form .worknote-post-form{display:block}.show-form .worknote-post-trigger{display:none}.no-worknotes{background:transparent url(/web/20160411231227im_/http://lightspeed.goanimate.com/static/6a882951f9649a88/go/img/videos/img_noNote.png) no-repeat center 70px;display:none;text-align:center;font-weight:bold;padding:170px 10px 10px}.empty>.no-worknotes{display:block}.scene-note{border-top:1px solid #eee;position:relative}.scene-note:hover,.scene-note-current{border-top:1px solid #36baa6;background:#f2f2f2}.scene-active-mark{display:none;background-color:#666;width:5px;position:absolute;top:0;bottom:0;left:0;z-index:5}.scene-note.active .scene-active-mark{display:block}.scene-note-header{position:absolute;top:0;left:0;background:#e5e5e5;padding:0 10px}.worknote,.worknote-body{overflow:hidden;zoom:1}.worknote{padding:30px 30px 40px;position:relative}.worknote.dim{opacity:.5}.worknote.dim:hover{opacity:1}.worknote-body>.worknote{padding:0 10px;border:0;position:relative}.worknote-body>.worknote:after{content:'';position:absolute;top:0;left:0;height:30px;border-left:2px solid #e6e6e6}.scene-note:hover .scene-note-header{background:#36baa6}.worknote-reply-wrapper .worknote:hover{background-color:transparent}.worknote-body{font-size:13px}.worknote-author{color:#333;font-size:14px;font-weight:bold}.worknote>.pull-left{margin-right:10px}.worknote-actions{position:absolute;left:70px;bottom:25px;display:none}.scene-note:hover .worknote-actions{display:block}.worknote-actions>a{color:#00a58f;display:inline-block;font-size:12px;font-weight:bold;line-height:15px}.worknote-actions>a:hover{color:#61ceb8;text-decoration:none}.note-label-reopen .hover{display:none}.worknote-actions a:hover .note-label-reopen .hover{display:inline}.worknote-actions a:hover .note-label-reopen .normal{display:none}.worknote-separator{width:85%;margin:0 auto;height:1%;border-top:1px solid #aaa;zoom:1}.worknote-reply-wrapper{position:absolute;top:10px;left:0;bottom:0;right:0;z-index:6;display:none;background:#fff;overflow-y:auto}.scene-note-body>.worknote-separator:first-of-type,.worknote-reply-wrapper .worknote-separator{display:none}.worknote-reply-wrapper .scene-note:hover{background:#fff}.worknote-reply-wrapper .worknote{padding-bottom:0}
+/*
+     FILE ARCHIVED ON 23:12:27 Apr 11, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 21:27:05 Feb 27, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 122.137
+  exclusion.robots: 0.083
+  exclusion.robots.policy: 0.076
+  cdx.remote: 0.063
+  esindex: 0.008
+  LoadShardBlock: 87.001 (3)
+  PetaboxLoader3.datanode: 114.759 (4)
+  CDXLines.iter: 16.297 (3)
+  load_resource: 102.374
+  PetaboxLoader3.resolve: 67.92
+*/
