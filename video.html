@@ -241,22 +241,7 @@ a.PIN_1398394542903_embed_grid_ft span.PIN_1398394542903_embed_grid_ft_logo { ve
 .fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://web.archive.org/web/20140425025519/https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
 .fb_connect_bar_container div,.fb_connect_bar_container span,.fb_connect_bar_container a,.fb_connect_bar_container img,.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}.fb_connect_bar a:hover{color:#fff}.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}.fb_connect_bar div a,.fb_connect_bar span,.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
 .fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
-<body class="en_US" data-twttr-rendered="true" style=""><!-- BEGIN WAYBACK TOOLBAR INSERT -->
-<style type="text/css">
-body {
-  margin-top:0 !important;
-  padding-top:0 !important;
-  /*min-width:800px !important;*/
-}
-</style>
-<script>__wm.rw(0);</script>
-<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 1px;">
-</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20140425025519/http://goanimate.com:80/videos/0P4VHPP_eYUY</div>
-<script type="text/javascript">
-__wm.bt(675,27,25,2,"web","http://goanimate.com/videos/0P4VHPP_eYUY","20140425025519",1996,"/_static/",["/_static/css/banner-styles.css?v=fantwOh2","/_static/css/iconochive.css?v=qtvMKcIJ"], false);
-  __wm.rw(1);
-</script>
-<!-- END WAYBACK TOOLBAR INSERT -->
+<body class="en_US" data-twttr-rendered="true" style="" onload="loadButtons()">
 <script type="text/javascript">
 if (self !== top) {
 			jQuery('body').hide();
@@ -343,9 +328,9 @@ if (self !== top) {
 	<div class="container">
 		<div class="status-container">
 			<div class="vthumb">
-				<div class="vthumb-clip"><div class="vthumb-clip-inner"><span class="valign"></span><img src="./nuevo2 - wmarin_files/19326160.jpg" alt="nuevo2"></div></div>
+				<div class="vthumb-clip"><div class="vthumb-clip-inner"><span class="valign"></span><img src="./nuevo2 - wmarin_files/19326160.jpg" alt="Your Animation"></div></div>
 			</div>
-			<div class="status private">
+			<div class="status public">
 				<span class="draft-text">Draft</span>
 				<span class="unlisted-text">Unlisted</span>
 				<span class="private-text">Private</span>
@@ -354,7 +339,7 @@ if (self !== top) {
 		</div>
 		<div class="video-top-content clearfix">
 			<div class="pull-left video-info">
-				<h1>nuevo2</h1>
+				<h1>Your Animation</h1>
 				By <a href="/" title="wmarin">User 2</a> <span class="label label-biz">Business</span>
 
 			</div>
@@ -362,7 +347,7 @@ if (self !== top) {
 			</div>
 
 			<ul class="video-top-nav">
-				<li class="static"><a title="Views"><span class="icon views"></span> <span class="num">5</span></a></li>
+				<li class="static"><a title="Views"><span class="icon views"></span> <span class="num">0</span></a></li>
 			</ul>
 		</div>
 	</div>
@@ -388,6 +373,9 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 });
 let id = params.movieId;
 let goapi = params.api;
+function loadButtons() {
+	document.getElementById('button').innerHTML = `<span class="divider">|</span><button class="button" data-remote="/ajax/getMovieShare/?movieId=${id}" data-action="video-share"><i class="ico-share"></i> Share</button><span class="divider">|</span>`;
+}
 var playerApiReady = false;
 function playerLoaded() {
 	playerApiReady = true;
@@ -409,11 +397,7 @@ jQuery('#playerdiv').flash({
 	flashvars: {"movieOwner":"wmarin","movieOwnerId":"0O8KmJskLRUE","movieId":id,"movieLid":"13","movieTitle":"nuevo2","movieDesc":"","userId":"","username":"","uemail":"","ut":"-1","numContact":"","apiserver":goapi,"duration":"273","playcount":1,"thumbnailURL":`${goapi}movie_thumbs/${id}.png`,"copyable":"0","isPublished":"0","ctc":"go","tlang":"en_US","is_private_shared":"1","autostart":"0","appCode":"go","is_slideshow":"0","originalId":"0FG-em4oNreQ","is_emessage":"0","storePath":"https:\/\/josephanimate2021.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephanimate2021.github.io\/static\/477\/<client_theme>","animationPath":"https:\/\/web.archive.org\/web\/20140425025519\/http:\/\/lightspeed.goanimate.com\/animation\/877\/","isEmbed":"0","refuser":null,"utm_source":null,"uid":null,"isTemplate":"0","showButtons":"1","chain_mids":"","averageRating":"0","ratingCount":"0","fb_app_url":"https:\/\/web.archive.org\/web\/20140425025519\/http:\/\/goanimate.com\/","ad":1,"endStyle":0,"isWide":"1","pwm":0,"s3base":"https:\/\/web.archive.org\/web\/20140425025519\/http:\/\/s3.amazonaws.com\/fs.goanimate.com\/","initcb":"playerLoaded","showshare":false}});
 </script>				</div>
 			</div>
-			<div class="video-actions">
-				<span class="divider">|</span>
-				<button class="button" data-remote="/ajax/getMovieShare/0P4VHPP_eYUY" data-action="video-share"><i class="ico-share"></i> Share</button>
-
-				<span class="divider">|</span>
+			<div class="video-actions" id="button">
 			</div>
 <script>
 $('.video-actions').toggle($('.video-actions').find('.button').length > 0);
