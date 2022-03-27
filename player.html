@@ -74,6 +74,21 @@ Copyright (C) Mugen Yujo, 2014.">
 var srv_tz_os = -4, view_name = "go", user_cookie_name = "u_info";
 var user_role = null;
 </script>
+<script>
+// some of this code was taken from regularspark. but it works here lol :)
+const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+});
+let id = params.movieId;
+let goapi = params.api;
+// prevent video curoption
+let path = params.swfPathUsed;
+let stPath = params.storePathUsed;
+let ctPath = params.staticPathUsed;
+function showPencil() {
+    document.getElementById('pencil').innerHTML = `<a href="/lvm-static/editVideo?movieId=${id}&swfPathUsed=${path}&storePathUsed=${stPath}&staticPathUsed=${ctPath}&api=${goapi}"><span class="glyph-pro glyph-pencil"></span></a>`;
+}
+</script>
 
 <script src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/common_combined.js"></script>
 <script type="text/javascript" src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/goserver_js-en_US.json"></script>
@@ -269,7 +284,7 @@ loginStatus = AMPLITUDE_EVENT_PROPERTIES.NO;amplitudeTrackEvent(
 </script>
 
 <div style="display: none;"></div></head>
-<body class="en_US">
+<body class="en_US" onload="showPencil()">
 <script type="text/javascript">
 if (self !== top) {
             jQuery('body').hide();
@@ -544,25 +559,7 @@ Copyright (C) Joseph Animate, 2022.</p>
                 </div>
             </div>
         </div>
-        <div id="autosave-overlay" class="modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h3 class="modal-title">Your video was autosaved</h3>
-                    </div>
-                    <div class="modal-body">
-                        <span class="autosave-message"></span>
-                        <a class="history-toggle" data-dismiss="modal">View revision history.</a>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-default text-uppercase" onclick="fullscreenStudio(&#39;/videomaker/full/editcheck/m-0&#39;);">Manually saved</button>
-                        <button class="load-autosave btn btn-default btn-orange text-uppercase">Load autosaved</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <div id="pencil"></div>
 
     <div class="settings social grey">
         <div class="container">
@@ -810,12 +807,6 @@ Copyright (C) Joseph Animate, 2022.</p>
 <input id="embed_code_field" type="hidden" value="&lt;iframe scrolling=&quot;no&quot; allowTransparency=&quot;true&quot; allowfullscreen frameborder=&quot;0&quot; width=&quot;620&quot; height=&quot;350&quot; src=&quot;https://goanimate.com/player/embed/0-13F9yscDHc&quot; &gt;&lt;/iframe&gt;
 ">
 <script>
-    // some of this code was taken from regularspark. but it works here lol :)
-    const params = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(prop),
-    });
-    let id = params.movieId;
-    let goapi = params.api;
     var flashPlayerUrl = 'https://josephanimate2021.github.io/animation/66453a3ba2cc5e1b/player.swf',
         flashPlayerVars = {"movieOwner":"Mugen Yujo","movieOwnerId":"0yjsQQB5bx50","movieId":id,"movieLid":"0","movieTitle":"Mugen+Yujo+-+S1+E1+-+To+Be+Dared","movieDesc":"Daniel+is+dared+to+to+a+dangerous+thing%2C+and+accepts+the+dare%2C+but+will+he+still+accept+it%3F++Find+out+next+time+on+Mugen+Yujo%21%0A%0ACopyright+%28C%29+Mugen+Yujo%2C+2014.","userId":"","username":"","uemail":"","ut":"-1","numContact":"","apiserver":goapi,"duration":"29","playcount":1,"thumbnailURL":"https:\/\/vyondlegacyacsapi.herokuapp.com\/movie_thumbs\/m-0.png","copyable":"0","isPublished":"1","ctc":"go","tlang":"en_US","is_private_shared":"0","autostart":"0","appCode":"go","is_slideshow":"0","originalId":"0zEt_fo4L-5k","is_emessage":"0","storePath":"https:\/\/josephanimate2021.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephanimate2021.github.io\/static\/55910a7cd204c37c\/<client_theme>","animationPath":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/lightspeed.goanimate.com\/animation\/a6a59f12d985fe21\/","isEmbed":"0","refuser":null,"utm_source":null,"uid":null,"isTemplate":"0","showButtons":"1","chain_mids":"","averageRating":"0","ratingCount":"0","fb_app_url":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/goanimate.com\/","ad":1,"endStyle":0,"isWide":"1","pwm":1,"s3base":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/s3.amazonaws.com\/fs.goanimate.com\/,http:\/\/assets.goanimate.com\/","initcb":"flashPlayerLoaded","free_trial":1,"showshare":false},
         h5PlayerElem = null,
