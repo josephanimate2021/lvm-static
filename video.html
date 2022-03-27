@@ -109,6 +109,16 @@ ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'st
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 </script>
+<script>
+	const params = new Proxy(new URLSearchParams(window.location.search), {
+		get: (searchParams, prop) => searchParams.get(prop),
+	});
+	let id = params.movieId;
+	let goapi = params.api;
+	function loadButtons() {
+		document.getElementById('button').innerHTML = `<span class="divider">|</span><button class="button" data-remote="/ajax/getMovieShare/?movieId=${id}" data-action="video-share"><i class="ico-share"></i> Share</button><span class="divider">|</span>`;
+	}
+</script>
 
 <!-- GoAnimate_Footer_ROS_Bottom_960x284 -->
 <script type="text/javascript" src="./nuevo2 - wmarin_files/google_service.js.download">
