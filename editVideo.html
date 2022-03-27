@@ -347,12 +347,14 @@ function voiceBanner(bannerId) {
         });
         let id = params.movieId;
         let goapi = params.api;
+        // prevent video curoption
+        let path = params.swfPathUsed;
 
         var enable_full_screen = true;
 
         var studio_data = {
             id: "Studio",
-            swf: "https://josephanimate2021.github.io/animation/66453a3ba2cc5e1b/go_full.swf",
+            swf: `${path}`,
             width: "100%",
             height: "100%",
 
