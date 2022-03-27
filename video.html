@@ -373,10 +373,9 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 });
 let id = params.movieId;
 let goapi = params.api;
-
+document.getElementById('button').innerHTML = `<span class="divider">|</span><button class="button" data-remote="/ajax/getMovieShare/?movieId=${id}" data-action="video-share"><i class="ico-share"></i> Share</button><span class="divider">|</span>`;
 var playerApiReady = false;
 function playerLoaded() {
-	document.getElementById('button').innerHTML = `<span class="divider">|</span><button class="button" data-remote="/ajax/getMovieShare/?movieId=${id}" data-action="video-share"><i class="ico-share"></i> Share</button><span class="divider">|</span>`;
 	playerApiReady = true;
 	jQuery(document).trigger('playerApiReady');
 };
