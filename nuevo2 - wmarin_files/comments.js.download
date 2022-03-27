@@ -1,0 +1,35 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+!function(d){var a="#all-comments";function c(h,i,g){g=g||"success";var j=d('<div class="alert"></div>');j.addClass("alert-"+g).html(i);h.find(".form-message").append(j)}function b(g){g.find(".alert").remove()}var f={get:function(g){d(a).addClass("loading");d.get(g,function(h){d.scrollTo(a,{duration:200,offset:{top:-20}});d(a).html(h).removeClass("loading")})},post:function(i,k){var j=i.find('[name="subject"]'),h=i.find('[name="comment_content"]');b(i);if(j.length>0&&j.val()==""){c(i,GT.gettext("Please enter the subject"),"error");return}if(h.val()==""){c(i,GT.gettext("Your comment is too short"),"error");return}var g=i.serialize();i.form("disable").find('[type="submit"]').button("loading");if(typeof Recaptcha=="object"){Recaptcha.destroy()}d.post(i.attr("action"),g,function(l){parseResponse(l);switch(responseArray.code){case"0":_gaq.push(["_trackPageview","/pageTracker/ajax/comment/postComplete"]);if(typeof responseArray.json.url!="undefined"){window.location=responseArray.json.url}else{if(typeof k=="function"){k(responseArray.html)}}d(document).trigger(e=d.Event("commentPosted"));i.form("reset").find('[type="submit"]').button("done");setTimeout(function(){i.find('[type="submit"]').prop("disabled",true)},1);break;case"1":i.find(".recaptcha-container").show();i.form("enable").find('[type="submit"]').button("reset");if(typeof Recaptcha=="object"){Recaptcha.create(recaptcha_public_key,"recaptcha",d.extend({},recaptcha_options,{callback:Recaptcha.focus_response_field}))}break;default:c(i,responseArray.json.error,"error");i.form("enable").find('[type="submit"]').button("reset");break}resetResponse()})},remove:function(g){var h=GT.gettext("Are you sure to delete this comment?");if(!confirm(h)){return}d.post("/ajax/deleteComment/"+g,function(i){parseResponse(i);if(typeof responseArray.json.url!="undefined"){window.location=responseArray.json.url}else{if(responseArray.code=="0"){d("#comment-"+g).fadeOut(300,function(){d(this).remove()});d(document).trigger(e=d.Event("commentDeleted"))}else{}}resetResponse()})},flag:function(g){d.post("/ajax/flagComment/"+g,function(h){parseResponse(h);if(typeof responseArray.json.url!="undefined"){window.location=responseArray.json.url}else{if(responseArray.code=="0"){}else{}}resetResponse()})}};d(function(){d(a).on("click","[data-page]",function(j){var i=d(this);var h=i.data("page");var g=i.closest(".go-pagination").data("endPoint");j.preventDefault();f.get(g+"/"+h)}).on("submit",".go-pagination-form",function(j){var i=d(this);var g=i.closest(".go-pagination").data("endPoint");var h=parseInt(i.find('input[name="page"]').val(),10);j.preventDefault();if(h<=0||h>i.data("maxPage")){alert(GT.gettext("Please input a valid page number"));return}f.get(g+"/"+h)}).on("click.comment.goanimate",'[data-action="comment-flag"]',function(i){var h=d(this);var g=h.data("commentId");i.preventDefault();g&&f.flag(g)});d(document).on("submit.comment.goanimate",".comment-form",function(i){var h=d(this),g=h.data("target"),j=h.data("targetMethod");i.preventDefault();f.post(h,function(k){if(j){if(j=="modalClose"){d(g).modal("hide");showNotice(GT.gettext("Your broadcast message was sent."))}else{$comment=d(k);$comment.addClass("fade");d(g)[j]($comment);$comment.addClass("in")}}})}).on("click.comment.goanimate",'[data-action="comment-delete"]',function(i){var h=d(this);var g=h.data("commentId");i.preventDefault();g&&f.remove(g)})})}(jQuery);
+
+}
+/*
+     FILE ARCHIVED ON 23:52:41 Apr 21, 2014 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:24:47 Mar 27, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 145.5
+  exclusion.robots: 0.085
+  exclusion.robots.policy: 0.077
+  RedisCDXSource: 56.39
+  esindex: 0.008
+  LoadShardBlock: 69.2 (3)
+  PetaboxLoader3.datanode: 66.608 (4)
+  CDXLines.iter: 17.34 (3)
+  load_resource: 25.13
+*/

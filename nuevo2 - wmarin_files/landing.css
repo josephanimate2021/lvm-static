@@ -1,0 +1,421 @@
+/* Home page template - hero promo full bleed */
+.dgc-hero-promo-full-bleed,
+.dgc-hero-promo-full-bleed-black-text {
+  padding: 0;
+}
+
+.dgc-hero-promo-full-bleed-black-text
+.devsite-landing-row-item-description-content {
+  color: black;
+}
+
+.dgc-hero-promo-full-bleed .devsite-landing-row-inner,
+.dgc-hero-promo-full-bleed-black-text .devsite-landing-row-inner{
+  padding: 0 2.5rem;
+}
+
+.dgc-hero-promo-full-bleed-black-text a {
+  color: black !important;
+}
+
+.dgc-hero-promo-full-bleed img,
+.dgc-hero-promo-full-bleed-black-text img {
+  border-radius: .6rem;
+}
+
+.dgc-hero-promo-full-bleed .dgc-hero-promo-full-bleed-button {
+  background-color: transparent !important;
+  border: 1px solid var(--tenant-inverted-text-color, white) !important;
+  color: var(--tenant-inverted-text-color, white) !important;
+}
+
+.dgc-hero-promo-full-bleed-black-text .dgc-hero-promo-full-bleed-button {
+  background-color: transparent !important;
+  border: 1px solid var(--tenant-primary-text-color, black) !important;
+  color: var(--tenant-primary-text-color, black) !important;
+}
+
+.dgc-hero-promo-full-bleed-button:hover,
+.dgc-hero-promo-full-bleed-button:focus {
+  background-color: rgb(0,0,0,.15) !important;
+}
+
+@media screen and (max-width: 870px) {
+  .dgc-hero-promo-full-bleed,
+  .dgc-hero-promo-full-bleed-black-text {
+    padding: 24px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dgc-hero-promo-full-bleed,
+  .dgc-hero-promo-full-bleed-black-text {
+    padding: 1px 0 36px;
+  }
+}
+
+/* Home page template - hero promo full bleed with animation */
+.dgc-hero-promo-animated figure {
+  background-image: url(/web/20220322150102im_/https://developers.google.com/homepage-assets/images/build-anything-with-google.png) !important;
+  background-size: contain !important;
+  border-radius: .6rem;
+}
+
+.dgc-hero-promo-animated img {
+  animation: heroPromo 4s;
+}
+
+@keyframes heroPromo {
+  0%, 50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Home page template - hero promo stories offset */
+.dgc-hero-offset-inner > div:first-child {
+  margin-inline-start: -10vw;
+  min-width: 50vw;
+  width: 880px;
+}
+
+/* [1] Ensure the row item description slightly overlaps its media. */
+.dgc-hero-offset-inner > div:last-child {
+  background-color: var(--tenant-background-1);
+  border-radius: 8px;
+  box-shadow: 0 0 30px -10px grey;
+  padding: 32px;
+  z-index: 1 /* [1] */;
+}
+
+.dgc-hero-offset > div {
+  padding: 0 48px;
+}
+
+.dgc-hero-offset img {
+  border-radius: 8px;
+  height: 400px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1310px) {
+  .dgc-hero-offset-inner > div:first-child {
+    margin-inline-start: -14vw;
+    width: 78vw;
+  }
+
+  .dgc-hero-offset-inner > div:last-child {
+    width: 40vw;
+  }
+
+  .dgc-hero-offset-inner h3 a {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .dgc-hero-offset > div {
+    padding: 0;
+  }
+
+  /* [1] Forces hero to display in a column with flex centering rather than a
+   * row at 840px width */
+  .dgc-hero-offset-inner {
+    display: flex !important; /* [1] */
+  }
+
+  /* [1] Forces image container width to full screen width when resized to 840px
+   * rather than having small amounts of whitespace on each side. */
+  .dgc-hero-offset-inner > div:first-child {
+    margin-inline-start: 0;
+    width: 100% !important /* [1] */;
+  }
+
+  .dgc-hero-offset img {
+    border-radius: 0;
+    height: 50vh;
+  }
+
+  /* [1] Pull the description up in order to to overlap the image. */
+  /* [2] Adds padding to header/description card at lower resolution width
+   * because mobile breakpoints remove all padding. */
+  .dgc-hero-offset-inner > div:last-child {
+    margin-top: -144px !important; /* [1] */
+    padding: 32px !important; /* [2] */
+    width: calc(100% - 64px);
+  }
+}
+
+/* Home page template - I/O Fullscreen takeover */
+.dgc-hero-fullscreen {
+  --dgc-hero-grid:
+    '. . . .' 2fr
+    '. heading . .'
+    '. item . .'
+    '. . . .' 1fr / 80px 8fr 10fr 80px;
+  --dgc-hero-heading-font-size: 58px;
+  --dgc-hero-heading-line-height: 64px;
+  --dgc-hero-margin: 0 calc(-50vw + 50%);
+}
+
+@media screen and (max-width: 1000px) {
+  .dgc-hero-fullscreen {
+    --dgc-hero-grid:
+      '. .' 4fr
+      'heading .'
+      'item .'
+      '. .' 1fr / 2fr 1fr;
+    --dgc-hero-margin: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dgc-hero-fullscreen {
+    --dgc-hero-grid:
+      '.' 5fr
+      'heading'
+      'item'
+      '.' 1fr / 1fr;
+    --dgc-hero-heading-font-size: 36px;
+    --dgc-hero-heading-line-height: 40px;
+  }
+}
+
+/* [1] Override default overflow hidden property to allow sticky properties,
+ * which allows fullscreen takeover to slide over the below content. */
+.dgc-hero-fullscreen .devsite-wrapper {
+  overflow: unset !important; /* [1] */
+}
+
+.dgc-hero-fullscreen-row::after,
+.dgc-hero-fullscreen-row .devsite-landing-row-html {
+  height: calc(100vh - 112px);
+}
+
+/* [1] Override primary color background so that the row has a transparent
+ * background that doesn't cover up the background image. */
+.dgc-hero-fullscreen-row {
+  background: transparent !important; /* [1]  */
+  overflow: hidden;
+  padding-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.dgc-hero-fullscreen-row::after {
+  background: url(/web/20220322150102im_/https://developers.google.com/homepage-assets/images/io-promo.svg) 55% top / cover;
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+
+.dgc-hero-fullscreen-row .devsite-landing-row-html {
+  display: grid;
+  grid: var(--dgc-hero-grid);
+  margin: var(--dgc-hero-margin);
+}
+
+.dgc-hero-fullscreen-row h2,
+.dgc-hero-fullscreen-item {
+  z-index: 1;
+}
+
+.dgc-hero-fullscreen-row h2 {
+  color: white;
+  font-size: var(--dgc-hero-heading-font-size);
+  grid-area: heading;
+  line-height: var(--dgc-hero-heading-line-height);
+}
+
+.dgc-hero-fullscreen-item {
+  background: var(--tenant-background-1);
+  border: var(--tenant-primary-border);
+  border-radius: 8px;
+  grid-area: item;
+  padding: 16px;
+}
+
+/* Home page - hero */
+.dgc-hero {
+  border-bottom: 2px solid #f1f3f4;
+}
+
+.dgc-hero img {
+  aspect-ratio: 720 / 416;
+}
+
+.dgc-hero .devsite-landing-row-item .devsite-landing-row-item-body h3 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.dgc-hero .devsite-landing-row-item-image {
+  margin: 40px auto;
+}
+
+.dgc-hero .devsite-landing-row-item-buttons {
+  padding-top: 38px;
+}
+
+/* Home page - logo garden */
+.dgc-logo-garden {
+  bottom: -30vh;
+  position: sticky;
+}
+
+.dgc-logo-garden .devsite-landing-row-item-custom-image-icon {
+  width: 64px;
+}
+
+.dgc-logo-garden-cta {
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .dgc-logo-garden {
+    bottom: -70vh;
+  }
+
+  .dgc-logo-garden-cta {
+    margin-top: 40px;
+  }
+}
+
+/* Home page - programs */
+.dgc-programs.devsite-landing-row-item {
+  overflow: visible;
+}
+
+.dgc-programs .devsite-landing-row-item-image {
+  position: relative;
+}
+
+.dgc-programs .devsite-landing-row-item-image::before {
+  background: center / contain no-repeat;
+  content: '';
+  display: block;
+  height: 160px;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 160px;
+}
+
+.dgc-programs--events .devsite-landing-row-item-image::before {
+  background-image: url(/web/20220322150102im_/https://developers.google.com/site-assets/images/home/events-graphic.png);
+}
+
+.dgc-programs--community .devsite-landing-row-item-image::before {
+  background-image: url(/web/20220322150102im_/https://developers.google.com/site-assets/images/home/community-graphic.png);
+}
+
+@media screen and (max-width: 840px) {
+  .dgc-programs .devsite-landing-row-item-media {
+    overflow: visible !important;
+  }
+}
+
+/* Home page - experts */
+.devsite-directory__wrapper {
+  padding: 0 12px 0;
+}
+
+.devsite-directory__content {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(var(--directory-columns, 4), 1fr);
+}
+
+.devsite-directory__content__item {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.experts-row {
+  overflow: hidden;
+}
+
+.experts-directory__item__profile {
+  padding: 20px 20px 0;
+  text-align: center;
+}
+
+.experts-directory__item__profile-pic-holder {
+  background-size: cover;
+  border-radius: 50%;
+  display: block;
+  height: 100px;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  position: relative;
+  width: 100px;
+}
+
+.experts-directory__item__name {
+  margin: 0;
+}
+
+.experts-directory__item__name h3 {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.experts-directory__item__location,
+.experts-directory__item__experience {
+  font: 400 14px/20px;
+  margin-top: 0;
+}
+
+.experts-directory__item__expertise {
+  color: gray;
+}
+
+.experts-directory__item__view-profile {
+  margin: auto auto 16px;
+}
+
+@media screen and (max-width: 1000px) {
+  .devsite-directory__content {
+    --directory-columns: 2;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .devsite-directory__content {
+    --directory-columns: 1;
+  }
+}
+
+/*
+     FILE ARCHIVED ON 15:01:02 Mar 22, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:20:47 Mar 27, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 1574.01
+  exclusion.robots: 1374.966
+  exclusion.robots.policy: 1374.956
+  xauthn.identify: 95.438
+  xauthn.chkprivs: 1279.336
+  RedisCDXSource: 21.726
+  esindex: 0.008
+  LoadShardBlock: 155.366 (3)
+  PetaboxLoader3.datanode: 118.019 (4)
+  CDXLines.iter: 15.855 (3)
+  load_resource: 96.862
+  PetaboxLoader3.resolve: 61.06
+*/

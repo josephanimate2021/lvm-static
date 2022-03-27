@@ -1,0 +1,50 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+(function(_ds){var window=this;var s_=function(a){var b=a.qp,c=a.Ub,d=a.Lm;a=a.On;let e;e='<ul class="devsite-nav-list"><li class="devsite-nav-item devsite-nav-heading devsite-toc-toggle" role="heading" aria-level="2"><span class="devsite-nav-title"><span class="devsite-nav-text">On this page</span></span>';c&&(e=e+'<button type="button" title="'+_ds.mB("Expand/collapse contents"),e+='" class="devsite-nav-show-all button-transparent material-icons"></button>');e+="</li>";const f=b.length;for(let h=0;h<f;h++){var g=b[h];e+='<li class="devsite-nav-item"'+
+(c&&g.index<a?" visible":"")+'><a href="#'+_ds.U(g.id)+'" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="'+(c?"Embedded nav":"Right nav")+'" data-value="'+_ds.U(h)+'" track-type="navigation" track-name="'+(c?"embeddedNav":"rightNav")+'" track-metadata-position="'+_ds.U(h)+'" track-metadata-link-destination="#'+_ds.U(g.id)+'"><span class="devsite-nav-text" tooltip>'+_ds.S(g.text)+"</span></a>";if(_ds.bB(g.children).length){e+='<ul class="devsite-nav-list">';
+g=g.children;const k=g.length;for(let l=0;l<k;l++){const m=g[l];e+='<li class="devsite-nav-item"'+(c&&m.index<a?" visible":"")+'><a href="#'+_ds.U(m.id)+'" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="'+(c?"Embedded nav":"Right nav")+'" data-value="'+_ds.U(h)+"."+_ds.U(l)+'" track-type="navigation" track-name="'+(c?"embeddedNav":"rightNav")+'" track-metadata-position="'+_ds.U(h)+"."+_ds.U(l)+'" track-metadata-link-destination="#'+
+_ds.U(m.id)+'"><span class="devsite-nav-text" tooltip>'+_ds.S(m.text)+"</span></a></li>"}e+="</ul>"}e+="</li>"}d&&(e=c?e+'<li class="devsite-nav-item devsite-apix-link"><a href="#try-it" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Try it</span></a></li>':e+'<button type="button" class="devsite-show-apix button-primary">Try it!</button>');c&&(e=e+'<li class="devsite-toc-toggle"><button type="button" class="button-flat devsite-nav-more-items material-icons" track-type="navigation" track-name="embeddedNavExpand" title="'+
+_ds.mB("Expand/collapse contents"),e+='"></button></li>');return(0,_ds.Q)(e+"</ul>")};var u_=function(a){if(!a.hasAttribute("disabled")){var b=document.querySelector("devsite-content .devsite-article-body");b?(a.Ub?a.classList.add("devsite-toc-embedded"):a.classList.add("devsite-toc"),t_(a,b),a.F=!0):a.Ka()}},w_=async function(a){await v_(a);if(a.h){var b=`#${a.h.id}`,c=encodeURI(b);b=a.G.get(b)||a.G.get(c);a.v!==b&&(a.v&&a.v.classList.remove("devsite-nav-active"),b&&(b.classList.add("devsite-nav-active"),a.v=b))}},x_=function(a){a.Ub||a.eventHandler.listen(document.body,"devsite-content-updated devsite-element-hidden devsite-element-visible devsite-page-loaded devsite-sticky-resize devsite-sticky-scroll".split(" "),
+()=>{a.L.va()});a.eventHandler.listen(document.body,"devsite-content-updated",()=>{u_(a)})},y_=async function(a){if("IntersectionObserver"in _ds.Bh()){a.C&&a.C.disconnect();var b=document.querySelector("devsite-header");let c=152;b&&(await window.customElements.whenDefined("devsite-header"),(b=Number(b.getAttribute("top-row--height"))+Number(b.getAttribute("bottom-row--height")))&&(c=b));a.C=new IntersectionObserver(d=>{for(const e of d)e.isIntersecting?a.D.add(e.target):a.D.delete(e.target);a.L.va()},
+{rootMargin:`${c}px 0px 0px 0px`,threshold:[0,1]})}a.J.h()},v_=async function(a){let b=0;var c=document.querySelector("devsite-header");c&&(await window.customElements.whenDefined("devsite-header"),b=c.C());c=a.j.findIndex(e=>a.D.has(e)&&e.getBoundingClientRect().top>=b);const d=a.j[c];if(d){const e=await z_();d.getBoundingClientRect().top-b>e&&0<c?a.h=a.j[c-1]:a.h=d}else a.h&&a.h.getBoundingClientRect().top>window.innerHeight&&(c=a.j.indexOf(a.h),0<c&&(a.h=a.j[c-1]))},t_=function(a,b){const c=[];
+let d=!1,e="";switch(a.getAttribute("depth")){case "1":e="h2:not(.hide-from-toc):not(#contents):not(#table-of-contents)";break;default:e="h2:not(.hide-from-toc):not(#contents):not(#table-of-contents), h3:not(.hide-from-toc):not(#contents):not(#table-of-contents)"}a.j=[...b.querySelectorAll(e)].filter(f=>f.id&&f.dataset.text).filter(f=>A_(f));for(const [f,g]of a.j.entries())b=g,b={id:b.id,level:b.tagName.toLowerCase(),text:b.dataset.text,children:[],index:f},"h2"===b.level?(c.push(b),d=!0):d?c[c.length-
+1].children.push(b):c.push(b);_ds.Ya(a.H,c,a.K.bind(a))&&a.F||(c.length?(B_(a,c),a.show(),a.Ub||C_(a)):a.Ka(),a.H=c)},A_=function(a){return _ds.ij.find(b=>!!_ds.Zh(a,null,b,6))||_ds.Zh(a,"devsite-selector",null,6)||_ds.Zh(a,null,"devsite-dialog",3)?!1:!0},B_=function(a,b){const c=_ds.N(s_,{qp:b,Ub:a.Ub,Lm:!!document.body.querySelector("devsite-apix, .devsite-apix"),On:8>b.length?8:5});b=c.querySelectorAll("a.devsite-nav-title");for(const d of b){b=d;const e=b.hash,f=encodeURI(b.hash);a.G.set(e,b);
+a.G.set(f,b)}_ds.Gh(a);a.Ub&&_ds.D(a,"hidden","",c);a.appendChild(c);if(a.Ub){if(8<a.getElementsByClassName("devsite-nav-item").length){for(const d of a.querySelectorAll(".devsite-nav-show-all, .devsite-nav-more-items"))a.eventHandler.listen(d,"click",()=>{a.hasAttribute("expanded")?a.removeAttribute("expanded"):_ds.D(a,"expanded","")});_ds.D(a,"expandable","")}else a.removeAttribute("expandable");setTimeout(()=>{c.removeAttribute("hidden")},0)}},C_=async function(a){await a.J.promise;if(a.C){a.C.disconnect();
+a.D.clear();a.v&&a.v.classList.remove("devsite-nav-active");a.v=null;for(const b of a.j)a.C.observe(b)}},z_=async function(){let a=0,b=0;const c=document.querySelector("devsite-header");c&&(await window.customElements.whenDefined("devsite-header"),a=c.C(),b=c.J());return Math.max(b-a,Math.floor((window.innerHeight-a)/5))},D_=class extends _ds.E{constructor(){super();this.eventHandler=new _ds.G;this.J=new _ds.nk;this.D=new Set;this.G=new Map;this.N=new _ds.hk(()=>void u_(this),16);this.L=new _ds.hk(()=>
+void w_(this),33);this.h=this.v=null;this.j=[];this.F=!1;this.C=null;this.Ub=!1;this.H=[];_ds.Hg(this,(0,_ds.t)`disabled`,(0,_ds.t)`has-sidebar`,(0,_ds.t)`hidden`,(0,_ds.t)`expandable`,(0,_ds.t)`expanded`,(0,_ds.t)`visible`)}static get observedAttributes(){return["max-height","offset"]}connectedCallback(){this.Ub=this.hasAttribute("devsite-toc-embedded");u_(this);x_(this)}disconnectedCallback(){this.Ka();this.F=!1;_ds.I(this.eventHandler)}Df(a){a=a&&"false"===a.toLowerCase();this.H=[];_ds.Gh(this);
+a?(_ds.D(this,"disabled",""),this.Ka()):(this.removeAttribute("disabled"),this.show(),this.N.va())}Ka(){_ds.Gh(this);this.dispatchEvent(new CustomEvent("devsite-element-hidden",{bubbles:!0}));this.removeAttribute("visible");_ds.D(this,"hidden","");if(!this.Ub){const a=document.querySelector(".devsite-main-content");a&&a.removeAttribute("has-sidebar")}}show(){this.dispatchEvent(new CustomEvent("devsite-element-visible",{bubbles:!0}));this.removeAttribute("hidden");_ds.D(this,"visible","");if(!this.Ub){const a=
+document.querySelector(".devsite-main-content");a&&_ds.D(this,"has-sidebar","",a);y_(this)}}K(a,b){let c=!0;if(a.children.length||b.children.length)c=_ds.Ya(a.children,b.children,this.K.bind(this));return c&&a.id===b.id&&a.text===b.text}};D_.prototype.renderUpdatedContent=D_.prototype.Df;D_.prototype.disconnectedCallback=D_.prototype.disconnectedCallback;D_.prototype.connectedCallback=D_.prototype.connectedCallback;try{window.customElements.define("devsite-toc",D_)}catch(a){console.warn("Unrecognized DevSite custom element - DevsiteToc",a)};})(_ds_www);
+
+
+}
+/*
+     FILE ARCHIVED ON 23:54:14 Mar 26, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:22:31 Mar 27, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 94.5
+  exclusion.robots: 0.106
+  exclusion.robots.policy: 0.097
+  RedisCDXSource: 1.198
+  esindex: 0.01
+  LoadShardBlock: 64.145 (3)
+  PetaboxLoader3.datanode: 97.653 (5)
+  CDXLines.iter: 25.695 (3)
+  load_resource: 93.404 (2)
+  PetaboxLoader3.resolve: 54.114 (2)
+*/

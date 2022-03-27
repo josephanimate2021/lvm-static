@@ -1,0 +1,38 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+(function(_ds){var window=this;var QV=function(a){_ds.Gh(a);if("indeterminate"===a.getAttribute("type")){const b=a.getAttribute("color"),c=document.createElement("div");c.classList.add("devsite-progress--indeterminate");for(let d=1;4>=d;d++){const e=document.createElement("div");e.classList.add(`devsite-progress--indeterminate-${d}`);!b||1!==d&&3!==d||(e.style.backgroundColor=b);c.appendChild(e)}a.appendChild(c)}},RV=class extends _ds.E{static get observedAttributes(){return["color","type"]}connectedCallback(){QV(this)}attributeChangedCallback(a,
+b,c){b!==c&&QV(this)}};RV.prototype.attributeChangedCallback=RV.prototype.attributeChangedCallback;RV.prototype.connectedCallback=RV.prototype.connectedCallback;try{window.customElements.define("devsite-progress",RV)}catch(a){console.warn("devsite.app.customElement.DevsiteProgress",a)};})(_ds_www);
+
+
+}
+/*
+     FILE ARCHIVED ON 23:54:14 Mar 26, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:22:31 Mar 27, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 578.409
+  exclusion.robots: 0.079
+  exclusion.robots.policy: 0.073
+  RedisCDXSource: 15.715
+  esindex: 0.007
+  LoadShardBlock: 540.944 (3)
+  PetaboxLoader3.datanode: 621.394 (4)
+  CDXLines.iter: 19.318 (3)
+  load_resource: 125.382
+  PetaboxLoader3.resolve: 33.832
+*/

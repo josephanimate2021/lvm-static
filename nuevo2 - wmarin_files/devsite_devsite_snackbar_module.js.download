@@ -1,0 +1,52 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+(function(_ds){var window=this;var DY=function(){return(0,_ds.Q)('<div class="devsite-snackbar-snack" type="loading" role="alert"><div class="devsite-snackbar-inner"><div class="devsite-snackbar-message">Loading</div><div class="devsite-snackbar-action"><devsite-spinner single-color="#ffffff"></devsite-spinner></div></div></div>')},EY=function(){return(0,_ds.Q)('<div class="devsite-snackbar-snack" type="signin-state-changed" role="alert"><div class="devsite-snackbar-inner"><div class="devsite-snackbar-message">Your signed in state has changed.</div><button class="devsite-snackbar-action devsite-snackbar-action--reload">Reload</button><button class="devsite-snackbar-action devsite-snackbar-action--dismiss">OK</button></div></div>')},
+FY=function(){return(0,_ds.Q)('<div class="devsite-snackbar-snack" type="refresh" role="alert"><div class="devsite-snackbar-inner"><div class="devsite-snackbar-message">A new version is available</div><button class="devsite-snackbar-action">Refresh</button></div></div>')},GY=function(){return(0,_ds.Q)('<div class="devsite-snackbar-snack" type="error" role="alert"><div class="devsite-snackbar-inner"><div class="devsite-snackbar-message">Something went wrong. Please try again.</div><button class="devsite-snackbar-action">Retry</button></div></div>')},
+HY=function(){return(0,_ds.Q)('<div class="devsite-snackbar-snack" type="copied-to-clipboard" role="alert"><div class="devsite-snackbar-inner"><div class="devsite-snackbar-message">Copied to clipboard</div></div></div>')},IY=function(a){a=a||{};a=a.nj;a='<div class="devsite-snackbar-snack" type="cookie-notification" role="alert"><div class="devsite-snackbar-inner"><div class="devsite-snackbar-message">Google uses cookies to deliver its services, to personalize ads, and to analyze traffic. You can adjust your privacy controls anytime in your <a href="//web.archive.org/web/20220326235414/https://myaccount.google.com/intro/data-and-personalization">Google settings</a>.</div><a href="'+
+((a?_ds.U(_ds.Y(a)):"//web.archive.org/web/20220326235414/https://policies.google.com/technologies/cookies")+'" class="devsite-snackbar-link button">');return(0,_ds.Q)(a+'More details</a><button class="devsite-snackbar-action">OK</button></div></div>')},JY=function(a){a=a||{};a=a.nj;a='<div class="devsite-snackbar-snack" type="cookie-notification" role="alert"><div class="devsite-snackbar-inner"><div class="devsite-snackbar-message">This site uses cookies from Google to deliver its services and to analyze traffic.</div><a href="'+((a?_ds.U(_ds.Y(a)):
+"//web.archive.org/web/20220326235414/https://policies.google.com/technologies/cookies")+'" class="devsite-snackbar-link button">');return(0,_ds.Q)(a+'More details</a><button class="devsite-snackbar-action">OK</button></div></div>')},KY=function(){return(0,_ds.Q)('<div class="devsite-snackbar-snack" type="support-attachment-error" role="alert"><div class="devsite-snackbar-inner"><div class="devsite-snackbar-message">Unsupported file type.</div><button class="devsite-snackbar-action">OK</button></div></div>')},LY=function(a){var b=a.message,
+c=a.link,d=a.Ln;a='<div class="devsite-snackbar-snack" type="'+_ds.U(a.hp)+'" role="alert"><div class="devsite-snackbar-inner"><div class="devsite-snackbar-message">'+_ds.S(b)+'</div><button class="devsite-snackbar-action">';a=a+'No, thanks</button><a href="'+(_ds.U(_ds.Y(c))+'" class="devsite-snackbar-link button" target="_blank">');a=d?a+_ds.S(d):a+"OK";return(0,_ds.Q)(a+"</a></div></div>")},MY=function(a){var b=a.Lj,c=a.link,d=a.rc,e=a.ep;a='<div class="devsite-snackbar-snack" type="custom" role="alert"><div class="devsite-snackbar-inner"><div class="devsite-snackbar-message">'+
+_ds.S(a.message)+"</div>";e&&(a+='<button class="devsite-snackbar-action">OK</button>');a+=(_ds.dB(c)&&_ds.dB(b)?'<a href="'+_ds.U(_ds.Y(c))+'"'+(d?' target="_blank"':"")+' class="devsite-snackbar-link button">'+_ds.S(b)+"</a>":"")+"</div></div>";return(0,_ds.Q)(a)};var PY=function(a,b,c=null,d=!1){b&&(_ds.of(b,_ds.Ye,()=>{_ds.Ih(b);a.v=null;if(c)NY(a,c,d);else{const e=a.h.length?a.h.shift():null;null!==e&&OY(a,e)}}),b.removeAttribute("show"))},QY=function(a,b,c=!1){a.appendChild(b);window.requestAnimationFrame(()=>{NY(a,b,c)})},RY=function(a){PY(a,a.querySelector('*[type^="cookie-notification"]'))},SY=function(a){PY(a,a.querySelector('*[type^="support-attachment-error"]'))},TY=function(a){PY(a,a.querySelector('*[type^="signin-state-changed"]'))},OY=function(a,
+b){switch(b){case "loading":a.showLoading();break;case "refresh":UY(a);break;case "error":VY(a);break;case "copied-to-clipboard":var c=_ds.N(HY);QY(a,c,!0);break;case "cookie-notification":WY(a);break;case "support-attachment-error":XY(a);break;case "signin-state-changed":YY(a)}if(null==b?0:b.startsWith("notification-")){c=a.getAttribute(`${b}-message`);const d=a.getAttribute(`${b}-link`),e=a.getAttribute(`${b}-link-txt`);ZY(a,b,c,d,e,a.hasAttribute(`${b}-store-key`))}},UY=function(a){const b=_ds.N(FY);
+_ds.pf(b.querySelector(".devsite-snackbar-action"),"click",()=>{_ds.Bh().location.reload()});QY(a,b)},VY=function(a){const b=_ds.N(GY);_ds.pf(b.querySelector(".devsite-snackbar-action"),"click",()=>{_ds.Bh().location.reload()});QY(a,b)},WY=function(a){if(a.j.get("devsite-eu-cookie")){var b=a.h.length?a.h.shift():null;null!==b&&OY(a,b)}else{b=JY;if(a.hasAttribute("data-cookie-notice"))switch(Number(a.getAttribute("data-cookie-notice"))){case 2:b=IY;break;default:b=JY}if(a.hasAttribute("data-cookie-policy")){const c=
+a.getAttribute("data-cookie-policy");b=_ds.N(b,{nj:c})}else b=_ds.N(b);_ds.of(b.querySelector(".devsite-snackbar-action"),"click",()=>{a.j.set("devsite-eu-cookie","1");RY(a)});QY(a,b)}},XY=function(a){const b=_ds.N(KY);QY(a,b);_ds.of(b.querySelector(".devsite-snackbar-action"),"click",()=>{SY(a)})},YY=function(a){TY(a);const b=_ds.N(EY);QY(a,b,!1);_ds.pf(b.querySelector(".devsite-snackbar-action--reload"),"click",async()=>{await (await _ds.u()).reload();TY(a)});_ds.pf(b.querySelector(".devsite-snackbar-action--dismiss"),
+"click",async()=>{await (await _ds.u()).reload();TY(a)})},NY=function(a,b,c=!1){window.clearTimeout(a.D);a.v?PY(a,a.v,b,c):(a.v=b,window.requestAnimationFrame(()=>{b.setAttribute("show","")}),c&&(a.D=window.setTimeout(()=>{a.removeAttribute("type");PY(a,b)},5E3)))},ZY=function(a,b,c,d,e,f){if(c&&d){const g="devsite-notification"+d;if(!f||!a.j.get(g)){b=_ds.N(LY,{hp:b,message:c,link:d,Ln:e});QY(a,b);const h=new _ds.G(b);h.listen(b,"click",k=>{k.stopPropagation();if(k.target.classList.contains("devsite-snackbar-link")||
+k.target.classList.contains("devsite-snackbar-action"))f&&a.j.set(g,"1"),a.C(),_ds.I(h)})}}},$Y=class extends _ds.E{constructor(){super();this.h=[];this.D=-1;this.v=null;this.eventHandler=new _ds.G(this);this.j=new _ds.Sl}static get observedAttributes(){return["type"]}connectedCallback(){this.eventHandler.listen(document.body,"devsite-show-custom-snackbar-msg",this.G);this.eventHandler.listen(document.body,"devsite-show-notification-snackbar-msg",this.F);this.eventHandler.listen(document.body,"devsite-hide-notification-snackbar-msg",
+this.C)}disconnectedCallback(){_ds.I(this.eventHandler)}G(a){this.setAttribute("type","custom");var b;if(a=null==(b=a.Y)?void 0:b.detail){b=!!a.showClose;var c=!0;a.href&&(c=(new URL(a.href)).origin!==document.location.origin);var d=_ds.N(MY,{message:a.msg,Lj:a.linkText,link:a.href,rc:c,ep:b});b&&_ds.of(d.querySelector(".devsite-snackbar-action"),"click",()=>{PY(this,d)});QY(this,d,!b)}}attributeChangedCallback(a,b,c){if("type"===a){switch(b){case "loading":this.hideLoading();break;case "refresh":PY(this,
+this.querySelector('*[type^="refresh"]'));break;case "error":PY(this,this.querySelector('*[type^="error"]'));break;case "copied-to-clipboard":PY(this,this.querySelector('*[type^="copied-to-clipboard"]'));break;case "cookie-notification":RY(this);break;case "support-attachment-error":SY(this);break;case "signin-state-changed":TY(this);break;case "custom":PY(this,this.querySelector('*[type^="custom"]'))}null!=b&&b.startsWith("notification-")&&this.C();if(c){let d;if(null==(d=c)?0:d.includes(",")){let e;
+this.h=null==(e=c)?void 0:e.split(",");c=`${this.h.shift()}`}OY(this,c)}}}showLoading(){if(!this.querySelector('*[type^="loading"]')){var a=_ds.N(DY);QY(this,a)}}hideLoading(){PY(this,this.querySelector('*[type^="loading"]'))}F(a){let b;(a=null==(b=a.Y)?void 0:b.detail)&&ZY(this,"notification-custom",a.msg,a.href,a.Lj,!0)}C(){PY(this,this.querySelector('*[type^="notification"]'))}};$Y.prototype.attributeChangedCallback=$Y.prototype.attributeChangedCallback;$Y.prototype.disconnectedCallback=$Y.prototype.disconnectedCallback;
+$Y.prototype.connectedCallback=$Y.prototype.connectedCallback;try{window.customElements.define("devsite-snackbar",$Y)}catch(a){console.warn("Unrecognized DevSite custom element - DevsiteSnackBar",a)};})(_ds_www);
+
+
+}
+/*
+     FILE ARCHIVED ON 23:54:14 Mar 26, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:22:31 Mar 27, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 154.097
+  exclusion.robots: 0.075
+  exclusion.robots.policy: 0.069
+  RedisCDXSource: 0.642
+  esindex: 0.006
+  LoadShardBlock: 132.694 (3)
+  PetaboxLoader3.datanode: 213.716 (5)
+  CDXLines.iter: 18.49 (3)
+  load_resource: 153.849 (2)
+  PetaboxLoader3.resolve: 65.423 (2)
+*/

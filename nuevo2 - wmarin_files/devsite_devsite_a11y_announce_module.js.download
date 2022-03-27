@@ -1,0 +1,38 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+(function(_ds){var window=this;var HI=function(){return"devsite-a11y-announce"},II=async function(a,b){_ds.Xh(a)===b&&(_ds.Qh(a,""),await _ds.Yi(),await _ds.Yi());_ds.Qh(a,b)},JI=class extends _ds.E{constructor(){super();this.eventHandler=new _ds.G}connectedCallback(){this.setAttribute("aria-live","assertive");this.setAttribute("aria-atomic","true");this.eventHandler.listen(document.body,"devsite-a11y-announce",a=>{a=a.Y;(a=a.detail&&a.detail.message)&&II(this,a)})}disconnectedCallback(){_ds.I(this.eventHandler)}};
+JI.prototype.connectedCallback=JI.prototype.connectedCallback;JI.getTagName=HI;try{window.customElements.define(HI(),JI)}catch(a){console.warn("Unrecognized DevSite custom element - DevsiteA11yAnnounce",a)};})(_ds_www);
+
+
+}
+/*
+     FILE ARCHIVED ON 23:54:14 Mar 26, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:22:30 Mar 27, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 215.473
+  exclusion.robots: 0.116
+  exclusion.robots.policy: 0.107
+  RedisCDXSource: 1.296
+  esindex: 0.009
+  LoadShardBlock: 185.709 (3)
+  PetaboxLoader3.datanode: 266.633 (5)
+  CDXLines.iter: 25.148 (3)
+  load_resource: 155.215 (2)
+  PetaboxLoader3.resolve: 69.909 (2)
+*/

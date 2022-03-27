@@ -1,0 +1,40 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+(function(_ds){var window=this;var xS=async function(a){const b=a.h.get("django_language");b&&await a.j.set("language_preference",b)},yS=async function(a){if(!a.h.get("django_language")){const b=await _ds.u();a.h.set("django_language",b.getLocale()||"en",{Kb:15552E3,path:"/"})}},AS=function(a){_ds.I(a.eventHandler);const b=a.querySelector(".devsite-language-selector-select");b&&a.eventHandler.listen(b,"change",c=>{zS(a,c)})},zS=async function(a,b){await _ds.u();a.h.remove("django_language");b=b.target;a.h.set("django_language",
+b.value,{Kb:15552E3,path:"/"});const c=document.documentElement.getAttribute("lang");c&&await BS(a,c,b.value);await xS(a);a=new URL(_ds.Bh().location.toString());a.searchParams.delete("hl");a=_ds.Lc(a.toString());_ds.Bh().location.assign(_ds.xc(a))},BS=async function(a,b,c){a.dispatchEvent(new CustomEvent("devsite-analytics-observation",{detail:{category:"Site-Wide Custom Events",label:"Language Selector",action:`${b} to ${c}`},bubbles:!0}));b={eventData:JSON.stringify({name:"change",type:"languageSelector",
+metadata:{"selected-language":`${c}`,"original-language":`${b}`}})};a.dispatchEvent(new CustomEvent("devsite-analytics-observation-cloudtrack",{detail:b,bubbles:!0}))},CS=class extends _ds.E{constructor(){super(...arguments);this.j=_ds.bl();this.eventHandler=new _ds.G;this.h=new _ds.Tt}async connectedCallback(){try{await yS(this),await xS(this)}catch(a){}AS(this)}disconnectedCallback(){_ds.I(this.eventHandler)}$a(a){a&&(_ds.Kg(this,this.querySelector(".devsite-language-selector-menu"),a.querySelector(".devsite-language-selector-menu")),
+AS(this))}};CS.prototype.updateContent=CS.prototype.$a;CS.prototype.disconnectedCallback=CS.prototype.disconnectedCallback;CS.prototype.connectedCallback=CS.prototype.connectedCallback;try{window.customElements.define("devsite-language-selector",CS)}catch(a){console.warn("devsite.app.customElement.DevsiteLanguageSelector",a)};})(_ds_www);
+
+
+}
+/*
+     FILE ARCHIVED ON 23:54:14 Mar 26, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:22:31 Mar 27, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 63.598
+  exclusion.robots: 0.125
+  exclusion.robots.policy: 0.115
+  RedisCDXSource: 0.669
+  esindex: 0.01
+  LoadShardBlock: 35.065 (3)
+  PetaboxLoader3.datanode: 66.51 (5)
+  CDXLines.iter: 23.82 (3)
+  load_resource: 114.149 (2)
+  PetaboxLoader3.resolve: 76.701 (2)
+*/
