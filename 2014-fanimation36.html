@@ -2,6 +2,7 @@
   <head>
     <title>Video Editor</title>
     <script>
+      // some of this code was taken from regularspark. but it works here lol :)
       const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
       });
