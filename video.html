@@ -109,16 +109,6 @@ ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'st
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 </script>
-<script>
-	const params = new Proxy(new URLSearchParams(window.location.search), {
-		get: (searchParams, prop) => searchParams.get(prop),
-	});
-	let id = params.movieId;
-	let goapi = params.api;
-	function loadButtons() {
-		document.getElementById('button').innerHTML = `<span class="divider">|</span><button class="button" data-remote="/ajax/getMovieShare/?movieId=${id}" data-action="video-share"><i class="ico-share"></i> Share</button><span class="divider">|</span>`;
-	}
-</script>
 
 <!-- GoAnimate_Footer_ROS_Bottom_960x284 -->
 <script type="text/javascript" src="./nuevo2 - wmarin_files/google_service.js.download">
@@ -251,7 +241,7 @@ a.PIN_1398394542903_embed_grid_ft span.PIN_1398394542903_embed_grid_ft_logo { ve
 .fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://web.archive.org/web/20140425025519/https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
 .fb_connect_bar_container div,.fb_connect_bar_container span,.fb_connect_bar_container a,.fb_connect_bar_container img,.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}.fb_connect_bar a:hover{color:#fff}.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}.fb_connect_bar div a,.fb_connect_bar span,.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
 .fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
-<body class="en_US" data-twttr-rendered="true" style="" onload="loadButtons()">
+<body class="en_US" data-twttr-rendered="true" style="">
 <script type="text/javascript">
 if (self !== top) {
 			jQuery('body').hide();
@@ -383,11 +373,10 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 });
 let id = params.movieId;
 let goapi = params.api;
-function loadButtons() {
-	document.getElementById('button').innerHTML = `<span class="divider">|</span><button class="button" data-remote="/ajax/getMovieShare/?movieId=${id}" data-action="video-share"><i class="ico-share"></i> Share</button><span class="divider">|</span>`;
-}
+
 var playerApiReady = false;
 function playerLoaded() {
+	document.getElementById('button').innerHTML = `<span class="divider">|</span><button class="button" data-remote="/ajax/getMovieShare/?movieId=${id}" data-action="video-share"><i class="ico-share"></i> Share</button><span class="divider">|</span>`;
 	playerApiReady = true;
 	jQuery(document).trigger('playerApiReady');
 };
