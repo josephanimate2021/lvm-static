@@ -351,6 +351,7 @@ function voiceBanner(bannerId) {
         let path = params.swfPathUsed;
         let stPath = params.storePathUsed;
         let ctPath = params.staticPathUsed;
+        let point = params.startingPoint;
 
         var enable_full_screen = true;
 
@@ -730,6 +731,7 @@ function publishStudio() {
 }
 function exitStudio(share) {
     loadedFullscreenStudio = false;
+    window.location=`/lvm-static/${point}?movieId=${id}&swfPathUsed=https://josephanimate2021.github.io/animation/66453a3ba2cc5e1b/&storePathUsed=https://josephanimate2021.github.io/store/3a981f5cb2739137/<store>&staticPathUsed=https://josephanimate2021.github.io/static/55910a7cd204c37c/<client_theme>&api=https://vyondlegacyacsapi.herokuapp.com/`;
 }
 
 function studioUpsellUpgrade() {
