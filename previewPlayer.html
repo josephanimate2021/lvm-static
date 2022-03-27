@@ -1,0 +1,12 @@
+<script>
+  // some of this code was taken from regularspark. but it works here lol :)
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  let id = params.movieId;
+  document.title='Player',
+    flashvars = {"apiserver":"https://wrapper-online2.herokuapp.com/","storePath":"https://josephanimate2021.github.io/store/3a981f5cb2739137/<store>","ut":60,"autostart":1,"isWide":1,"clientThemePath":"https://josephanimate2021.github.io/static/477/<client_theme>","movieId":id,}
+</script>
+<body style="margin:0px">
+  <script>document.write(`<object id="obj" data="https://josephanimate2021.github.io/animation/877/player.swf" type="application/x-shockwave-flash" width="100%" height="100%"><param name="flashvars" value="apiserver=https%3A%2F%2Fwrapper-online2.herokuapp.com%2F&storePath=https%3A%2F%2Fjosephanimate2021.github.io%2Fstore%2F3a981f5cb2739137%2F%3Cstore%3E&ut=60&autostart=1&isWide=1&clientThemePath=https%3A%2F%2Fjosephanimate2021.github.io%2Fstatic%2F477%2F%3Cclient_theme%3E&movieId=${id}"> <param name="allowScriptAccess" value="always"> <param name="allowFullScreen" value="true"></object>`);</script>
+</body>
