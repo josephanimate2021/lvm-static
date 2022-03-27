@@ -346,6 +346,11 @@ function voiceBanner(bannerId) {
                 get: (searchParams, prop) => searchParams.get(prop),
         });
         let id = params.newId;
+        switch (id) {
+                case "undenfied": {
+                        location.href = "https://vyondlegacyacsapi.herokuapp.com/genorateId";
+                }
+        }
 
         var enable_full_screen = true;
 
