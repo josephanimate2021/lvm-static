@@ -87,6 +87,12 @@ let stPath = params.storePathUsed;
 let ctPath = params.staticPathUsed;
 function showPencil() {
     document.getElementById('pencil').innerHTML = `<a href="/lvm-static/editVideo?movieId=${id}&swfPathUsed=${path}&storePathUsed=${stPath}&staticPathUsed=${ctPath}&api=${goapi}&startingPoint=player">Edit</a>`;
+    // prevent api crashing
+    javascript:showThumbs()
+}
+// prevent api crashing
+function showThumbs() {
+    document.getElementById('img').style = `background-image:url(&#39;${goapi}movie_thumbs/${id}.png&#39;)`;
 }
 </script>
 
@@ -375,7 +381,7 @@ if (self !== top) {
 <div id="video-page">
     <input type="hidden" name="ct" value="JX_2ajxFPOeYO1c3yxC2CgBsvuq3YZCz5ddxHA96+a5i4ByB7221uzDjpVzvISiX1w9bxiHqIgibQTP5ODmyNErtibZ461kVlN+R8jOTy2EDw6w+rL1HomQYkvp5xotqVLtopIjNrGBRaQ2Psz8moyheCkABF_BQrH6ia55oYYVDJ6yI19AUSSbm_vnQAcFooMww2ZvZmqkLV4clZTPsqJS_cQCprHbRFybt94Gl4uz07e">
     <div class="background">
-        <div class="thumbnail-container" style="background-image:url(&#39;https://vyondlegacyacsapi.herokuapp.com/movie_thumbs/m-0.png&#39;)">
+        <div class="thumbnail-container" id="img">
             <div class="thumbnail-overlay"></div>
         </div>
         <div class="container">
@@ -390,7 +396,7 @@ if (self !== top) {
                     <div class="notification browser-no-mse hidden">
                         <span class="icon glyph-halfling glyph-info-sign"></span>
                         We are optimizing this video to be compatible with your browser, please wait a few minutes then refresh this page. <a href="https://web.archive.org/web/20160412001103/https://support.goanimate.com/hc/en-us/articles/206949976" target="_blank">Learn more.</a>                    </div>
-                    <div class="video-player-viewport" style="background-image: url(&#39;https://vyondlegacyacsapi.herokuapp.com/movie_thumbs/m-0.png&#39;);">
+                    <div class="video-player-viewport" id="img">
                         <div class="video-player-wrapper embed-responsive embed-responsive-16by9">
                             <div class="embed-responsive-item hidden" id="flash-player">
                                 <div class="no-flash-player">
