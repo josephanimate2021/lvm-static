@@ -64,16 +64,6 @@
 <script type="text/javascript">
 var srv_tz_os = -4, view_name = "go", user_cookie_name = "u_info";
 </script>
-<script>
-// some of this code was taken from regularspark. but it works here lol :)
-const params = new Proxy(new URLSearchParams(window.location.search), {
-	get: (searchParams, prop) => searchParams.get(prop),
-});
-let id = params.movieId;
-function showButtons() {
-	document.getElementById('button').innerHTML = `<span class="divider">|</span><button class="button" data-remote="/ajax/getMovieShare/?movieId=${id}" data-action="video-share"><i class="ico-share"></i> Share</button><span class="divider">|</span>`;
-}
-</script>
 <script src="./nuevo2 - wmarin_files/jquery-1.11.0.min.js.download"></script>
 
 <script src="./nuevo2 - wmarin_files/bootstrap.min.js.download"></script>
@@ -404,7 +394,13 @@ jQuery('#playerdiv').flash({
 	flashvars: {"movieOwner":"wmarin","movieOwnerId":"0O8KmJskLRUE","movieId":id,"movieLid":"13","movieTitle":"nuevo2","movieDesc":"","userId":"","username":"","uemail":"","ut":"-1","numContact":"","apiserver":goapi,"duration":"273","playcount":1,"thumbnailURL":`${goapi}movie_thumbs/${id}.png`,"copyable":"0","isPublished":"0","ctc":"go","tlang":"en_US","is_private_shared":"1","autostart":"0","appCode":"go","is_slideshow":"0","originalId":"0FG-em4oNreQ","is_emessage":"0","storePath":"https:\/\/josephanimate2021.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephanimate2021.github.io\/static\/477\/<client_theme>","animationPath":"https:\/\/web.archive.org\/web\/20140425025519\/http:\/\/lightspeed.goanimate.com\/animation\/877\/","isEmbed":"0","refuser":null,"utm_source":null,"uid":null,"isTemplate":"0","showButtons":"1","chain_mids":"","averageRating":"0","ratingCount":"0","fb_app_url":"https:\/\/web.archive.org\/web\/20140425025519\/http:\/\/goanimate.com\/","ad":1,"endStyle":0,"isWide":"1","pwm":0,"s3base":"https:\/\/web.archive.org\/web\/20140425025519\/http:\/\/s3.amazonaws.com\/fs.goanimate.com\/","initcb":"playerLoaded","showshare":false}});
 </script>				</div>
 			</div>
-			<div class="video-actions" id="button">
+			<div class="video-actions">
+				<span class="divider">|</span>
+				<button class="button" data-remote="/ajax/getMovieShare/" data-action="video-share">
+					<i class="ico-share"></i> 
+					Share
+				</button>
+				<span class="divider">|</span>
 			</div>
 <script>
 $('.video-actions').toggle($('.video-actions').find('.button').length > 0);
