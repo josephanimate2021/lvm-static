@@ -96,8 +96,8 @@ if (self !== top) {
                     <span class="icon-bar"></span>
                   </button>
                   
-            <a class="navbar-brand" href="https://owenthegoanimator.github.io/Vyond-Legacy-ACS" title="Vyond ACS">
-                      <img alt="Vyond Accesible" src="/Vyond-Legacy-ACS/vyond_logo_legacy_accessible.png">
+            <a class="navbar-brand" href="/" title="Vyond ACS">
+                      <img alt="Vyond Accesible" src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/img/vyond/vyond_logo_legacy.png">
                   </a></div>
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -141,16 +141,16 @@ if (self !== top) {
             
         </li>
         <li>
-            <a href="https://discord.gg/zeYXwAcnpn" onclick="amplitudeTrackCtaHelp('help_center');" target="_blank">Help Center</a>
+            <a href="https://discord.io/goanimate4schools" onclick="amplitudeTrackCtaHelp('help_center');" target="_blank">Help Center</a>
         </li>
         <li>
-            <a href="/Vyond-Reimaged/updates" onclick="amplitudeTrackCtaHelp('whats_new');" target="_blank">Updates</a>
+            <a href="/lvmStaticUpdates" onclick="amplitudeTrackCtaHelp('whats_new');" target="_blank">Updates</a>
         </li>
     </ul>
 </li>
                     <li>
-                        <a class="hidden-sm hidden-md hidden-lg" href="/Vyond-Legacy-ACS/videomaker">Make a Video</a>
-                        <span class="site-nav-btn hidden-xs"><a class="btn btn-orange" href="/Vyond-Legacy-ACS/videomaker">Make a video</a></span>
+                        <a class="hidden-sm hidden-md hidden-lg" href="/lvm-static/themeChooser">Make a Video</a>
+                        <span class="site-nav-btn hidden-xs"><a class="btn btn-orange" href="/lvm-static/themeChooser">Make a video</a></span>
                     </li>
 
 
@@ -199,6 +199,7 @@ if (self !== top) {
             <li class="active">Comedy World Characters</li>
         </ul>
 
+        <div id="themeDectorSentence"><p>Browse characters already available in the Comedy World theme and use them as a starting point to create new custom characters.</p></div>
 <div>
     <div id="ccbrowser-container" align="center"></div>
 </div>
@@ -215,21 +216,25 @@ switch (theme) {
   case "cc2": {
     window.location = "javascript:writeObjData()";
     document.getElementById('themeTeller').innerHTML = '<li><a href="/lvm-static/themeChooser">Make a video</a></li><li class="active">Lil\'l Peepz Characters</li>';
+    document.getElementById('themeDectorSentence').innerHTML = '<p>Browse characters already available in the Lil\'l Peepz theme and use them as a starting point to create new custom characters.</p>';
     break;
   }
   case "chibi": {
     window.location = "javascript:writeObjData()";
     document.getElementById('themeTeller').innerHTML = '<li><a href="/lvm-static/themeChooser">Make a video</a></li><li class="active">Chibi Peepz Characters</li>';
+    document.getElementById('themeDectorSentence').innerHTML = '<p>Browse characters already available in the Chibi Peepz theme and use them as a starting point to create new custom characters.</p>';
     break;
   }
   case "anime": {
     window.location = "javascript:writeObjData()";
     document.getElementById('themeTeller').innerHTML = '<li><a href="/lvm-static/themeChooser">Make a video</a></li><li class="active">Anime Characters</li>';
+    document.getElementById('themeDectorSentence').innerHTML = '<p>Browse characters already available in the Anime theme and use them as a starting point to create new custom characters.</p>';
     break;
   }
   case "ninja": {
     window.location = "javascript:writeObjData()";
     document.getElementById('themeTeller').innerHTML = '<li><a href="/lvm-static/themeChooser">Make a video</a></li><li class="active">Ninja Peepz Characters</li>';
+    document.getElementById('themeDectorSentence').innerHTML = '<p>Browse characters already available in the Ninja Peepz theme and use them as a starting point to create new custom characters.</p>';
     break;
   }                  
 } 
