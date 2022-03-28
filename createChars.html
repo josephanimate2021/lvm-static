@@ -196,7 +196,7 @@ if (self !== top) {
 
         <ul class="breadcrumb">
             <li><a href="/lvm-static/themeChooser">Make a video</a></li>
-              <li id="themeTeller">
+              <li id="themeTeller"><a href="/lvm-static/browseChars?themeId=family">Comedy World Characters</a></li>
             <li class="active">Create a new character</li>
         </ul>
 
@@ -284,22 +284,10 @@ switch (theme) {
     document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=anime">Anime Characters</a>';
     break;
   }
-  case "jungle": {
-    document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=jungle">Jungle Warfare Characters</a>';
-    break;
-  }
   case "ninja": {
     document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=cc2">Ninja Peepz Characters</a>';
     break;
-  } 
-  case "petz": {
-    document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=petz">Lil\'l Petz Characters</a>';
-    break;
-  }
-  default: {
-    document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=family">Comedy World Characters</a>';
-    break;
-  }                      
+  }                  
 }                       
 </script>
     </div>
