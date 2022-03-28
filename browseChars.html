@@ -1190,26 +1190,26 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 let theme = params.themeId;
 switch (theme) {
   case "cc2": {
-    document.getElementById('themeDector').innerHTML = "lil'l Peepz Characters";
-    document.getElementById('themeDectorSentence').innerHTML = "Browse characters already available in the lil'l Peepz theme and use them as a starting point to create new custom characters.";
+    document.getElementById('themeTeller').innerHTML = 'Lil\'l Peepz Characters';
+    document.getElementById('themeDectorSentence').innerHTML = 'Browse characters already available in the Comedy World theme and use them as a starting point to create new custom characters.';
     break;
   }
   case "chibi": {
-    document.getElementById('themeDector').innerHTML = "Chibi Peepz Characters";
-    document.getElementById('themeDectorSentence').innerHTML = "Browse characters already available in the Chibi Peepz theme and use them as a starting point to create new custom characters.";
+    document.getElementById('themeTeller').innerHTML = 'Chibi Peepz Characters';
+    document.getElementById('themeDectorSentence').innerHTML = 'Browse characters already available in the Chibi Peepz theme and use them as a starting point to create new custom characters.';
     break;
   }
   case "anime": {
-    document.getElementById('themeDector').innerHTML = "Anime Characters";
-    document.getElementById('themeDectorSentence').innerHTML = "Browse characters already available in the Anime theme and use them as a starting point to create new custom characters.";
+    document.getElementById('themeTeller').innerHTML = 'Anime Characters';
+    document.getElementById('themeDectorSentence').innerHTML = 'Browse characters already available in the Anime theme and use them as a starting point to create new custom characters.';
     break;
   }
   case "ninja": {
-    document.getElementById('themeDector').innerHTML = "Ninja Peepz Characters";
-    document.getElementById('themeDectorSentence').innerHTML = "Browse characters already available in the Ninja Peepz theme and use them as a starting point to create new custom characters.";
+    document.getElementById('themeTeller').innerHTML = 'Ninja Peepz Characters';
+    document.getElementById('themeDectorSentence').innerHTML = 'Browse characters already available in the Ninja Peepz theme and use them as a starting point to create new custom characters.';
     break;
-  }
-}    
+  }                  
+}           
 </script>
 <script>
     $('.dropdown-menu-user').click(function(e) {
@@ -1225,10 +1225,10 @@ switch (theme) {
 
         <ul class="breadcrumb">
             <li><a href="/lvm-static/themeChooser">Make a video</a></li>
-            <li class="active" id="themeDector">Comedy World Characters</li>
+            <li class="active" id="themeTeller">Comedy World Characters</li>
         </ul>
 
-        <p id="themeDectorSentence">Browse characters already available in the Whiteboard Animation theme and use them as a starting point to create new custom characters.</p>
+        <p id="themeDectorSentence">Browse characters already available in the Comedy World theme and use them as a starting point to create new custom characters.</p>
 
 <script>document.write(`<div id="ccbrowser-container" align="center"><object data="https://owenthegoanimator.github.io/Original-GA-Cloudfront/GoAnimate-Assets/animation/414827163ad4eb60/cc_browser.swf" type="application/x-shockwave-flash" id="ccbrowser" width="960" height="1200" title="Adobe Flash Player"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fgoanimatewrapper-europe.herokuapp.com%2F&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fowenthegoanimator.github.io%2FOriginal-GA-Cloudfront%2FGoAnimate-Assets%2Fstore%2F3a981f5cb2739137%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fowenthegoanimator.github.io%2FOriginal-GA-Cloudfront%2FGoAnimate-Assets%2Fstatic%2Fad44370a650793d9%2F%3Cclient_theme%3E&amp;appCode=go&amp;siteId=school&amp;st=&amp;userId=0DyHqK6Yj9dM&amp;ut=23&amp;uisa=0&amp;themeId=${theme}&amp;u_info_school=OjI6d1lZakM3SVUxak5YVU9rQWlueURFZ3ZTT1EwakFJYjczcGVCMzJTMiszcFYzVERQRDByQktlUElUTDlaeUdsSzJyRTZFZldHMVRXR1BtOTNwWm5vS2JscTFXTzVodndrVnpaRG9XNVppRU9pSnRpR3pnSEljPQ%3D%3D"><param name="movie" value="https://owenthegoanimator.github.io/Original-GA-Cloudfront/GoAnimate-Assets/animation/414827163ad4eb60/cc_browser.swf"></object></div>`);</script>
 
