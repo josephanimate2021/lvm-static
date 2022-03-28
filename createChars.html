@@ -87,8 +87,7 @@ if (self !== top) {
 
 
 <div class="site-header">
-    <div class="navbar site-nav" role="navigation">
-        <div class="container">
+    <div class="navbar site-nav site-nav--legacy" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -96,50 +95,110 @@ if (self !== top) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                <a class="navbar-brand" href="https://web.archive.org/web/20160412001103/https://goanimate.com/" title="GoAnimate">
-                    <img alt="Make a Video Online with GoAnimate.com" src="https://web.archive.org/web/20160412001103im_/http://lightspeed.goanimate.com/static/6a882951f9649a88/go/img/business_video/home/logo.png">
-                </a>
-            </div>
+                  
+            <a class="navbar-brand" href="https://owenthegoanimator.github.io/Vyond-Legacy-ACS" title="Vyond ACS">
+                      <img alt="Vyond Accesible" src="/Vyond-Legacy-ACS/vyond_logo_legacy_accessible.png">
+                  </a></div>
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                
                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="https://web.archive.org/web/20160412001103/https://goanimate.com/signup">Free Trial</a></li>
-                    <li><a href="https://web.archive.org/web/20160412001103/https://goanimate.com/login">Login</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href="https://web.archive.org/web/20160412001103/http://goanimate.com/videos" data-toggle="dropdown">Explore <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="https://web.archive.org/web/20160412001103/http://resources.goanimate.com/">Resources</a></li>
-                            <li><a href="https://web.archive.org/web/20160412001103/http://blog.goanimate.com/">Blog</a></li>
-                            <li><a href="https://web.archive.org/web/20160412001103/http://goanimate.com/videos">Featured Videos</a></li>
-                            <li><a href="https://web.archive.org/web/20160412001103/http://goanimate.com/features">Features</a></li>
-                            <li><a href="https://web.archive.org/web/20160412001103/https://support.goanimate.com/">Help Center</a></li>
-                        </ul>
-                    </li>
-                                    <li class="plans-and-pricing">
-                        <a href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans/?hook=header_button.site">Plans &amp; Pricing</a>
-                    </li>
-                    <li>
-                        <a class="hidden-sm hidden-md hidden-lg" href="https://web.archive.org/web/20160412001103/http://goanimate.com/videomaker">Make a Video</a>
-                        <span class="site-nav-btn hidden-xs"><a class="btn btn-orange" href="https://web.archive.org/web/20160412001103/http://goanimate.com/videomaker">Make a Video</a></span>
-                    </li>
-                </ul>
-            </div>
+<li class="dropdown">
+    
+    
+    <ul class="dropdown-menu dropdown-menu-help">
 
-            <div class="noti_tooltips_container"></div>
-        </div>
-    </div>
-</div>
-    <script>var notiTooltips = new NotificationTooltips($('#idxNotibtn'));</script>
+        <li>
+            <a href="#" onclick="zE.activate({hideOnClose: true});amplitudeTrackCtaHelp('quick_search');return false;">Quick Search</a>
+        </li>
+        <li>
+            <a href="https://josephcrosmanplays532.github.io/help" onclick="amplitudeTrackCtaHelp('help_center');" target="_blank">Help Center</a>
+        </li>
+        <li>
+            <a href="https://josephcrosmanplays532.github.io/whatsnew" onclick="amplitudeTrackCtaHelp('whats_new');" target="_blank">What’s New</a>
+        </li>
+    </ul>
+</li>
+
+<script>
+    $('.dropdown-menu-help').click(function(e) {
+        e.stopPropagation();
+    });
+</script>
+
 
 
 <script>
-    jQuery('.logout-link').click(function(){
-        amplitudeTrackEvent(AMPLITUDE_EVENT.LOGOUT, null);
+    $('.dropdown-menu-user').click(function(e) {
+        e.stopPropagation();
     });
-    </script>
+</script>
+                </ul><ul class="nav navbar-nav navbar-right">
+<li class="dropdown">
+    <a class="dropdown-toggle" href="https://support.vyond.com/?_ga=2.86365592.1634984527.1623466218-1007383286.1623466218" data-toggle="dropdown" aria-expanded="false">Help<span class="dropdown-caret"></span></a>
+    <ul class="dropdown-menu dropdown-menu-help">
 
-<!-- END OF HEADER -->
+        <li>
+            
+        </li>
+        <li>
+            <a href="https://discord.gg/zeYXwAcnpn" onclick="amplitudeTrackCtaHelp('help_center');" target="_blank">Help Center</a>
+        </li>
+        <li>
+            <a href="/Vyond-Reimaged/updates" onclick="amplitudeTrackCtaHelp('whats_new');" target="_blank">Updates</a>
+        </li>
+    </ul>
+</li>
+                    <li>
+                        <a class="hidden-sm hidden-md hidden-lg" href="/Vyond-Legacy-ACS/videomaker">Make a Video</a>
+                        <span class="site-nav-btn hidden-xs"><a class="btn btn-orange" href="/Vyond-Legacy-ACS/videomaker">Make a video</a></span>
+                    </li>
+
+
+
+                </ul>
+
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown">
+    
+    <ul class="dropdown-menu dropdown-menu-help">
+
+        <li>
+            <a href="#" onclick="zE.activate({hideOnClose: true});amplitudeTrackCtaHelp('quick_search');return false;">Quick Search</a>
+        </li>
+        <li>
+            <a href="https://josephcrosmanplays532.github.io/help" onclick="amplitudeTrackCtaHelp('help_center');" target="_blank">Help Center</a>
+        </li>
+        <li>
+            <a href="https://josephcrosmanplays532.github.io/whatsnew" onclick="amplitudeTrackCtaHelp('whats_new');" target="_blank">What’s New</a>
+        </li>
+    </ul>
+</li>
+
+<script>
+    $('.dropdown-menu-help').click(function(e) {
+        e.stopPropagation();
+    });
+</script>
+
+
+
+<script>
+    $('.dropdown-menu-user').click(function(e) {
+        e.stopPropagation();
+    });
+</script>
+                </ul>
+            </div>
+    </div>
+</div>
+<div class="container container-cc">
+
+
+        <ul class="breadcrumb">
+            <li><a href="/Vyond-Legacy-ACS/videomaker">Make a video</a></li>
+              <li><a href="/Vyond-Legacy-ACS/charactercreator/family/">Comedy World Characters</a></li>
+            <li class="active">Create a new character</li>
+        </ul>
 
 <div>
     <div id="char_creator_client" align="center"></div>
