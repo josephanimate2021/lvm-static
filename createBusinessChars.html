@@ -212,13 +212,6 @@ let id = params.charId;
 let character = params.bs;
 let option = params.method;
 let theme = params.themeId;
-function writeObjData(charId) {
-  if (charId) {
-    document.getElementById('char_creator_client').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=0aWj-HdFtJ5c&amp;themeId=${theme}&amp;ut=23&amp;original_asset_id=${id}"><param name="movie" value="https://ga.vyond.com/static/animation/cc.swf"></object>`;
-  } else {
-    document.getElementById('char_creator_client').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=0aWj-HdFtJ5c&amp;themeId=${theme}&amp;ut=23&amp;ft=_sticky_filter_${character}"><param name="movie" value="https://ga.vyond.com/static/animation/cc.swf"></object>`;
-  }
-}
 switch (theme) {
   case "business": {
     document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=business">Business Friendly Characters</a>';
@@ -234,7 +227,14 @@ switch (theme) {
     var bs = `${character}`;
     break;
   }                               
-}                        
+}                
+function writeObjData(charId) {
+  if (charId) {
+    document.getElementById('char_creator_client').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=0aWj-HdFtJ5c&amp;themeId=${themeId}&amp;ut=23&amp;original_asset_id=${id}"><param name="movie" value="https://ga.vyond.com/static/animation/cc.swf"></object>`;
+  } else {
+    document.getElementById('char_creator_client').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=0aWj-HdFtJ5c&amp;themeId=${themeId}&amp;ut=23&amp;ft=_sticky_filter_${bs}"><param name="movie" value="https://ga.vyond.com/static/animation/cc.swf"></object>`;
+  }
+}                    
 switch (option) {
   case "copy": {
     window.location = "javascript:writeObjData('charId')";
