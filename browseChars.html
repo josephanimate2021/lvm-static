@@ -246,15 +246,15 @@ switch (theme) {
     document.getElementById('themeDectorSentence').innerHTML = '<p>Browse characters already available in the Whiteboard Animation theme and use them as a starting point to create new custom characters.</p>';
     break;
   }
-  case "null": {  
+  case "null": {
     var themeId = "family";
     break;
   }
   default: {
     var themeId = `${theme}`;
     break;
-  }                                  
-}             
+  }
+}           
 function writeObjData() {
   document.getElementById('ccbrowser-container').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc_browser.swf" type="application/x-shockwave-flash" id="ccbrowser" width="960" height="1200" title="Adobe Flash Player"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;siteId=school&amp;st=&amp;userId=0DyHqK6Yj9dM&amp;ut=23&amp;uisa=0&amp;themeId=${themeId}&amp;u_info_school=OjI6d1lZakM3SVUxak5YVU9rQWlueURFZ3ZTT1EwakFJYjczcGVCMzJTMiszcFYzVERQRDByQktlUElUTDlaeUdsSzJyRTZFZldHMVRXR1BtOTNwWm5vS2JscTFXTzVodndrVnpaRG9XNVppRU9pSnRpR3pnSEljPQ%3D%3D"><param name="movie" value="https://ga.vyond.com/static/animation/cc_browser.swf"></object>`;
 }   
