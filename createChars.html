@@ -291,7 +291,16 @@ switch (theme) {
   }
   case "business":
   case "whiteboard": {
-    location.href = `/lvm-static/createBusinessChars?themeId=${theme}&bs=${character}`;
+    switch (option) {
+      case "copy": {
+        location.href = `/lvm-static/createBusinessChars?themeId=${theme}&charId=${id}&method=copy`;
+        break;
+      }
+      default: {
+        location.href = `/lvm-static/createBusinessChars?themeId=${theme}&bs=${character}`;
+        break;
+      }
+    }                        
     break;
   }
 }                       
