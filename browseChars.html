@@ -209,6 +209,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 let theme = params.themeId;
+let vars = params.themeId;            
 function writeObjData() {
   document.getElementById('ccbrowser-container').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc_browser.swf" type="application/x-shockwave-flash" id="ccbrowser" width="960" height="1200" title="Adobe Flash Player"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;siteId=school&amp;st=&amp;userId=0DyHqK6Yj9dM&amp;ut=23&amp;uisa=0&amp;themeId=${theme}&amp;u_info_school=OjI6d1lZakM3SVUxak5YVU9rQWlueURFZ3ZTT1EwakFJYjczcGVCMzJTMiszcFYzVERQRDByQktlUElUTDlaeUdsSzJyRTZFZldHMVRXR1BtOTNwWm5vS2JscTFXTzVodndrVnpaRG9XNVppRU9pSnRpR3pnSEljPQ%3D%3D"><param name="movie" value="https://ga.vyond.com/static/animation/cc_browser.swf"></object>`;
 }   
@@ -250,20 +251,76 @@ switch (theme) {
     break;
   }
 } 
-jQuery('#ccbrowser-container').flash({
-    id: "ccbrowser",
-    swf: "https://ga.vyond.com/static/animation/cc_browser.swf",
-    height: 1200,
-    width: 960,
+switch (vars) {
+  case "null": {
+     jQuery('#ccbrowser-container').flash({
+       id: "ccbrowser",
+       swf: "https://josephanimate2021.github.io/animation/414827163ad4eb60/cc_browser.swf",
+       height: 1200,
+       width: 960,
 
-    align: "middle",
-    allowScriptAccess: "always",
-    allowFullScreen: "true",
-    wmode: "transparent",
+       align: "middle",
+       allowScriptAccess: "always",
+       allowFullScreen: "true",
+       wmode: "transparent",
 
-    hasVersion: "10.3",
+       hasVersion: "10.3",
 
-    flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/ga.vyond.com\/static\/store\/<store>","clientThemePath":"https:\/\/ga.vyond.com\/static\/<client_theme>","appCode":"go","siteId":"school","st":"","userId":"0DyHqK6Yj9dM","ut":23,"uisa":0,"themeId":theme,"u_info_school":"OjI6d1lZakM3SVUxak5YVU9rQWlueURFZ3ZTT1EwakFJYjczcGVCMzJTMiszcFYzVERQRDByQktlUElUTDlaeUdsSzJyRTZFZldHMVRXR1BtOTNwWm5vS2JscTFXTzVodndrVnpaRG9XNVppRU9pSnRpR3pnSEljPQ=="}});
+       flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/josephanimate2021.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephanimate2021.github.io\/static\/ad44370a650793d9\/<client_theme>","appCode":"go","siteId":"school","st":"","userId":"0DyHqK6Yj9dM","ut":23,"uisa":0,"themeId":"family","u_info_school":"OjI6d1lZakM3SVUxak5YVU9rQWlueURFZ3ZTT1EwakFJYjczcGVCMzJTMiszcFYzVERQRDByQktlUElUTDlaeUdsSzJyRTZFZldHMVRXR1BtOTNwWm5vS2JscTFXTzVodndrVnpaRG9XNVppRU9pSnRpR3pnSEljPQ=="}});
+    break;
+ } 
+ case "business": { 
+     jQuery('#ccbrowser-container').flash({
+       id: "ccbrowser",
+       swf: "https://ga.vyond.com/static/animation/cc_browser.swf",
+       height: 1200,
+       width: 960,
+
+       align: "middle",
+       allowScriptAccess: "always",
+       allowFullScreen: "true",
+       wmode: "transparent",
+
+       hasVersion: "10.3",
+
+       flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/ga.vyond.com\/static\/store\/<store>","clientThemePath":"https:\/\/ga.vyond.com\/static\/<client_theme>","appCode":"go","siteId":"school","st":"","userId":"0DyHqK6Yj9dM","ut":23,"uisa":0,"themeId":"business","u_info_school":"OjI6d1lZakM3SVUxak5YVU9rQWlueURFZ3ZTT1EwakFJYjczcGVCMzJTMiszcFYzVERQRDByQktlUElUTDlaeUdsSzJyRTZFZldHMVRXR1BtOTNwWm5vS2JscTFXTzVodndrVnpaRG9XNVppRU9pSnRpR3pnSEljPQ=="}});
+    break;
+ }
+ case "whiteboard": { 
+     jQuery('#ccbrowser-container').flash({
+       id: "ccbrowser",
+       swf: "https://ga.vyond.com/static/animation/cc_browser.swf",
+       height: 1200,
+       width: 960,
+
+       align: "middle",
+       allowScriptAccess: "always",
+       allowFullScreen: "true",
+       wmode: "transparent",
+
+       hasVersion: "10.3",
+
+       flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/ga.vyond.com\/static\/store\/<store>","clientThemePath":"https:\/\/ga.vyond.com\/static\/<client_theme>","appCode":"go","siteId":"school","st":"","userId":"0DyHqK6Yj9dM","ut":23,"uisa":0,"themeId":"whiteboard","u_info_school":"OjI6d1lZakM3SVUxak5YVU9rQWlueURFZ3ZTT1EwakFJYjczcGVCMzJTMiszcFYzVERQRDByQktlUElUTDlaeUdsSzJyRTZFZldHMVRXR1BtOTNwWm5vS2JscTFXTzVodndrVnpaRG9XNVppRU9pSnRpR3pnSEljPQ=="}});
+    break;
+ } 
+ default: {
+     jQuery('#ccbrowser-container').flash({
+       id: "ccbrowser",
+       swf: "https://josephanimate2021.github.io/animation/414827163ad4eb60/cc_browser.swf",
+       height: 1200,
+       width: 960,
+
+       align: "middle",
+       allowScriptAccess: "always",
+       allowFullScreen: "true",
+       wmode: "transparent",
+
+       hasVersion: "10.3",
+
+       flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/josephanimate2021.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephanimate2021.github.io\/static\/ad44370a650793d9\/<client_theme>","appCode":"go","siteId":"school","st":"","userId":"0DyHqK6Yj9dM","ut":23,"uisa":0,"themeId":theme,"u_info_school":"OjI6d1lZakM3SVUxak5YVU9rQWlueURFZ3ZTT1EwakFJYjczcGVCMzJTMiszcFYzVERQRDByQktlUElUTDlaeUdsSzJyRTZFZldHMVRXR1BtOTNwWm5vS2JscTFXTzVodndrVnpaRG9XNVppRU9pSnRpR3pnSEljPQ=="}});
+    break;
+  }
+}                        
 </script>
     </div>
 
