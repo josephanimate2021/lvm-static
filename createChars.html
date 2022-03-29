@@ -212,12 +212,10 @@ let id = params.charId;
 let character = params.bs;
 let option = params.method;
 let theme = params.themeId;
-function writeObjData(charId, newVars) {
+function writeObjData(charId) {
   if (charId) {
     document.getElementById('char_creator_client').innerHTML = `<object data="https://josephanimate2021.github.io/animation/414827163ad4eb60/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;original_asset_id=${id}&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fjosephanimate2021.github.io%2Fstore%2F3a981f5cb2739137%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fjosephanimate2021.github.io%2Fstatic%2Fad44370a650793d9%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=00EDZP3Cu0aw&amp;themeId=${theme}&amp;ut=30"><param name="movie" value="https://josephanimate2021.github.io/animation/414827163ad4eb60/cc.swf"></object>`;
-  } if (newVars) {
-    document.getElementById('char_creator_client').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=0aWj-HdFtJ5c&amp;themeId=${theme}&amp;ut=23&amp;ft=_sticky_filter_${character}"><param name="movie" value="https://ga.vyond.com/static/animation/cc.swf"></object>`;
-  } else {
+    } else {
     document.getElementById('char_creator_client').innerHTML = `<object data="https://josephanimate2021.github.io/animation/414827163ad4eb60/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;bs=${character}&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fjosephanimate2021.github.io%2Fstore%2F3a981f5cb2739137%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fjosephanimate2021.github.io%2Fstatic%2Fad44370a650793d9%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=00EDZP3Cu0aw&amp;themeId=${theme}&amp;ut=30"><param name="movie" value="https://josephanimate2021.github.io/animation/414827163ad4eb60/cc.swf"></object>`;
   }
 }   
@@ -246,37 +244,7 @@ switch (option) {
       window.location = `/browseChars?themeId=${theme}`;
     }
     break;
-  }
-  case "newBusinessChar": {
-    window.location = "javascript:writeObjData('newVars')";
-    jQuery('#char_creator_client').flash({
-    id: "char_creator",
-    swf: "https://ga.vyond.com/static/animation/cc.swf",
-    height: 600,
-    width: 960,
-
-    align: "middle",
-    allowScriptAccess: "always",
-    allowFullScreen: "true",
-    wmode: "transparent",
-
-    hasVersion: "10.3",
-
-    flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","m_mode":"school","isLogin":"Y","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/ga.vyond.com\/static\/store\/<store>","clientThemePath":"https:\/\/ga.vyond.com\/static\/<client_theme>","appCode":"go","page":"","siteId":"school","userId":"0DyHqK6Yj9dM","themeId":theme,"ut":23,"ft":`_sticky_filter_${character}`}});
-
-   function goSubscribe()
-   {
-       var url = '/business/videoplans?hook=cc.site';
-       window.open(url, 'goSubscribe');
-   }
-
-   function characterSaved()
-   {
-       SetCookie('cc_saved', '1', 1, '/');
-       window.location = `/browseChars?themeId=${theme}`;
-   }
-   break;
-  }                      
+  }              
   default: {
     window.location = "javascript:writeObjData()";
     $('#char_creator_client').flash({
