@@ -288,7 +288,12 @@ switch (theme) {
   case "ninja": {
     document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=cc2">Ninja Peepz Characters</a>';
     break;
-  }                  
+  }
+  case "business":
+  case "whiteboard": {
+    location.href = `/lvm-static/createBusinessChars?themeId=${theme}&bs=${character}`;
+    break;
+  }
 }                       
 </script>
     </div>
