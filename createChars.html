@@ -229,21 +229,21 @@ switch (theme) {
     document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=cc2">Ninja Peepz Characters</a>';
     break;
   }
-  case "business":
-  case "whiteboard": {
-    location.href = `/lvm-static/createBusinessChars?themeId=${theme}&bs=${character}`;
-    break;
-  }
   case "null": {  
     var themeId = "family";
     var bs = "adam";
     break;
-  }
+  }                     
   default: {
     var themeId = `${theme}`;
     var bs = `${character}`;
     break;
-  }             
+  } 
+  case "business":
+  case "whiteboard": {
+    location.href = `/lvm-static/createBusinessChars?themeId=${themeId}&bs=${bs}`;
+    break;
+  }                      
 }                
 function writeObjData(charId) {
   if (charId) {
@@ -274,7 +274,7 @@ switch (option) {
     }
     function characterSaved() {
       SetCookie('cc_saved', '1', 1, '/');
-      window.location = `/lvm-static/browseChars?themeId=${theme}`;
+      window.location = `/lvm-static/browseChars?themeId=${themeId}`;
     }
     break;
   }              
@@ -299,7 +299,7 @@ switch (option) {
     }
     function characterSaved() {
       SetCookie('cc_saved', '1', 1, '/');
-      window.location = `/lvm-static/browseChars?themeId=${theme}`;
+      window.location = `/lvm-static/browseChars?themeId=${themeId}`;
     }
     break;
   }
@@ -313,7 +313,7 @@ function fbShare(ccId)
     if (ccId == undefined) {
         return;
     }
-    var url = encodeURIComponent('/createChars?themeId=' + theme + '&charId=' + ccId);
+    var url = encodeURIComponent('/createChars?themeId=' + themeId + '&charId=' + ccId);
     var title = encodeURIComponent('I just created a new character on Vyond');
     var shareUrl = 'https://www.facebook.com/sharer.php?u=' + url + '&t=' + title;
 
