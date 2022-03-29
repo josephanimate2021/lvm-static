@@ -236,7 +236,19 @@ switch (theme) {
     document.getElementById('themeTeller').innerHTML = '<li><a href="/lvm-static/themeChooser">Make a video</a></li><li class="active">Ninja Peepz Characters</li>';
     document.getElementById('themeDectorSentence').innerHTML = '<p>Browse characters already available in the Ninja Peepz theme and use them as a starting point to create new custom characters.</p>';
     break;
-  }                  
+  }  
+  case "business": {
+    window.location = "javascript:writeObjData()";
+    document.getElementById('themeTeller').innerHTML = '<li><a href="/lvm-static/themeChooser">Make a video</a></li><li class="active">Business Friendly Characters</li>';
+    document.getElementById('themeDectorSentence').innerHTML = '<p>Browse characters already available in the Business Friendly theme and use them as a starting point to create new custom characters.</p>';
+    break;
+  }
+  case "whiteboard": {
+    window.location = "javascript:writeObjData()";
+    document.getElementById('themeTeller').innerHTML = '<li><a href="/lvm-static/themeChooser">Make a video</a></li><li class="active">Whiteboard Animation Characters</li>';
+    document.getElementById('themeDectorSentence').innerHTML = '<p>Browse characters already available in the Whiteboard Animation theme and use them as a starting point to create new custom characters.</p>';
+    break;
+  }
 } 
 jQuery('#ccbrowser-container').flash({
     id: "ccbrowser",
