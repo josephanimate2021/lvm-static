@@ -212,29 +212,13 @@ let id = params.charId;
 let character = params.bs;
 let option = params.method;
 let theme = params.themeId;
-switch (theme) {
-  case "business": {
-    document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=business">Business Friendly Characters</a>';
-    break;
-  }
-  case "null": {  
-    var themeId = "whiteboard";
-    var bs = "guy";
-    break;
-  }
-  default: {
-    var themeId = `${theme}`;
-    var bs = `${character}`;
-    break;
-  }                               
-}                
 function writeObjData(charId) {
   if (charId) {
-    document.getElementById('char_creator_client').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=0aWj-HdFtJ5c&amp;themeId=${themeId}&amp;ut=23&amp;original_asset_id=${id}"><param name="movie" value="https://ga.vyond.com/static/animation/cc.swf"></object>`;
+    document.getElementById('char_creator_client').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=0aWj-HdFtJ5c&amp;themeId=${theme}&amp;ut=23&amp;original_asset_id=${id}"><param name="movie" value="https://ga.vyond.com/static/animation/cc.swf"></object>`;
   } else {
-    document.getElementById('char_creator_client').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=0aWj-HdFtJ5c&amp;themeId=${themeId}&amp;ut=23&amp;ft=_sticky_filter_${bs}"><param name="movie" value="https://ga.vyond.com/static/animation/cc.swf"></object>`;
+    document.getElementById('char_creator_client').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=0aWj-HdFtJ5c&amp;themeId=${theme}&amp;ut=23&amp;ft=_sticky_filter_${character}"><param name="movie" value="https://ga.vyond.com/static/animation/cc.swf"></object>`;
   }
-}                    
+}
 switch (option) {
   case "copy": {
     window.location = "javascript:writeObjData('charId')";
@@ -251,7 +235,7 @@ switch (option) {
 
       hasVersion: "10.3",
 
-      flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","m_mode":"school","isLogin":"Y","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/ga.vyond.com\/static\/store\/<store>","clientThemePath":"https:\/\/ga.vyond.com\/static\/<client_theme>","appCode":"go","page":"","siteId":"school","userId":"0DyHqK6Yj9dM","themeId":themeId,"ut":23,"original_asset_id":id,}});
+      flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","m_mode":"school","isLogin":"Y","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/ga.vyond.com\/static\/store\/<store>","clientThemePath":"https:\/\/ga.vyond.com\/static\/<client_theme>","appCode":"go","page":"","siteId":"school","userId":"0DyHqK6Yj9dM","themeId":theme,"ut":23,"original_asset_id":id,}});
     
     function goSubscribe() {
       var url = 'https://www.vyond.com/pricing';
@@ -259,7 +243,7 @@ switch (option) {
     }
     function characterSaved() {
       SetCookie('cc_saved', '1', 1, '/');
-      window.location = `/lvm-static/browseChars?themeId=${themeId}`;
+      window.location = `/lvm-static/browseChars?themeId=${theme}`;
     }
     break;
   }              
@@ -278,7 +262,7 @@ switch (option) {
 
       hasVersion: "10.3",
 
-      flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","m_mode":"school","isLogin":"Y","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/ga.vyond.com\/static\/store\/<store>","clientThemePath":"https:\/\/ga.vyond.com\/static\/<client_theme>","appCode":"go","page":"","siteId":"school","userId":"0DyHqK6Yj9dM","themeId":themeId,"ut":23,"ft":`_sticky_filter_${bs}`}});
+      flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","m_mode":"school","isLogin":"Y","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/ga.vyond.com\/static\/store\/<store>","clientThemePath":"https:\/\/ga.vyond.com\/static\/<client_theme>","appCode":"go","page":"","siteId":"school","userId":"0DyHqK6Yj9dM","themeId":theme,"ut":23,"ft":`_sticky_filter_${character}`}});
     
     function goSubscribe() {
       var url = 'https://www.vyond.com/pricing';
@@ -286,11 +270,18 @@ switch (option) {
     }
     function characterSaved() {
       SetCookie('cc_saved', '1', 1, '/');
-      window.location = `/lvm-static/browseChars?themeId=${themeId}`;
+      window.location = `/lvm-static/browseChars?themeId=${theme}`;
     }
     break;
   }
-}                 
+}
+              
+switch (theme) {
+  case "business": {
+    document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=business">Business Friendly Characters</a>';
+    break;
+  }
+}                       
 </script>
     </div>
 
@@ -300,7 +291,7 @@ function fbShare(ccId)
     if (ccId == undefined) {
         return;
     }
-    var url = encodeURIComponent('/createChars?themeId=' + themeId + '&charId=' + ccId);
+    var url = encodeURIComponent('/createChars?themeId=' + theme + '&charId=' + ccId);
     var title = encodeURIComponent('I just created a new character on Vyond');
     var shareUrl = 'https://www.facebook.com/sharer.php?u=' + url + '&t=' + title;
 
