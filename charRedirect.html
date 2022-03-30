@@ -10,16 +10,6 @@
         let theme = params.themeId;
         let characters = params.bs;
         let id = params.assetChrId;
-        switch (theme) {
-          case "null": {
-            document.getElementById('question').innerHTML = '<p>What Vyond LVM Do You Want To Use To Create Your Own Character? <a href="https://owenthegoanimator.github.io/Vyond-Legacy-ACS/charactercreator/family/new_char/adam">Vyond Legacy ACS</a> or <a href="/lvm-static/createChars?themeId=family&bs=adam">LVM Static (Recomended)</a>. It\'s fine if you don\'t want to create your character. you can make videos instead. just be sure to not forget to create your character before making a video.</p>';
-            break;
-          }
-          default: {
-            document.getElementById('question').innerHTML = `<p>What Vyond LVM Do You Want To Use To Create Your Own Character? <a href="https://owenthegoanimator.github.io/Vyond-Legacy-ACS/charactercreator/${theme}/new_char/${characters}">Vyond Legacy ACS</a> or <a href="/lvm-static/createChars?themeId=${theme}&bs=${characters}">LVM Static (Recomended)</a>. It's fine if you don't want to create your character. you can make videos instead. just be sure to not forget to create your character before making a video.</p>`;
-            break;
-          }
-        }
         switch (charMethod) {
           case "copy": {
             document.getElementById('question').innerHTML = `<a href="/lvm-static/createChars?method=copy&themeId=${theme}&charId="${id}">Click Here To Copy Your Character.</a>`;
@@ -27,16 +17,6 @@
           }
           default: {
             document.getElementById('question').innerHTML = `<p>What Vyond LVM Do You Want To Use To Create Your Own Character? <a href="https://owenthegoanimator.github.io/Vyond-Legacy-ACS/charactercreator/${theme}/new_char/${characters}">Vyond Legacy ACS</a> or <a href="/lvm-static/createChars?themeId=${theme}&bs=${characters}">LVM Static (Recomended)</a>. It's fine if you don't want to create your character. you can make videos instead. just be sure to not forget to create your character before making a video.</p>`;
-            break;
-          }
-        }
-        switch (id) {
-          case "null": {
-            document.getElementById('question').innerHTML = '<a href="/lvm-static/createChars?method=copy&themeId=family&charId="327068826">Click Here To Copy Your Character.</a>';
-            break;
-          }
-          default: {
-            document.getElementById('question').innerHTML = `<a href="/lvm-static/createChars?method=copy&themeId=${theme}&charId="${id}">Click Here To Copy Your Character.</a>`;
             break;
           }
         }
