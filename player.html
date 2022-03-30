@@ -855,10 +855,10 @@ if (self !== top) {
 
         video.innerHTML = '';
 
-        previewPlayer = new PreviewPlayer("wss://preview.goanimate.com", "0-13F9yscDHc", true);
+        previewPlayer = new PreviewPlayer("wss://preview.vyond.com", "09NT7zVNrDlw", true);
         previewPlayer.setVideoElement(video);
-                previewPlayer.setUserType('FreeTrial');
-                previewPlayer.setUserAuthenticationToken('N:aab76b9b612c74b24bfe9acb7364a200ljL1+LWhGC3hUEzOkVKr/2qP1gwzvpYRSAGL1uUxJkunWpbs5w19CzWXaTYd6pniS3g0tYsTAZkspYA36yY5Brv26PrJYCerJHw/rYb8ufDg18qLlVemivBjPfRw49Id/f+CjUtielsDAxWIlYWGrJNxac8KjNdyXlTuJ1ucx+tzLhkVP77gIvYLwtR4fZEi');
+        previewPlayer.setUserAuthenticationToken('1:8af7a0920360fc523946b7fa20900d37c9cdc60ca8b684356b0030822c0b9e10:1Q/Zr1DXah/msl7S8mCq++RTQtqE6rntMS7j8S1GfqQ=');
+        previewPlayer.setFromPptConversion(false);
     }
 
     $('[data-action="user-opt-out"]').on('click', function(e) {
@@ -902,8 +902,6 @@ if (self !== top) {
             }
         );
     });
-    setupPreviewPlayer();
-    loadH5Preview();
     if (!window.MediaSource) {
         // MSE unsupported, hide all other notifications and display only the browser compatibility message
         $('.player-container > .notification').addClass('hidden')
