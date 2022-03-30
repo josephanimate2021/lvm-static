@@ -6,16 +6,18 @@
         const params = new Proxy(new URLSearchParams(window.location.search), {
           get: (searchParams, prop) => searchParams.get(prop),
         });
-        var theme, characters, id;
         let charMethod = params.mt;
-        if (theme, characters, id == 'null') {
-          theme = "family";
-          characters = "adam";
-          id = "327068826";
-        } else {
-          theme = params.themeId;
-          characters = params.bs;
-          id = params.assetChrid;
+        let theme = params.themeId;
+        let characters = params.bs;
+        let id = params.assetChrId;
+        if (theme == 'null') {
+          var theme = "family";
+        }
+        if (characters == 'null') {
+          var characters = "adam";
+        }
+        if (id == 'null') {
+          var id = "327068826";
         }
         switch (charMethod) {
           case "copy": {
