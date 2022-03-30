@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Character Creator</title>
+    <script>
+      function loadQuestions() {
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+        });
+        var theme, characters, id;
+        let charMethod = params.mt;
+        if (theme, characters, id == 'null') {
+          theme = "family";
+          characters = "adam";
+          id = "327068826";
+        } else {
+          theme = params.themeId;
+          characters = params.bs;
+          id = params.assetChrid;
+        }
+        switch (charMethod) {
+          case "copy": {
+            document.getElementById('question').innerHTML = `<a href="/lvm-static/createChars?method=copy&themeId=${theme}&charId="${id}">Click Here To Copy Your Character.</a>`;
+            break;
+          }
+          default: {
+            document.getElementById('question').innerHTML = `<p>What Vyond LVM Do You Want To Use To Create Your Own Character? <a href="https://owenthegoanimator.github.io/Vyond-Legacy-ACS/charactercreator/${theme}/new_char/${characters}">Vyond Legacy ACS</a> or <a href="/lvm-static/createChars?themeId=${theme}&bs=${characters}">LVM Static (Recomended)</a>. It's fine if you don't want to create your character. you can make videos instead. just be sure to not forget to create your character before making a video.</p>`;
+            break;
+          }
+        }
+    </script>
+  </head>
+  <body onload="loadQuestions()">
+    <div id="question"></div>
+  </body>
+</html>
