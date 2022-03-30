@@ -468,40 +468,48 @@ Copyright (C) Joseph Animate, 2022.</p>
                                                                                 Published: 5 March 2022                                                                    </p>
                             </div>
                         </div>
-                        <div id="player-control">
-                            <div class="playback-button paused">
-                                <span class="glyph-pro glyph-play"></span>
-                                <span class="glyph-pro glyph-pause"></span>
-                                <span class="glyph-pro glyph-repeat"></span>
-                            </div>
-                            <div class="seek-bar-container">
-                                <div class="seek-bar">
-                                    <div class="buffered-bar"></div>
-                                    <div class="played-bar"></div>
-                                    <div class="duration-tooltip">00:29</div>
-                                    <div class="time-tooltip"></div>
+                       <div class="video-loading" id="video-loading">
+                                    <div class="video-loading-message"></div>
                                 </div>
-                            </div>
-                            <div class="controls-right">
-                                <div class="volume-control">
-                                    <span class="volume-icon glyph-pro glyph-volume-up"></span>
-                                    <span class="volume-icon glyph-pro glyph-mute"></span>
-                                    <div class="volume-slider">
-                                        <div class="slider-track">
-                                            <div class="track-value-bar"></div>
+                                <div id="player-control">
+                                    <div class="seek-bar-container">
+                                        <div class="seek-bar">
+                                            <div class="buffered-bar"></div>
+                                            <div class="hover-bar"></div>
+                                            <div class="played-bar"></div>
+                                            <div class="time-tooltip"></div>
                                         </div>
-                                        <div class="slider-thumb"></div>
+                                    </div>
+                                    <div class="button-container">
+                                        <div class="playback-button paused">
+                                            <div class="play-button"></div>
+                                            <div class="pause-button"></div>
+                                            <div class="replay-button"></div>
+                                        </div>
+                                        <div class="progress-time-container">
+                                            <div class="progress-time">00:00 / 00:00</div>
+                                        </div>
+                                        <div class="controls-right">
+                                            <div class="volume-container">
+                                                <div class="volume-control">
+                                                    <div class="volume-icon">
+                                                        <div class="volume-up-icon"></div>
+                                                        <div class="volume-mute-icon"></div>
+                                                    </div>
+                                                    <div class="volume-slider">
+                                                        <div class="slider-track">
+                                                            <div class="track-value-bar"></div>
+                                                        </div>
+                                                        <div class="slider-thumb"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fullscreen-container">
+                                                <div class="fullscreen-button"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="fullscreen-button">
-                                    <span class="fullscreen-button-icon"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="video-loading" id="video-loading">
-                            <div class="video-loading-message"></div>
-                        </div>
-                    </div>
                     <div id="context-menu" class="hidden">
                         <div class="click-disabler"></div>
                         <ul>
