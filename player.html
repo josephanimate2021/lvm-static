@@ -599,66 +599,71 @@ if (self !== top) {
         <meta itemprop="height" content="720">
         <meta itemprop="width" content="1280">
     </div>
-    <div class="settings privacy public hidden-xs">
+        <div class="settings privacy private hidden-xs">
         <div class="container">
             <div class="row settings-row">
-                <div class="col-sm-2">
-                    <div class="settings-label hidden-xs">Share this video:</div>
-                </div>
-                <div class="col-sm-8">
+                <div class="col-sm-9">
+                    <div class="settings-label hidden-xs">Share</div>
                     <div class="using-draft"><span class="icon glyph-pro glyph-lock inline"></span>Draft</div>
                     <div class="using-private"><span class="icon glyph-pro glyph-lock inline"></span>Private</div>
-                    <div class="using-public"><span class="icon glyph-pro glyph-unlock inline"></span>Public</div>
+                    <div class="using-password-protected"><span class="icon glyph-pro glyph-lock inline"></span>Password-Protected</div>
                 </div>
             </div>
         </div>
-        <div id="pencil"></div>
-
-    <div class="settings social grey">
-        <div class="container">
-            <div class="row settings-row">
-                <div class="col-sm-2">
-                    <div class="settings-label hidden-xs">Copy URL:</div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="row-content">
-                        <input id="copyable-url" class="form-control gtm-ga-event" type="url" readonly="true" value="http://goanimate.com/videos/0-13F9yscDHc?utm_source=linkshare&amp;utm_medium=linkshare&amp;utm_campaign=usercontent" onclick="this.select()" data-gtmv-action="Share - Click text field" data-gtmv-category="" data-gtmv-label="20077390 - Guest">
+        <div id="autosave-overlay" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 class="modal-title">Your video was autosaved</h3>
                     </div>
-                </div>
-                <div class="col-sm-5 socials-icons">
-                    <ul class="socials-sharing">
-                        <li>
-                            <a class="glyph-social glyph-facebook sharing-button gtm-ga-event" data-share-target="facebook" data-gtmv-action="Embed - Facebook - Click" data-gtmv-category="" data-gtmv-label="20077390 - Guest" href="https://web.archive.org/web/20160412001103/http://goanimate.com/videos/0-13F9yscDHc#" onclick="FB.ui({method: &#39;share&#39;, href: &#39;https://web.archive.org/web/20160412001103/https://goanimate.com/videos/0-13F9yscDHc?utm_source=social&amp;utm_medium=facebook&amp;utm_campaign=usercontent&#39;}); return false;" title="" data-original-title="Post the video on Facebook">
-                                <span class="sr-only sr-only-focusable">Post the video on Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="glyph-social glyph-twitter sharing-button gtm-ga-event" data-share-target="twitter" data-gtmv-action="Share - Twitter - Click" data-gtmv-category="" data-gtmv-label="20077390 - Guest" href="https://web.archive.org/web/20160412001103/https://twitter.com/share?url=https%3A%2F%2Fgoanimate.com%2Fvideos%2F0-13F9yscDHc%3Futm_source%3Dsocial%26utm_medium%3Dtwitter%26utm_campaign%3Dusercontent&amp;text=Mugen+Yujo+-+S1+E1+-+To+Be+Dared" onclick="window.open(this.href, &#39;_blank&#39;,&#39;height=450,width=550,directories=no,menubar=no,scrollbars=yes,status=no,toolbar=no&#39;); return false;" title="" data-original-title="Post a tweet about the video">
-                                <span class="sr-only sr-only-focusable">Post a tweet about the video</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="glyph-social glyph-pinterest sharing-button gtm-ga-event" data-share-target="pinterest" data-gtmv-action="Embed - Pinterest - Click" data-gtmv-category="" data-gtmv-label="20077390 - Guest" href="https://web.archive.org/web/20160412001103/http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fgoanimate.com%2Fvideos%2F0-13F9yscDHc%3Futm_source%3Dsocial%26utm_medium%3Dpinterest%26utm_campaign%3Dusercontent&amp;media=http%3A%2F%2Fs3.amazonaws.com%2Ffs.goanimate.com%2Ffiles%2Fthumbnails%2Fmovie%2F2565%2F8243565%2F20077390.jpg&amp;description=Mugen+Yujo+-+S1+E1+-+To+Be+Dared" onclick="window.open(this.href, &#39;_blank&#39;,&#39;height=450,width=550,directories=no,menubar=no,scrollbars=yes,status=no,toolbar=no&#39;); return false;" title="" data-original-title="Post the video on Pinterest">
-                                <span class="sr-only sr-only-focusable">Post the video on Pinterest</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="glyph-social glyph-linked-in sharing-button gtm-ga-event" data-share-target="linkedin" data-gtmv-action="Share - LinkedIn - Click" data-gtmv-category="" data-gtmv-label="20077390 - Guest" href="https://web.archive.org/web/20160412001103/http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fgoanimate.com%2Fvideos%2F0-13F9yscDHc%3Futm_source%3Dsocial%26utm_medium%3Dlinkedin%26utm_campaign%3Dusercontent&amp;title=Mugen+Yujo+-+S1+E1+-+To+Be+Dared&amp;summary=Daniel+is+dared+to+to+a+dangerous+thing%2C+and+accepts+the+dare%2C+but+will+he+still+accept+it%3F++Find+out+next+time+on+Mugen+Yujo%21%0A%0ACopyright+%28C%29+Mugen+Yujo%2C+2014.&amp;source=GoAnimate" onclick="window.open(this.href, &#39;_blank&#39;,&#39;height=570,width=520,directories=no,menubar=no,scrollbars=yes,status=no,toolbar=no&#39;); return false;" title="" data-original-title="Post a link to the video on LinkedIn">
-                                <span class="sr-only sr-only-focusable">Post a link to the video on LinkedIn</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="glyph-social glyph-google-plus sharing-button gtm-ga-event" data-share-target="google+" data-gtmv-action="Embed - Google+ - Click" data-gtmv-category="" data-gtmv-label="20077390 - Guest" href="https://web.archive.org/web/20160412001103/https://plus.google.com/share?url=https%3A%2F%2Fgoanimate.com%2Fvideos%2F0-13F9yscDHc%3Futm_source%3Dsocial%26utm_medium%3Dgplus%26utm_campaign%3Dusercontent" onclick="window.open(this.href, &#39;_blank&#39;,&#39;height=450,width=550,directories=no,menubar=no,scrollbars=yes,status=no,toolbar=no&#39;); return false;" title="" data-original-title="Post the video on Google+">
-                                <span class="sr-only sr-only-focusable">Post the video on Google+</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="modal-body">
+                        <span class="autosave-message"></span>
+                        <a class="history-toggle" data-dismiss="modal">View revision history.</a>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default text-uppercase" onclick="fullscreenStudio('/videomaker/full/editcheck/5btJhbxqTdY');">Manually saved</button>
+                        <button class="load-autosave btn btn-default btn-orange text-uppercase">Load autosaved</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="export disabled">
+    <div class="settings headline">
+        <div class="container">
+            <div class="settings-row">
+            <h1 class="video-title visible-xs">Day 25 Final</h1>
+            <p>Created by <a href="https://josephanimate2021.github.io/user/UC_hK9fOxyy_TM8FJGXIyG8Q" title="Dhar Mann">Dhar Mann</a></p>
+
+        </div>
+        </div>
+    </div>
+
+
+    <div class="settings social grey">
+        <div class="container">
+            <div class="settings-row">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input id="copyable-url" class="form-control gtm-ga-event" type="url" readonly="true" value="https://josephanimate2021.github.io/DharMannArchives/RUDE CASHIER Won’t Sell To KID - DELETING AFTER 48 HOURS!! | Dhar Mann/styles/vyond/watch?utm_source=linkshare&amp;utm_medium=linkshare&amp;utm_campaign=usercontent" onclick="this.select()" data-gtmv-action="Share - Click text field" data-gtmv-category="" data-gtmv-label="25238467 - Guest">
+                        </div>
+                        <div class="col-sm-6 socials-icons">
+                            <ul class="socials-sharing">
+                                <li>
+                                    <a class="glyph-pro glyph-embed-close" data-remote="/ajax/getEmbedOverlay/5btJhbxqTdY" data-action="video-embed" title="Embed code">
+                                        <span class="sr-only sr-only-focusable">Embed code</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="export disabled" id="export">
         <div class="container">
             <div class="title-row">
                 <h3 class="title">Export</h3>
@@ -670,7 +675,7 @@ if (self !== top) {
                         <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
                         <div class="option-name">Download<br><span class="text-uppercase">Video</span></div>
                         <div class="description">
-                            Up to 1080p Full HD.                            <a class="for-unavailable" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans" target="_blank"><br>View plans</a>
+                            Up to 1080p Full HD.                            <a class="for-unavailable" href="https://www.vyond.com/pricing" target="_blank"><br>View plans</a>
                         </div>
                         <div class="toggle-content"></div>
                         <div class="spin"></div>
@@ -682,20 +687,10 @@ if (self !== top) {
                         <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
                         <div class="option-name">Download<br><span class="text-uppercase">animated GIF</span></div>
                         <div class="description">
-                            Paste your video clip anywhere as a GIF!                            <a class="for-unavailable" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans" target="_blank">View plans</a>
+                            Paste your video clip anywhere as a GIF!                            <a class="for-unavailable" href="https://www.vyond.com/pricing" target="_blank">View plans</a>
                         </div>
                         <div class="toggle-content"></div>
                         <div class="spin"></div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="export-option" id="transfer-export">
-                        <div class="icon"></div>
-                        <div class="option-name">Transfer<br><span class="text-uppercase">Commercial Rights</span></div>
-                        <div class="description">
-                            To your clients or other third parties.                            <a class="for-unavailable" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans" target="_blank">View plans</a>
-                        </div>
                     </div>
                 </div>
 
@@ -705,7 +700,7 @@ if (self !== top) {
                         <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
                         <div class="option-name">Export to<br><span class="text-uppercase">YouTube</span></div>
                         <div class="description for-unavailable">
-                            Available to subscribers only.                            <a class="for-unavailable" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans" target="_blank">View plans</a>
+                            Available to subscribers only.                            <a class="for-unavailable" href="https://www.vyond.com/pricing" target="_blank">View plans</a>
                         </div>
                         <div class="description for-available">
                         </div>
@@ -720,90 +715,7 @@ if (self !== top) {
                         <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
                         <div class="option-name">Export to<br><span class="text-uppercase">Wistia</span></div>
                         <div class="description for-unavailable">
-                            Available to subscribers only.                            <a class="for-unavailable" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans" target="_blank">View plans</a>
-                        </div>
-                        <div class="description for-available">
-                            <div class="for-connect">Connect</div>
-                            <div class="for-connected">Connected</div>
-                        </div>
-                        <div class="toggle-content"></div>
-                        <div class="spin"></div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="export-option" id="vimeo-export" data-type="Vimeo" data-connected="false">
-                        <div class="icon"></div>
-                        <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
-                        <div class="option-name">Export to<br><span class="text-uppercase">Vimeo</span></div>
-                        <div class="description for-unavailable">
-                            Available to subscribers only.                            <a class="for-unavailable" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans" target="_blank">View plans</a>
-                        </div>
-                        <div class="description for-available">
-                            <div class="for-connect">Connect</div>
-                            <div class="for-connected">Connected</div>
-                        </div>
-                        <div class="toggle-content"></div>
-                        <div class="spin"></div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="export-option" id="vzaar-export" data-type="Vzaar" data-connected="false">
-                        <div class="icon"></div>
-                        <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
-                        <div class="option-name">Export to<br><span class="text-uppercase">Vzaar</span></div>
-                        <div class="description for-unavailable">
-                            Available to subscribers only.                            <a class="for-unavailable" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans" target="_blank">View plans</a>
-                        </div>
-                        <div class="description for-available">
-                            <div class="for-connect">Connect</div>
-                            <div class="for-connected">Connected</div>
-                        </div>
-                        <div class="toggle-content"></div>
-                        <div class="spin"></div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="export-option" id="viewbix-export" data-type="Viewbix" data-connected="false">
-                        <div class="icon"></div>
-                        <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
-                        <div class="option-name">Export to<br><span class="text-uppercase">Viewbix</span></div>
-                        <div class="description for-unavailable">
-                            Available to subscribers only.                            <a class="for-unavailable" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans" target="_blank">View plans</a>
-                        </div>
-                        <div class="description for-available"></div>
-                        <div class="toggle-content"></div>
-                        <div class="spin"></div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="export-option" id="lectora-export" data-type="Lectora" data-connected="false">
-                        <div class="icon"></div>
-                        <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
-                        <div class="option-name">Export to<br><span class="text-uppercase">Lectora</span></div>
-                        <div class="description for-unavailable">
-                            Available to subscribers only.                            <a class="for-unavailable" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans" target="_blank">View plans</a>
-                        </div>
-                        <div class="description for-available">
-                            <div class="for-connect">Connect</div>
-                            <div class="for-connected">Connected</div>
-                        </div>
-                        <div class="toggle-content"></div>
-                        <div class="spin"></div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="export-option" id="wevideo-export" data-type="WeVideo" data-connected="false">
-                        <div class="icon"></div>
-                        <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
-                        <div class="option-name">Export to<br><span class="text-uppercase">WeVideo</span></div>
-                        <div class="description for-unavailable">
-                            Available to subscribers only.                            <a class="for-unavailable" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans" target="_blank">View plans</a>
+                            Available to subscribers only.                            <a class="for-unavailable" href="https://www.vyond.com/pricing" target="_blank">View plans</a>
                         </div>
                         <div class="description for-available">
                             <div class="for-connect">Connect</div>
@@ -820,7 +732,58 @@ if (self !== top) {
                         <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
                         <div class="option-name">Export to<br><span class="text-uppercase">Vidyard</span></div>
                         <div class="description for-unavailable">
-                            Available to subscribers only.                            <a class="for-unavailable" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans" target="_blank">View plans</a>
+                            Available to subscribers only.                            <a class="for-unavailable" href="https://www.vyond.com/pricing" target="_blank">View plans</a>
+                        </div>
+                        <div class="description for-available">
+                            <div class="for-connect">Connect</div>
+                            <div class="for-connected">Connected</div>
+                        </div>
+                        <div class="toggle-content"></div>
+                        <div class="spin"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="export-option" id="vimeo-export" data-type="Vimeo" data-connected="false">
+                        <div class="icon"></div>
+                        <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
+                        <div class="option-name">Export to<br><span class="text-uppercase">Vimeo</span></div>
+                        <div class="description for-unavailable">
+                            Available to subscribers only.                            <a class="for-unavailable" href="https://www.vyond.com/pricing" target="_blank">View plans</a>
+                        </div>
+                        <div class="description for-available">
+                            <div class="for-connect">Connect</div>
+                            <div class="for-connected">Connected</div>
+                        </div>
+                        <div class="toggle-content"></div>
+                        <div class="spin"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="export-option" id="vzaar-export" data-type="Vzaar" data-connected="false">
+                        <div class="icon"></div>
+                        <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
+                        <div class="option-name">Export to<br><span class="text-uppercase">Vzaar</span></div>
+                        <div class="description for-unavailable">
+                            Available to subscribers only.                            <a class="for-unavailable" href="https://www.vyond.com/pricing" target="_blank">View plans</a>
+                        </div>
+                        <div class="description for-available">
+                            <div class="for-connect">Connect</div>
+                            <div class="for-connected">Connected</div>
+                        </div>
+                        <div class="toggle-content"></div>
+                        <div class="spin"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="export-option" id="wevideo-export" data-type="WeVideo" data-connected="false">
+                        <div class="icon"></div>
+                        <button class="toggle-trigger"><span class="glyph-halfling glyph-chevron-down"></span></button>
+                        <div class="option-name">Export to<br><span class="text-uppercase">WeVideo</span></div>
+                        <div class="description for-unavailable">
+                            Available to subscribers only.                            <a class="for-unavailable" href="https://www.vyond.com/pricing" target="_blank">View plans</a>
                         </div>
                         <div class="description for-available">
                             <div class="for-connect">Connect</div>
@@ -857,8 +820,8 @@ if (self !== top) {
         </div>
     </div>
 </div>
-<input id="embed_code_field" type="hidden" value="&lt;iframe scrolling=&quot;no&quot; allowTransparency=&quot;true&quot; allowfullscreen frameborder=&quot;0&quot; width=&quot;620&quot; height=&quot;350&quot; src=&quot;https://goanimate.com/player/embed/0-13F9yscDHc&quot; &gt;&lt;/iframe&gt;
-">
+<input id="embed_code_field" type="hidden" value="<iframe scrolling=&quot;no&quot; allowTransparency=&quot;true&quot; allowfullscreen frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://ga.vyond.com/player/embed/09NT7zVNrDlw&quot; ></iframe>
+"/>
 <script>
     var flashPlayerUrl = 'https://josephanimate2021.github.io/animation/930/player.swf',
         flashPlayerVars = {"movieOwner":"Mugen Yujo","movieOwnerId":"0yjsQQB5bx50","movieId":id,"movieLid":"0","movieTitle":"Mugen+Yujo+-+S1+E1+-+To+Be+Dared","movieDesc":"Daniel+is+dared+to+to+a+dangerous+thing%2C+and+accepts+the+dare%2C+but+will+he+still+accept+it%3F++Find+out+next+time+on+Mugen+Yujo%21%0A%0ACopyright+%28C%29+Mugen+Yujo%2C+2014.","userId":"","username":"","uemail":"","ut":"-1","numContact":"","apiserver":goapi,"duration":"29","playcount":1,"thumbnailURL":`${goapi}movie_thumbs/${id}.png`,"copyable":"0","isPublished":"1","ctc":"go","tlang":"en_US","is_private_shared":"0","autostart":"0","appCode":"go","is_slideshow":"0","originalId":"0zEt_fo4L-5k","is_emessage":"0","storePath":"https:\/\/josephanimate2021.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephanimate2021.github.io\/static\/55910a7cd204c37c\/<client_theme>","animationPath":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/lightspeed.goanimate.com\/animation\/a6a59f12d985fe21\/","isEmbed":"0","refuser":null,"utm_source":null,"uid":null,"isTemplate":"0","showButtons":"1","chain_mids":"","averageRating":"0","ratingCount":"0","fb_app_url":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/goanimate.com\/","ad":1,"endStyle":0,"isWide":"1","pwm":1,"s3base":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/s3.amazonaws.com\/fs.goanimate.com\/,http:\/\/assets.goanimate.com\/","initcb":"flashPlayerLoaded","free_trial":1,"showshare":false},
