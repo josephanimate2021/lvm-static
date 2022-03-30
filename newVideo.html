@@ -255,7 +255,7 @@ function voiceBanner(bannerId) {
 <div style="display:none">
 <div class="ga-importer">
     <div class="ga-importer-header">
-        <form class="ga-importer-base-form" action="/Vyond-Legacy-ACS/ajax/saveUserProp" method="post">
+        <script>document.write(`<form class="ga-importer-base-form" action="${goapi}upload_asset" method="post">`);</script>
             <a class="ga-importer-collapse" href="#" title="Collapse" onclick="hideImporter(); return false;">&#215;</a>
 
             <div class="fileinputs">
