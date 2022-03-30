@@ -212,13 +212,19 @@ let id = params.charId;
 let character = params.bs;
 let option = params.method;
 let theme = params.themeId;
-if (character == 'man') {
-  var bs = "guy";
-}
-if (character == 'woman') {
-  var bs = "girl";
-} else {
-  var bs = `${character}`;
+switch (character) {
+  case "man": { 
+    var bs = "guy";
+    break;
+  }            
+  case "woman": { 
+    var bs = "girl";
+    break;
+  }  
+  default: { 
+    var bs = `${character}`;
+    break;
+  }  
 }
 function writeObjData(charId) {
   if (charId) {
