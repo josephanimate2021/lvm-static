@@ -843,11 +843,11 @@ if (self !== top) {
 <script src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/video_page_player.js"></script>
 <script src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/video_page_player_control.js"></script>
 <script>
-    var videoPage = new VideoPage("09NT7zVNrDlw"),
+    var videoPage = new VideoPage("0-13F9yscDHc"),
         previewPlayer,
         flashVar = {
-            duration: 3        };
-    var videoCopyableUrl = 'https://web.archive.org/web/20191104072153/https://ga.vyond.com/videos/09NT7zVNrDlw?utm_source=linkshare&utm_medium=linkshare&utm_campaign=usercontent';
+            duration: 29        };
+    var videoCopyableUrl = 'https://web.archive.org/web/20160412001103/http://goanimate.com/videos/0-13F9yscDHc?utm_source=linkshare&utm_medium=linkshare&utm_campaign=usercontent';
 
     function setupPreviewPlayer() {
         var previewPlayerRetryCount = 5;
@@ -876,7 +876,7 @@ if (self !== top) {
         amplitudeTrackEvent(
             AMPLITUDE_EVENT.VIDEO_PLAYER_SWITCH,
             {
-                video_id: '09NT7zVNrDlw',
+                video_id: '0-13F9yscDHc',
                 action: AMPLITUDE_EVENT_PROPERTIES.PREVIEW_ACTION_HTML5_TO_LEGACY
             }
         );
@@ -897,43 +897,22 @@ if (self !== top) {
         amplitudeTrackEvent(
             AMPLITUDE_EVENT.VIDEO_PLAYER_SWITCH,
             {
-                video_id: '09NT7zVNrDlw',
+                video_id: '0-13F9yscDHc',
                 action: AMPLITUDE_EVENT_PROPERTIES.PREVIEW_ACTION_LEGACY_TO_HTML5
             }
         );
     });
     if (!window.MediaSource) {
-        if ($.flash.available) {
-            // MSE not available
-            $('.player-container > .notification').addClass('hidden')
-                .filter('.browser-no-mse').removeClass('hidden');
-        } else {
-            // MSE and flash plugin not available
-            $('.player-container > .notification').addClass('hidden')
-                .filter('.browser-no-mse-no-flash').removeClass('hidden');
-            // refresh the page after 30 seconds
-            setTimeout(function() {
-                window.location.reload()
-            }, 30000);
-        }
-        // trigger h5 video compilation
-        $.post('https://ga.vyond.com/ajax/compileH5Video/09NT7zVNrDlw');
+        // MSE unsupported, hide all other notifications and display only the browser compatibility message
+        $('.player-container > .notification').addClass('hidden')
+            .filter('.browser-no-mse').removeClass('hidden');
+        $.post('https://web.archive.org/web/20160412001103/http://goanimate.com/ajax/compileH5Video/0-13F9yscDHc');
     }
-    setupPreviewPlayer();
-    loadH5Preview();
-
     $(document).on('click', 'a.for-unavailable', function() {
         amplitudeTrackEvent(AMPLITUDE_EVENT.VIEW_PLANS_FROM_VIDEO_PAGE);
     });
 </script>
 
-
-
-<script>
-$(window).on('amplitude_loaded', function() {
-    amplitudeTrackEvent(AMPLITUDE_EVENT.VISIT_VIDEO_PAGE, {"movie":"09NT7zVNrDlw","owner":0,"editor":0,"duration":"3","creator_plan":"gopublish","referral":null,"login_status":"no","video_status":"private","manage_end_date":""});
-});
-</script>
 
 
 <!-- FOOTER -->
