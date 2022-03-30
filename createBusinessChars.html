@@ -219,6 +219,20 @@ function writeObjData(charId) {
     document.getElementById('char_creator_client').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=0aWj-HdFtJ5c&amp;themeId=${theme}&amp;ut=23&amp;ft=_sticky_filter_${character}"><param name="movie" value="https://ga.vyond.com/static/animation/cc.swf"></object>`;
   }
 }
+switch (character) {
+  case "man": {  
+    var bs = "guy";
+    break;         
+  }
+  case "woman": {
+    var bs = "girl";
+    break;          
+  }
+  default: {
+    var bs = `${character}`;
+    break;          
+  }
+}                    
 switch (option) {
   case "copy": {
     window.location = "javascript:writeObjData('charId')";
@@ -262,7 +276,7 @@ switch (option) {
 
       hasVersion: "10.3",
 
-      flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","m_mode":"school","isLogin":"Y","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/ga.vyond.com\/static\/store\/<store>","clientThemePath":"https:\/\/ga.vyond.com\/static\/<client_theme>","appCode":"go","page":"","siteId":"school","userId":"0DyHqK6Yj9dM","themeId":theme,"ut":23,"ft":`_sticky_filter_${character}`}});
+      flashvars: {"apiserver":"https:\/\/vyondlegacyacsapi.herokuapp.com\/","m_mode":"school","isLogin":"Y","isEmbed":"0","ctc":"go","tlang":"en_US","storePath":"https:\/\/ga.vyond.com\/static\/store\/<store>","clientThemePath":"https:\/\/ga.vyond.com\/static\/<client_theme>","appCode":"go","page":"","siteId":"school","userId":"0DyHqK6Yj9dM","themeId":theme,"ut":23,"ft":`_sticky_filter_${bs}`}});
     
     function goSubscribe() {
       var url = 'https://www.vyond.com/pricing';
