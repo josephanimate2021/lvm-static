@@ -212,32 +212,7 @@ let id = params.charId;
 let character = params.bs;
 let option = params.method;
 let theme = params.themeId;
-switch (character) {
-  case "man": { 
-    var bs = "guy";
-    break;
-  }            
-  case "woman": { 
-    var bs = "girl";
-    break;
-  }
-  case "boy": {
-    location.href = "/lvm-static/createBusinessChars?themeId=business&charId=300863355&method=copy";
-    break;
-  }
-  case "heavy_man": {
-    location.href = "/lvm-static/createBusinessChars?themeId=business&charId=308271433&method=copy";
-    break;
-  } 
-  case "heavy_woman": {
-    location.href = "/lvm-static/createBusinessChars?themeId=business&charId=308271435&method=copy";
-    break;
-  }
-  default: { 
-    var bs = `${character}`;
-    break;
-  }  
-}
+
 function writeObjData(charId) {
   if (charId) {
     document.getElementById('char_creator_client').innerHTML = `<object data="https://ga.vyond.com/static/animation/cc.swf" type="application/x-shockwave-flash" id="char_creator" width="960" height="600"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="apiserver=https%3A%2F%2Fvyondlegacyacsapi.herokuapp.com%2F&amp;m_mode=school&amp;isLogin=Y&amp;isEmbed=0&amp;ctc=go&amp;tlang=en_US&amp;storePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2Fstore%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fga.vyond.com%2Fstatic%2F%3Cclient_theme%3E&amp;appCode=go&amp;page=&amp;siteId=go&amp;userId=0aWj-HdFtJ5c&amp;themeId=${theme}&amp;ut=23&amp;original_asset_id=${id}"><param name="movie" value="https://ga.vyond.com/static/animation/cc.swf"></object>`;
@@ -304,6 +279,32 @@ switch (option) {
               
 switch (theme) {
   case "business": {
+    switch (character) {
+      case "man": { 
+        var bs = "guy";
+        break;
+      }            
+      case "woman": { 
+        var bs = "girl";
+        break;
+      }
+      case "boy": {
+        location.href = "/lvm-static/createBusinessChars?themeId=business&charId=300863355&method=copy";
+        break;
+      }
+      case "heavy_man": {
+        location.href = "/lvm-static/createBusinessChars?themeId=business&charId=308271433&method=copy";
+        break;
+      } 
+      case "heavy_woman": {
+        location.href = "/lvm-static/createBusinessChars?themeId=business&charId=308271435&method=copy";
+        break;
+      }
+      default: { 
+        var bs = `${character}`;
+        break;
+      }  
+    }
     document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=business">Business Friendly Characters</a>';
     break;
   }
