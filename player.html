@@ -108,7 +108,7 @@ var GT = new Gettext({'locale_data': json_locale_data});
 <script src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/js/trial_upsell.js.gz.js"></script>
 <script src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/js/lib/moment.min.js.gz.js"></script>
 <script src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/js/country-options.js.gz.js"></script>
-<script src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/js/video_export.js"></script>
+<script src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/video_export.js"></script>
 
 
 <script type="text/javascript" src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/recaptcha_ajax.js"></script>
@@ -247,7 +247,7 @@ var utmUtil = (function() {
     };
 }());
 </script>
-<script src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/js/amplitude/go_amp.js.gz.js"></script>
+<script src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/go_amp.js"></script>
 <script>
 // Page view.
 var utmParameters = utmUtil.getUTMParameters(),
@@ -372,7 +372,7 @@ if (self !== top) {
     <ul class="dropdown-menu dropdown-menu-help">
 
         <li>
-            <a id="html5" style="display:block" data-action="user-opt-out">Switch To The Legacy Video Player</a>                  
+            <a id="html5" data-action="user-opt-out">Switch To The Legacy Video Player</a>                  
             <a id="flash" style="display:none" data-action="user-opt-in">Switch To The HTML5 Video Player</a>                     
         </li>
         <li>
@@ -830,7 +830,7 @@ if (self !== top) {
     amplitudeTrackEvent(
         AMPLITUDE_EVENT.WATCH_VIDEO,
         {
-            video_id: '09NT7zVNrDlw',
+            video_id: '0-13F9yscDHc',
             owner: '0yjsQQB5bx50'
         }
     );
@@ -841,11 +841,11 @@ if (self !== top) {
 <script src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/js/video_page_player.js.gz.js"></script>
 <script src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/js/video_page_player_control.js.gz.js"></script>
 <script>
-    var videoPage = new VideoPage("09NT7zVNrDlw"),
+    var videoPage = new VideoPage("0-13F9yscDHc"),
         previewPlayer,
         flashVar = {
             duration: 29        };
-    var videoCopyableUrl = `https://josephanimate2021.github.io/player?movieId=${id}`;
+    var videoCopyableUrl = 'https://web.archive.org/web/20160412001103/http://goanimate.com/videos/0-13F9yscDHc?utm_source=linkshare&utm_medium=linkshare&utm_campaign=usercontent';
 
     function setupPreviewPlayer() {
         var previewPlayerRetryCount = 5;
@@ -874,7 +874,7 @@ if (self !== top) {
         amplitudeTrackEvent(
             AMPLITUDE_EVENT.VIDEO_PLAYER_SWITCH,
             {
-                video_id: '09NT7zVNrDlw',
+                video_id: '0-13F9yscDHc',
                 action: AMPLITUDE_EVENT_PROPERTIES.PREVIEW_ACTION_HTML5_TO_LEGACY
             }
         );
@@ -897,18 +897,18 @@ if (self !== top) {
         amplitudeTrackEvent(
             AMPLITUDE_EVENT.VIDEO_PLAYER_SWITCH,
             {
-                video_id: '09NT7zVNrDlw',
+                video_id: '0-13F9yscDHc',
                 action: AMPLITUDE_EVENT_PROPERTIES.PREVIEW_ACTION_LEGACY_TO_HTML5
             }
         );
-        document.getElementById('html5').style.display = "block";
         document.getElementById('flash').style.display = "none";
+        document.getElementById('html5').style.display = "block";
     });
     if (!window.MediaSource) {
         // MSE unsupported, hide all other notifications and display only the browser compatibility message
         $('.player-container > .notification').addClass('hidden')
             .filter('.browser-no-mse').removeClass('hidden');
-        $.post('https://ga.vyond.com/ajax/compileH5Video/09NT7zVNrDlw');
+        $.post('https://web.archive.org/web/20160412001103/http://goanimate.com/ajax/compileH5Video/0-13F9yscDHc');
     }
     $(document).on('click', 'a.for-unavailable', function() {
         amplitudeTrackEvent(AMPLITUDE_EVENT.VIEW_PLANS_FROM_VIDEO_PAGE);
@@ -933,8 +933,513 @@ if (self !== top) {
         </div>
     </div>
 </div>
+
+<div class="modal upsell-modal" id="upsell-modal" data-page="videos" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title">Upgrade to unlock more features</h3>
+            </div>
+            <div class="modal-body">
+                <div class="upsell-features-wrapper ">
+                    <div class="upsell-features">
+                        <div class="upsell-feature commercial-license">
+                            <div class="upsell-feature-body">
+                                <div class="upsell-feature-image">
+                                    <img src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/slide8_commerciallic_icon.png">
+                                </div>
+                                <div class="upsell-feature-title">
+                                    <h2>Commercial License for Business Use</h2>
+                                    <div class="upsell-unlock">Unlock this feature now</div>                                    <p>Get the commercial rights to use your video for business purposes.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-right">
+                                    <a href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans">Full comparison &gt;</a>
+                                </div>
+
+                                <ul class="upsell-plan-comparison clearfix">
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">Free<br> Plan</div>
+                                        <div class="upsell-plan-data">N/A</div>
+                                    </li>
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">GoPlus<br> Plan</div>
+                                        <div class="upsell-plan-data">N/A</div>
+                                    </li>
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">GoPublish<br> Plan</div>
+                                        <div class="upsell-plan-data">Limited commercial rights</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPremium<br> Plan</div>
+                                        <div class="upsell-plan-data">Full commercial rights</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoTeam<br> Plan</div>
+                                        <div class="upsell-plan-data">Full commercial rights</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="upsell-feature business-style">
+                            <div class="upsell-feature-body">
+                                <div class="upsell-feature-image">
+                                    <img src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/slide3_bizexestyle_icon.png">
+                                </div>
+                                <div class="upsell-feature-title">
+                                    <h2>Business Exclusive Themes</h2>
+                                    <div class="upsell-unlock">Unlock this feature now</div>                                    <p>Access relevant characters, backgrounds and props representing a wide range of industries.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-right">
+                                    <a href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans">Full comparison &gt;</a>
+                                </div>
+
+                                <ul class="upsell-plan-comparison clearfix">
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">Free<br> Plan</div>
+                                        <div class="upsell-plan-data">N/A</div>
+                                    </li>
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">GoPlus<br> Plan</div>
+                                        <div class="upsell-plan-data">N/A</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPublish<br> Plan</div>
+                                        <div class="upsell-plan-data">Access to all themes</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPremium<br> Plan</div>
+                                        <div class="upsell-plan-data">Access to all themes</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoTeam<br> Plan</div>
+                                        <div class="upsell-plan-data">Access to all themes</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="upsell-feature unlimited-duration">
+                            <div class="upsell-feature-body">
+                                <div class="upsell-feature-image">
+                                    <img src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/slide2_unlimitedvideo_icon.png">
+                                </div>
+                                <div class="upsell-feature-title">
+                                    <h2>Unlimited Video Duration</h2>
+                                    <div class="upsell-unlock">Unlock this feature now</div>                                    <p>Produce both short form and long form videos with ease using out Video.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-right">
+                                    <a href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans">Full comparison &gt;</a>
+                                </div>
+
+                                <ul class="upsell-plan-comparison clearfix">
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">Free<br> Plan</div>
+                                        <div class="upsell-plan-data">&lt; 30 seconds</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPlus<br> Plan</div>
+                                        <div class="upsell-plan-data">Unlimited <i class="i-upsell-info" title="Excludes exclusive business themes"></i></div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPublish<br> Plan</div>
+                                        <div class="upsell-plan-data">Unlimited</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPremium<br> Plan</div>
+                                        <div class="upsell-plan-data">Unlimited</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoTeam<br> Plan</div>
+                                        <div class="upsell-plan-data">Unlimited</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="upsell-feature download-video">
+                            <div class="upsell-feature-body">
+                                <div class="upsell-feature-image">
+                                    <img src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/slide5_downloadexport_icon.png">
+                                </div>
+                                <div class="upsell-feature-title">
+                                    <h2>Download and Export Your Videos</h2>
+                                    <div class="upsell-unlock">Unlock this feature now</div>                                    <p>Download your video as an mp4 or export directly to our partner sites.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-right">
+                                    <a href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans">Full comparison &gt;</a>
+                                </div>
+
+                                <ul class="upsell-plan-comparison clearfix">
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">Free<br> Plan</div>
+                                        <div class="upsell-plan-data">N/A</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPlus<br> Plan</div>
+                                        <div class="upsell-plan-data">Up to 360p</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPublish<br> Plan</div>
+                                        <div class="upsell-plan-data">Up to 720p</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPremium<br> Plan</div>
+                                        <div class="upsell-plan-data">Up to 1080p</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoTeam<br> Plan</div>
+                                        <div class="upsell-plan-data">Up to 1080p</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="upsell-feature watermark">
+                            <div class="upsell-feature-body">
+                                <div class="upsell-feature-image">
+                                    <img src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/slide4_watermark_icon.png">
+                                </div>
+                                <div class="upsell-feature-title">
+                                    <h2>Logo Management</h2>
+                                    <div class="upsell-unlock">Unlock this feature now</div>                                    <p>Replace our logo with your own, or remove the watermark completely.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-right">
+                                    <a href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans">Full comparison &gt;</a>
+                                </div>
+
+                                <ul class="upsell-plan-comparison clearfix">
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">Free<br> Plan</div>
+                                        <div class="upsell-plan-data">GoAnimate Logo</div>
+                                    </li>
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">GoPlus<br> Plan</div>
+                                        <div class="upsell-plan-data">GoAnimate Logo</div>
+                                    </li>
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">GoPublish<br> Plan</div>
+                                        <div class="upsell-plan-data">GoAnimate Logo</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPremium<br> Plan</div>
+                                        <div class="upsell-plan-data">Remove/Replace Watermark <i class="i-upsell-info" title="Work with multiple logos, assigning different logos to the watermark in different videos, or remove the watermark entirely"></i></div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoTeam<br> Plan</div>
+                                        <div class="upsell-plan-data">Remove/Replace Watermark <i class="i-upsell-info" title="Work with multiple logos, assigning different logos to the watermark in different videos, or remove the watermark entirely"></i></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="upsell-feature character">
+                            <div class="upsell-feature-body">
+                                <div class="upsell-feature-image">
+                                    <img src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/slide1_cc_icon.png">
+                                </div>
+                                <div class="upsell-feature-title">
+                                    <h2>Huge Cast of Characters</h2>
+                                    <div class="upsell-unlock">Unlock this feature now</div>                                    <p>Use any of our library characters, or customize at will with our character creators.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-right">
+                                    <a href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans">Full comparison &gt;</a>
+                                </div>
+
+                                <ul class="upsell-plan-comparison clearfix">
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">Free<br> Plan</div>
+                                        <div class="upsell-plan-data">N/A</div>
+                                    </li>
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">GoPlus<br> Plan</div>
+                                        <div class="upsell-plan-data">Limited <i class="i-upsell-info" title="Excludes exclusive business theme character creators"></i></div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPublish<br> Plan</div>
+                                        <div class="upsell-plan-data">Unlimited</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPremium<br> Plan</div>
+                                        <div class="upsell-plan-data">Unlimited</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoTeam<br> Plan</div>
+                                        <div class="upsell-plan-data">Unlimited</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="upsell-feature version-control">
+                            <div class="upsell-feature-body">
+                                <div class="upsell-feature-image">
+                                    <img src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/slide6_versioncontrol_icon.png">
+                                </div>
+                                <div class="upsell-feature-title">
+                                    <h2>Version Control</h2>
+                                    <div class="upsell-unlock">Unlock this feature now</div>                                    <p>Roll back to an earlier, saved-over copy with ease or manage multiple versions.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-right">
+                                    <a href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans">Full comparison &gt;</a>
+                                </div>
+
+                                <ul class="upsell-plan-comparison clearfix">
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">Free<br> Plan</div>
+                                        <div class="upsell-plan-data">N/A</div>
+                                    </li>
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">GoPlus<br> Plan</div>
+                                        <div class="upsell-plan-data">N/A</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPublish<br> Plan</div>
+                                        <div class="upsell-plan-data">Available</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPremium<br> Plan</div>
+                                        <div class="upsell-plan-data">Available</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoTeam<br> Plan</div>
+                                        <div class="upsell-plan-data">Available</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="upsell-feature qvm-contents">
+                            <div class="upsell-feature-body">
+                                <div class="upsell-feature-image">
+                                    <img src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/slide7_qvm_icon.png">
+                                </div>
+                                <div class="upsell-feature-title">
+                                    <h2>Premium Templates Content</h2>
+                                    <div class="upsell-unlock">Unlock this feature now</div>                                    <p>Access our premium characters and settings, or use your own custom characters in our Templates.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-right">
+                                    <a href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans">Full comparison &gt;</a>
+                                </div>
+
+                                <ul class="upsell-plan-comparison clearfix">
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">Free<br> Plan</div>
+                                        <div class="upsell-plan-data">Limited</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPlus<br> Plan</div>
+                                        <div class="upsell-plan-data">Unlimited</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPublish<br> Plan</div>
+                                        <div class="upsell-plan-data">Unlimited</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPremium<br> Plan</div>
+                                        <div class="upsell-plan-data">Unlimited</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoTeam<br> Plan</div>
+                                        <div class="upsell-plan-data">Unlimited</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="upsell-feature qvm-duration">
+                            <div class="upsell-feature-body">
+                                <div class="upsell-feature-image">
+                                    <img src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/slide9_templates_icon.png">
+                                </div>
+                                <div class="upsell-feature-title">
+                                    <h2>Longer Video Duration for Templates</h2>
+                                    <div class="upsell-unlock">Unlock this feature now</div>                                    <p>Extend your scenes with up to 30 lines of dialog when using our Templates.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-right">
+                                    <a href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans">Full comparison &gt;</a>
+                                </div>
+
+                                <ul class="upsell-plan-comparison clearfix">
+                                    <li class="dim">
+                                        <div class="upsell-plan-name">Free<br> Plan</div>
+                                        <div class="upsell-plan-data">&lt;10 lines</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPlus<br> Plan</div>
+                                        <div class="upsell-plan-data">&lt;30 lines <i class="i-upsell-info" title="Excludes exclusive business theme templates"></i></div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPublish<br> Plan</div>
+                                        <div class="upsell-plan-data">&lt;30 lines</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoPremium<br> Plan</div>
+                                        <div class="upsell-plan-data">&lt;30 lines</div>
+                                    </li>
+                                    <li>
+                                        <div class="upsell-plan-name">GoTeam<br> Plan</div>
+                                        <div class="upsell-plan-data">&lt;30 lines</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="upsell-arrow left" href="https://web.archive.org/web/20160412001103/http://goanimate.com/videos/0-13F9yscDHc#"></a>
+                <a class="upsell-arrow right" href="https://web.archive.org/web/20160412001103/http://goanimate.com/videos/0-13F9yscDHc#"></a>
+
+                <ol class="upsell-index">
+                    <li class="active"><span class="upsell-index-dot"></span></li>
+                    <li><span class="upsell-index-dot"></span></li>
+                    <li><span class="upsell-index-dot"></span></li>
+                    <li><span class="upsell-index-dot"></span></li>
+                    <li><span class="upsell-index-dot"></span></li>
+                    <li><span class="upsell-index-dot"></span></li>
+                    <li><span class="upsell-index-dot"></span></li>
+                    <li><span class="upsell-index-dot"></span></li>
+                    <li><span class="upsell-index-dot"></span></li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+
+                <a class="btn btn-orange btn-upsell" href="https://web.archive.org/web/20160412001103/http://goanimate.com/business/videoplans?hook=upsell.site">Subscribe</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/upsell.js"></script>
+
+</div>
 <!-- END OF PAGE STRUCTURE -->
 
+
+<script>
+var IE = {
+  Version: function() {
+    var version = 999; // we assume a sane browser
+    if (navigator.appVersion.indexOf("MSIE") != -1)
+      // bah, IE again, lets downgrade version number
+      version = parseFloat(navigator.appVersion.split("MSIE")[1]);
+    return version;
+  }
+}
+
+var UserData = function() {
+  this.userData = null;
+  this.name = location.hostname;
+
+  if (IE.version > 6 && !this.userData) {
+    try {
+      this.userData = document.createElement('INPUT');
+      this.userData.type = "hidden";
+      this.userData.style.display = "none";
+      this.userData.addBehavior ("#default#userData");
+      document.body.appendChild(this.userData);
+      var expires = new Date();
+      expires.setDate(expires.getDate()+365);
+      this.userData.expires = expires.toUTCString();
+    } catch(e) {
+    }
+  }
+
+    this.setItem = function(key, value) {
+
+            this.userData.load(this.name);
+            this.userData.setAttribute(key, value);
+            this.userData.save(this.name);
+    }
+    this.getItem = function(key) {
+            this.userData.load(this.name);
+            return this.userData.getAttribute(key);
+    }
+    this.remove = function(key) {
+            this.userData.load(this.name);
+            this.userData.removeAttribute(key);
+            this.userData.save(this.name);
+    }
+
+}
+
+function locStorage(action, key, value){
+    var result;
+    if (typeof(localStorage) == 'undefined' ) {
+            // localStorge not supported
+    } else {
+        try {
+            switch(action){
+                case 'setItem':
+                    localStorage.setItem(key, value);
+                break;
+                case 'getItem':
+                    result = localStorage.getItem(key);
+                break;
+                case 'removeItem':
+                    localStorage.removeItem(key);
+                break;
+            }
+        return result;
+        } catch (e) {
+            if (e == QUOTA_EXCEEDED_ERR) {
+                //data wasn't successfully saved due to quota exceed so throw an error
+            }
+        }
+    }
+}
+function bannedUser(value){
+    if (value == "true"){
+        document.body.innerHTML="";
+    }
+}
+</script>
+<div style="height:0;overflow:hidden;"><object width="1" height="1">   <param name="vap" value="http://lightspeed.goanimate.com/static/6a882951f9649a88/go/swf/VAP.swf">   <param name="bgcolor" value="#000000"><param name="allowFullScreen" value="true">   <param name="FlashVars" value="detect=true">   <param name="allowscriptaccess" value="always">   <embed src="https://web.archive.org/web/20160412001103oe_/http://lightspeed.goanimate.com/static/6a882951f9649a88/go/swf/VAP.swf" flashvars="detect=true" type="application/x-shockwave-flash" width="1" height="1" bgcolor="#ffffff" allowscriptaccess="always" allowfullscreen="true"></object></div>    <script>
+    //check userdata (IE)
+    if (IE.version > 6) {
+        var ud = new UserData();
+        var ud_expiry = ud.getItem("vap");
+        if (ud_expiry > 1460419864){
+            document.body.innerHTML='';
+        }
+    }
+    //check localStorage
+    var ls_expiry = locStorage("getItem", "vap");
+    if (ls_expiry > 1460419864){
+        document.body.innerHTML='';
+    }
+    </script>
+
+<div id="container"></div>
 
 <div id="offer_container">
 </div>
@@ -942,8 +1447,95 @@ if (self !== top) {
     </script>
 
 <script type="text/javascript">
+adroll_adv_id = "Z3PWKMYHBZCATKWVHPRBJL";
+adroll_pix_id = "RRV5CFG5YZAEPP2W6FPCNG";
+(function () {
+    var oldonload = window.onload;
+    window.onload = function(){
+        __adroll_loaded=true;
+        var scr = document.createElement("script");
+        var host = (("https:" == document.location.protocol) ? "https://web.archive.org/web/20160412001103/https://s.adroll.com" : "https://web.archive.org/web/20160412001103/http://a.adroll.com");
+        scr.setAttribute('async', 'true');
+        scr.type = "text/javascript";
+        scr.src = host + "/j/roundtrip.js";
+        ((document.getElementsByTagName('head') || [null])[0] ||
+        document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        if(oldonload){oldonload()}
+    };
+}());
+</script>
+
+<!-- Start of Async HubSpot Analytics Code -->
+<script type="text/javascript">
+(function(d,s,i,r) {
+if (d.getElementById(i)){return;}
+var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+n.id=i;n.src='//web.archive.org/web/20160412001103/http://js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/427840.js';
+e.parentNode.insertBefore(n, e);
+})(document,"script","hs-analytics",300000);
+</script>
+<!-- End of Async HubSpot Analytics Code -->
+
+<script type="text/javascript">
+    function logSendShareToGA() {
+        dataLayer.push({
+            'event': 'ga-pageview-t1',
+            'path': '/pageTracker/goals/reg/contactform'
+        });
+    }
 
 </script>
 
-</body>
-</html>
+
+
+<!--
+     FILE ARCHIVED ON 00:11:03 Apr 12, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 21:27:03 Feb 27, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 265.447
+  exclusion.robots: 0.184
+  exclusion.robots.policy: 0.176
+  RedisCDXSource: 1.008
+  esindex: 0.007
+  LoadShardBlock: 246.107 (3)
+  PetaboxLoader3.datanode: 214.482 (4)
+  CDXLines.iter: 16.217 (3)
+  load_resource: 144.461
+  PetaboxLoader3.resolve: 68.026
+-->
+<script type="text/javascript" id="">var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","//connect.facebook.net/en_US/fbevents.js");fbq("init","784667875001149");fbq("track","PageView");
+
+}</script>
+<noscript><img height="1" width="1" style="display:none" src="https://web.archive.org/web/20160412001103im_/https://www.facebook.com/tr?id=784667875001149&amp;ev=PageView&amp;noscript=1"></noscript>
+<script type="text/javascript" id="">var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+$(function(){function c(a,c,b){document.cookie=a+"\x3d"+escape(c)+"; path\x3d/; max-age\x3d"+b+";"}function f(a){return(a=document.cookie.match("(^|;) ?"+a+"\x3d([^;]*)(;|$)"))?unescape(a[2]):null}var d=5,g=900;$(window).on({unload:function(){c("lasturl",window.location.href,d)},onbeforeunload:function(){c("lasturl",window.location.href,d)},load:function(){var a=document.referrer,d=f("gasessid");""===a&&(a=f("lasturl"));if((""===a||null===d)&&"undefined"!==typeof ga){var a=new Date,b,e;try{var h=
+ga.getAll(),a=new Date;e=h[0].get("clientId");b=e+"."+a.getTime();ga("set","dimension1",e);ga("set","dimension2",b);dataLayer.push({GAClientId:e,GASessionId:b});c("gasessid",b,g)}catch(k){}}}})});
+
+}</script><script type="text/javascript" id="" src="./Mugen Yujo - S1 E1 - To Be Dared - Mugen Yujo_files/integrations-hubspot-v1.js"></script></body></html>
