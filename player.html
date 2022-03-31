@@ -53,7 +53,7 @@ Copyright (C) Mugen Yujo, 2014.">
 <link rel="alternate" href="https://web.archive.org/web/20160412001103/http://feeds.feedburner.com/GoAnimate/MostWatched" type="application/rss+xml" title="GoAnimate - Most Watched">
 
 <link href="https://josephanimate2021.github.io/fonts/1/sailec.css" rel="stylesheet" type="text/css">
-<link href="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/css/common_combined.css.gz.css" rel="stylesheet" type="text/css">
+<div id="mode-switcher"><link href="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/css/common_combined.css.gz.css" rel="stylesheet" type="text/css"></div>
 
 <link href="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/css/upsell_modals.css.gz.css" rel="stylesheet" type="text/css">
 <link href="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/css//watermark.css.gz.css" rel="stylesheet" type="text/css">
@@ -69,11 +69,29 @@ Copyright (C) Mugen Yujo, 2014.">
 .top-nav.collapse {height: auto;overflow: visible;}
 </style>
 <![endif]-->
-
+<script>
+	    function switchToDarkMode() {
+		    document.getElementById('mode-switcher').innerHTML = '<link href="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/css/common_combined.css" rel="stylesheet" type="text/css">';
+		    window.location = "javascript:changeWords('switchedToDarkMode')";
+	    }
+	    function changeWords(switchedToDarkMode) {
+		    if (switchedToDarkMode) {
+			    document.getElementById('mode').innerText = 'Light Mode';
+			    document.getElementById('mode').href = 'javascript:switchToLightMode()';
+		    } else {
+			    document.getElementById('mode').innerText = 'Dark Mode';
+			    document.getElementById('mode').href = 'javascript:switchToDarkMode()';
+		    }
+	    }
+	    function switchToLightMode() {
+		    document.getElementById('mode-switcher').innerHTML = '<link href="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/css/common_combined.css.gz.css" rel="stylesheet" type="text/css">';
+		    window.location = "javascript:changeWords()";
+	    } 
+</script>
 <script>
 var srv_tz_os = -4, view_name = "go", user_cookie_name = "u_info";
 var user_role = null;
-</script>
+</script>    
 <script>
 // some of this code was taken from regularspark. but it works here lol :)
 const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -379,6 +397,9 @@ if (self !== top) {
         </li>
         <li>
             <a href="/Vyond-Reimaged/updates" onclick="amplitudeTrackCtaHelp('whats_new');" target="_blank">Updates</a>
+        </li>
+        <li>
+            <a href="javascript:switchToDarkMode()" id="mode">Dark Mode</a>
         </li>
     </ul>
 </li>
