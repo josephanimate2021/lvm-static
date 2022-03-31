@@ -372,7 +372,12 @@ if (self !== top) {
     <ul class="dropdown-menu dropdown-menu-help">
 
         <li>
-            
+            <div class="using-h5 hidden-xs">
+                <a data-action="user-opt-out">Switch To The Legacy Video Player</a>                    
+            </div>
+            <div class="using-flash hidden-xs hidden">
+                <a data-action="user-opt-in">Switch To The HTML5 Video Player</a>                    
+            </div>  
         </li>
         <li>
             <a href="https://discord.gg/zeYXwAcnpn" onclick="amplitudeTrackCtaHelp('help_center');" target="_blank">Help Center</a>
@@ -436,10 +441,6 @@ if (self !== top) {
         <div class="container">
             <div class="row">
                 <div class="player-container col-sm-7">
-                    <div class="notification using-h5 hidden-xs">
-                        <a data-action="user-opt-out">Switch Players</a>                    </div>
-                    <div class="notification using-flash hidden-xs hidden">
-                        <a data-action="user-opt-in">Switch Players</a>                    </div>
                     <div class="notification browser-no-mse hidden">
                         <span class="icon glyph-halfling glyph-info-sign"></span>
                         We are optimizing this video to be compatible with your browser, please wait a few minutes then refresh this page. <a href="https://web.archive.org/web/20160412001103/https://support.goanimate.com/hc/en-us/articles/206949976" target="_blank">Learn more.</a>                    </div>
