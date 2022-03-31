@@ -372,8 +372,8 @@ if (self !== top) {
     <ul class="dropdown-menu dropdown-menu-help">
 
         <li>
-            <div class="using-h5 hidden-xs"><a data-action="user-opt-out">Switch To The Legacy Video Player</a></div>                   
-            <div class="using-flash hidden-xs"><a data-action="user-opt-in">Switch To The HTML5 Video Player</a></div>                     
+            <a id="html5" data-action="user-opt-out">Switch To The Legacy Video Player</a>                  
+            <a id="flash" style="display:none" data-action="user-opt-in">Switch To The HTML5 Video Player</a>                     
         </li>
         <li>
             <a href="https://discord.gg/zeYXwAcnpn" onclick="amplitudeTrackCtaHelp('help_center');" target="_blank">Help Center</a>
@@ -880,6 +880,8 @@ if (self !== top) {
                 action: AMPLITUDE_EVENT_PROPERTIES.PREVIEW_ACTION_HTML5_TO_LEGACY
             }
         );
+        document.getElementById('html5').style.display = "none";
+        document.getElementById('flash').style.display = "block";
     });
 
     $('[data-action="user-opt-in"]').on('click', function(e) {
@@ -901,6 +903,8 @@ if (self !== top) {
                 action: AMPLITUDE_EVENT_PROPERTIES.PREVIEW_ACTION_LEGACY_TO_HTML5
             }
         );
+        document.getElementById('flash').style.display = "none";
+        document.getElementById('html5').style.display = "block";
     });
     if (!window.MediaSource) {
         // MSE unsupported, hide all other notifications and display only the browser compatibility message
