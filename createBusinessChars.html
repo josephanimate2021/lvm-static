@@ -308,6 +308,23 @@ switch (theme) {
     document.getElementById('themeTeller').innerHTML = '<a href="/lvm-static/browseChars?themeId=business">Business Friendly Characters</a>';
     break;
   }
+  case "whiteboard": {
+    switch (character) {
+      case "man": { 
+        var bs = "guy";
+        break;
+      }            
+      case "woman": { 
+        var bs = "girl";
+        break;
+      }
+      default: { 
+        var bs = `${character}`;
+        break;
+      }  
+    }
+    break;
+  }
 }                       
 </script>
     </div>
