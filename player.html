@@ -652,7 +652,7 @@ if (self !== top) {
                         <div class="col-sm-6 socials-icons">
                             <ul class="socials-sharing">
                                 <li>
-                                    <a class="glyph-pro glyph-embed-close" data-remote="/ajax/getEmbedOverlay/5btJhbxqTdY" data-action="video-embed" title="Embed code">
+                                    <script>document.write(`<a class="glyph-pro glyph-embed-close" data-remote="/ajax/getEmbedOverlay/?movieId=${id}" data-action="video-embed" title="Embed code">`);</script>
                                         <span class="sr-only sr-only-focusable">Embed code</span>
                                     </a>
                                 </li>
@@ -821,8 +821,8 @@ if (self !== top) {
         </div>
     </div>
 </div>
-<input id="embed_code_field" type="hidden" value="<iframe scrolling=&quot;no&quot; allowTransparency=&quot;true&quot; allowfullscreen frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://ga.vyond.com/player/embed/09NT7zVNrDlw&quot; ></iframe>
-"/>
+<script>document.write(`<input id="embed_code_field" type="hidden" value="<iframe scrolling=&quot;no&quot; allowTransparency=&quot;true&quot; allowfullscreen frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://josephanimate2021.github.io/lvm-static/embedVideo?movieId=${id}&quot; ></iframe>
+"/>`);</script>
 <script>
     var flashPlayerUrl = 'https://josephanimate2021.github.io/animation/930/player.swf',
         flashPlayerVars = {"movieOwner":"Mugen Yujo","movieOwnerId":"0yjsQQB5bx50","movieId":id,"movieLid":"0","movieTitle":"Mugen+Yujo+-+S1+E1+-+To+Be+Dared","movieDesc":"Daniel+is+dared+to+to+a+dangerous+thing%2C+and+accepts+the+dare%2C+but+will+he+still+accept+it%3F++Find+out+next+time+on+Mugen+Yujo%21%0A%0ACopyright+%28C%29+Mugen+Yujo%2C+2014.","userId":"","username":"","uemail":"","ut":"-1","numContact":"","apiserver":goapi,"duration":"29","playcount":1,"thumbnailURL":`${goapi}movie_thumbs/${id}.png`,"copyable":"0","isPublished":"1","ctc":"go","tlang":"en_US","is_private_shared":"0","autostart":"0","appCode":"go","is_slideshow":"0","originalId":"0zEt_fo4L-5k","is_emessage":"0","storePath":"https:\/\/josephanimate2021.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephanimate2021.github.io\/static\/55910a7cd204c37c\/<client_theme>","animationPath":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/lightspeed.goanimate.com\/animation\/a6a59f12d985fe21\/","isEmbed":"0","refuser":null,"utm_source":null,"uid":null,"isTemplate":"0","showButtons":"1","chain_mids":"","averageRating":"0","ratingCount":"0","fb_app_url":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/goanimate.com\/","ad":1,"endStyle":0,"isWide":"1","pwm":1,"s3base":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/s3.amazonaws.com\/fs.goanimate.com\/,http:\/\/assets.goanimate.com\/","initcb":"flashPlayerLoaded","free_trial":1,"showshare":false},
@@ -848,7 +848,7 @@ if (self !== top) {
         previewPlayer,
         flashVar = {
             duration: 29        };
-    var videoCopyableUrl = 'https://web.archive.org/web/20160412001103/http://goanimate.com/videos/0-13F9yscDHc?utm_source=linkshare&utm_medium=linkshare&utm_campaign=usercontent';
+    var videoCopyableUrl = `https://josephanimate2021.github.io/lvm-static/player?movieId=${id}&utm_source=linkshare&utm_medium=linkshare&utm_campaign=usercontent`;
 
     function setupPreviewPlayer() {
         var previewPlayerRetryCount = 5;
