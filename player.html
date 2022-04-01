@@ -89,6 +89,11 @@ function showPencil() {
     if (videoOwner == 'true') {
             document.getElementById('pencil').innerHTML = `<a href="/lvm-static/editVideo?movieId=${id}&swfPathUsed=${path}&storePathUsed=${stPath}&staticPathUsed=${ctPath}&api=${goapi}&startingPoint=player"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
     }
+    if (goapi == 'null') {
+        var goapi = "https://vyondlegacyacsapi.herokuapp.com/";
+    } else {
+        var goapi = `${goapi}`;
+    }
     document.getElementById('bg').innerHTML = `<div class="thumbnail-container" style="background-image:url(&#39;${goapi}movie_thumbs/${id}.png&#39;)">`;
     document.getElementById('grounded').style = `background-image:url(&#39;${goapi}movie_thumbs/${id}.png&#39;)`;
 }
@@ -647,7 +652,7 @@ if (self !== top) {
             <div class="settings-row">
                     <div class="row">
                         <div class="col-sm-6">
-                            <input id="copyable-url" class="form-control gtm-ga-event" type="url" readonly="true" value="https://josephanimate2021.github.io/DharMannArchives/RUDE CASHIER Won’t Sell To KID - DELETING AFTER 48 HOURS!! | Dhar Mann/styles/vyond/watch?utm_source=linkshare&amp;utm_medium=linkshare&amp;utm_campaign=usercontent" onclick="this.select()" data-gtmv-action="Share - Click text field" data-gtmv-category="" data-gtmv-label="25238467 - Guest">
+                            <script>document.write(`<input id="copyable-url" class="form-control gtm-ga-event" type="url" readonly="true" value="https://josephanimate2021.github.io/lvm-static/player?movieId=${id}&utm_source=linkshare&amp;utm_medium=linkshare&amp;utm_campaign=usercontent" onclick="this.select()" data-gtmv-action="Share - Click text field" data-gtmv-category="" data-gtmv-label="25238467 - Guest">`);</script>
                         </div>
                         <div class="col-sm-6 socials-icons">
                             <ul class="socials-sharing">
