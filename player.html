@@ -85,9 +85,16 @@ let path = params.swfPathUsed;
 let stPath = params.storePathUsed;
 let ctPath = params.staticPathUsed;
 let videoOwner = params.isVideoOwner;
+let status = params.videoStatus;
 function showPencil() {
     if (videoOwner == 'true') {
             document.getElementById('pencil').innerHTML = `<a href="/lvm-static/editVideo?movieId=${id}&swfPathUsed=${path}&storePathUsed=${stPath}&staticPathUsed=${ctPath}&api=${goapi}&startingPoint=player"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
+    }
+    if (status == 'private') {
+            document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/videomaker/editcheck/?movieId=${id}"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
+            var api = "http://localhost:4343/";
+    } else {
+            var api = `${goapi}`;
     }
     document.getElementById('bg').innerHTML = `<div class="thumbnail-container" style="background-image:url(&#39;${goapi}movie_thumbs/${id}.png&#39;)">`;
     document.getElementById('grounded').style = `background-image:url(&#39;${goapi}movie_thumbs/${id}.png&#39;)`;
@@ -434,7 +441,7 @@ if (self !== top) {
 <div id="video-page">
     <input type="hidden" name="ct" value="W6VHc262xvbThXRIZs3WJA5tZUya8_Ug3ENhF3OOdnJnUlP6ajGkOFl4lEjQ06fjzx_mlv5SZqvuJUrGdInUjCamQ_DLpLhyaho41nklEscPFIzJDlTp23aUyAQPINV7LmhMm1ZkYo+qAD14p6PDNe52VEcHh3kqT5113sbHDkiPozs3ja537vulJOh3k0p_OB8XeNNxad_rO8SydsqN9Bn3CUY2L5Xx4+T80wpuWNTC_jHTg="/>
     <div class="video-content">
-        <script>document.write(`<div class="thumbnail-container" style="background-image:url(&#39;${goapi}movie_thumbs/${id}.png&#39;)">`);</script>
+        <script>document.write(`<div class="thumbnail-container" style="background-image:url(&#39;${api}movie_thumbs/${id}.png&#39;)">`);</script>
             <div class="thumbnail-overlay"></div>
         </div>
         <div class="container">
@@ -448,7 +455,7 @@ if (self !== top) {
                         We are optimizing this video to be compatible with your browser, please wait a few minutes then refresh this page. <a href="https://support.vyond.com/hc/en-us/articles/206949976" target="_blank">Learn more.</a>                    </div>
                    <div class="video-player">
                         <div class="video-player-container">
-                            <script>document.write(`<div class="video-player-viewport" style="background-image:url(&#39;${goapi}movie_thumbs/${id}.png&#39;)">`);</script> 
+                            <script>document.write(`<div class="video-player-viewport" style="background-image:url(&#39;${api}movie_thumbs/${id}.png&#39;)">`);</script> 
                                 <div class="video-player-wrapper embed-responsive embed-responsive-16by9">
                                     <div class="embed-responsive-item hidden" id="flash-player">
                                         <div class="no-flash-player">
@@ -825,7 +832,7 @@ if (self !== top) {
 "/>`);</script>
 <script>
     var flashPlayerUrl = 'https://josephanimate2021.github.io/animation/930/player.swf',
-        flashPlayerVars = {"movieOwner":"Mugen Yujo","movieOwnerId":"0yjsQQB5bx50","movieId":id,"movieLid":"0","movieTitle":"Mugen+Yujo+-+S1+E1+-+To+Be+Dared","movieDesc":"Daniel+is+dared+to+to+a+dangerous+thing%2C+and+accepts+the+dare%2C+but+will+he+still+accept+it%3F++Find+out+next+time+on+Mugen+Yujo%21%0A%0ACopyright+%28C%29+Mugen+Yujo%2C+2014.","userId":"","username":"","uemail":"","ut":"-1","numContact":"","apiserver":goapi,"duration":"29","playcount":1,"thumbnailURL":`${goapi}movie_thumbs/${id}.png`,"copyable":"0","isPublished":"1","ctc":"go","tlang":"en_US","is_private_shared":"0","autostart":"0","appCode":"go","is_slideshow":"0","originalId":"0zEt_fo4L-5k","is_emessage":"0","storePath":"https:\/\/josephanimate2021.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephanimate2021.github.io\/static\/55910a7cd204c37c\/<client_theme>","animationPath":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/lightspeed.goanimate.com\/animation\/a6a59f12d985fe21\/","isEmbed":"0","refuser":null,"utm_source":null,"uid":null,"isTemplate":"0","showButtons":"1","chain_mids":"","averageRating":"0","ratingCount":"0","fb_app_url":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/goanimate.com\/","ad":1,"endStyle":0,"isWide":"1","pwm":1,"s3base":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/s3.amazonaws.com\/fs.goanimate.com\/,http:\/\/assets.goanimate.com\/","initcb":"flashPlayerLoaded","free_trial":1,"showshare":false},
+        flashPlayerVars = {"movieOwner":"Mugen Yujo","movieOwnerId":"0yjsQQB5bx50","movieId":id,"movieLid":"0","movieTitle":"Mugen+Yujo+-+S1+E1+-+To+Be+Dared","movieDesc":"Daniel+is+dared+to+to+a+dangerous+thing%2C+and+accepts+the+dare%2C+but+will+he+still+accept+it%3F++Find+out+next+time+on+Mugen+Yujo%21%0A%0ACopyright+%28C%29+Mugen+Yujo%2C+2014.","userId":"","username":"","uemail":"","ut":"-1","numContact":"","apiserver":api,"duration":"29","playcount":1,"thumbnailURL":`${api}movie_thumbs/${id}.png`,"copyable":"0","isPublished":"1","ctc":"go","tlang":"en_US","is_private_shared":"0","autostart":"0","appCode":"go","is_slideshow":"0","originalId":"0zEt_fo4L-5k","is_emessage":"0","storePath":"https:\/\/josephanimate2021.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephanimate2021.github.io\/static\/55910a7cd204c37c\/<client_theme>","animationPath":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/lightspeed.goanimate.com\/animation\/a6a59f12d985fe21\/","isEmbed":"0","refuser":null,"utm_source":null,"uid":null,"isTemplate":"0","showButtons":"1","chain_mids":"","averageRating":"0","ratingCount":"0","fb_app_url":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/goanimate.com\/","ad":1,"endStyle":0,"isWide":"1","pwm":1,"s3base":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/s3.amazonaws.com\/fs.goanimate.com\/,http:\/\/assets.goanimate.com\/","initcb":"flashPlayerLoaded","free_trial":1,"showshare":false},
         h5PlayerElem = null,
         sceneDetails = {};
 </script>
