@@ -12,11 +12,11 @@
         let id = params.assetChrId;
         switch (charMethod) {
           case "copy": {
-            document.getElementById('question').innerHTML = `<a href="/lvm-static/createChars?method=copy&themeId=${theme}&charId="${id}">Click Here To Copy Your Character.</a>`;
+            document.getElementById('question').innerHTML = `<p>What Vyond LVM Do You Want To Use To Copy A Character? <a href="/lvm-static/createChars?method=copy&themeId=${theme}&charId="${id}">LVM Static (Recomended)</a> Or <a href="https://florzaa.github.io/Vyond-Revamp/charactercreator/${theme}/copy/?charId=${id}">Vyond Revamp</a>`;
             break;
           }
           default: {
-            document.getElementById('question').innerHTML = `<p>What Vyond LVM Do You Want To Use To Create Your Own Character? <a href="https://owenthegoanimator.github.io/Vyond-Legacy-ACS/charactercreator/${theme}/new_char/${characters}">Vyond Legacy ACS</a> or <a href="/lvm-static/createChars?themeId=${theme}&bs=${characters}">LVM Static (Recomended)</a>. It's fine if you don't want to create your character. you can make videos instead. just be sure to not forget to create your character before making a video.</p>`;
+            document.getElementById('question').innerHTML = `<p>What Vyond LVM Do You Want To Use To Create Your Own Character? <a href="https://owenthegoanimator.github.io/Vyond-Legacy-ACS/charactercreator/${theme}/new_char/${characters}">Vyond Legacy ACS</a>, <a href="/lvm-static/createChars?themeId=${theme}&bs=${characters}">LVM Static (Recomended)</a>, Or <a href="https://florzaa.github.io/Vyond-Revamp/charactercreator/${theme}/new_char/${characters}">Vyond Revamp</a>. It's fine if you don't want to create your character. you can make videos instead. just be sure to not forget to create your character before making a video.</p>`;
             break;
           }
         }
@@ -24,6 +24,6 @@
     </script>
   </head>
   <body onload="loadQuestions()">
-    <div id="question"><p>You need something here in order to get this thing to work.</div>
+    <div id="question"></div>
   </body>
 </html>
