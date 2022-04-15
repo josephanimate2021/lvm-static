@@ -89,9 +89,6 @@ function showPencil() {
     if (videoOwner == 'true') {
             document.getElementById('pencil').innerHTML = `<a href="/lvm-static/editVideo?movieId=${id}&swfPathUsed=${path}&storePathUsed=${stPath}&staticPathUsed=${ctPath}&api=${goapi}&startingPoint=player"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
     }
-    if (goapi == 'http://localhost:4343/') {
-            location.href = `https://josephanimate2021.github.io/lvm-static/offline-player?movieId=${id}`;
-    }
     document.getElementById('bg').innerHTML = `<div class="thumbnail-container" style="background-image:url(&#39;${goapi}movie_thumbs/${id}.png&#39;)">`;
     document.getElementById('grounded').style = `background-image:url(&#39;${goapi}movie_thumbs/${id}.png&#39;)`;
 }
@@ -452,7 +449,7 @@ if (self !== top) {
                    <div class="video-player">
                         <div class="video-player-container">
                             <script>document.write(`<div class="video-player-viewport" style="background-image:url(&#39;${goapi}movie_thumbs/${id}.png&#39;)">`);</script> 
-                                <div class="video-player-wrapper embed-responsive embed-responsive-16by9" id="flashWrapper">
+                                <div class="video-player-wrapper embed-responsive embed-responsive-16by9">
                                     <div class="embed-responsive-item hidden" id="flash-player">
                                         <div class="no-flash-player">
                                             You can't use Vyond because Flash might be disabled. <a href="https://get.adobe.com/flashplayer/">Enable Flash</a>.
