@@ -91,8 +91,8 @@ function showPencil() {
     }
     switch (goapi) {
         case "http://localhost:4343/": {
-            document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/videomaker/editcheck/?movieId=${id}"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
             var server = "https://127.0.0.1:4664";
+            document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/videomaker/editcheck/?movieId=${id}"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
             break;
         }
         default: {
