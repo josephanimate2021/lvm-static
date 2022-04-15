@@ -85,6 +85,7 @@ function showPencil() {
     switch (modded) {
         case "true": {
             document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/go_full?movieId=${id}"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
+            document.getElementById('vyond-img').innerHTML = '<img alt="Wrapper: Revision" src="http://localhost:4343/pages/img/list_logo.png">';
             break;
         }
         default: {
@@ -334,7 +335,7 @@ if (self !== top) {
                     <span class="icon-bar"></span>
                   </button>
                   
-            <a class="navbar-brand" href="/lvm-static/" title="Vyond">
+            <a class="navbar-brand" href="/lvm-static/" title="Vyond" id="vyond-img">
                       <img alt="Vyond Accesible" src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/img/vyond/vyond_logo_legacy.png">
                   </a></div>
 
