@@ -89,16 +89,16 @@ function showPencil() {
     if (videoOwner == 'true') {
             document.getElementById('pencil').innerHTML = `<a href="/lvm-static/editVideo?movieId=${id}&swfPathUsed=${path}&storePathUsed=${stPath}&staticPathUsed=${ctPath}&api=${goapi}&startingPoint=player"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
     }
-    switch (goapi) {
-        case "http://localhost:4343/": {
-            var server = "https://127.0.0.1:4664";
-            document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/videomaker/editcheck/?movieId=${id}"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
-            break;
-        }
-        default: {
-            var server = "https://josephanimate2021.github.io";
-            break;
-        }
+}
+switch (goapi) {
+    case "http://localhost:4343/": {
+        document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/videomaker/editcheck/?movieId=${id}"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
+        var server = "https://127.0.0.1:4664";
+        break;
+    }
+    default: {
+        var server = "https://josephanimate2021.github.io";
+        break;
     }
 }
 </script>
