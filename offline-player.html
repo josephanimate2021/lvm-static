@@ -638,7 +638,7 @@ if (self !== top) {
             <div class="settings-row">
                     <div class="row">
                         <div class="col-sm-6">
-                            <script>document.write(`<input id="copyable-url" class="form-control gtm-ga-event" type="url" readonly="true" value="https://josephanimate2021.github.io/lvm-static/player?movieId=${id}&api=${goapi}&utm_source=linkshare&amp;utm_medium=linkshare&amp;utm_campaign=usercontent" onclick="this.select()" data-gtmv-action="Share - Click text field" data-gtmv-category="" data-gtmv-label="25238467 - Guest">`);</script>
+                            <script>document.write(`<input id="copyable-url" class="form-control gtm-ga-event" type="url" readonly="true" value="https://josephanimate2021.github.io/lvm-static/offline-player?movieId=${id}&utm_source=linkshare&amp;utm_medium=linkshare&amp;utm_campaign=usercontent" onclick="this.select()" data-gtmv-action="Share - Click text field" data-gtmv-category="" data-gtmv-label="25238467 - Guest">`);</script>
                         </div>
                         <div class="col-sm-6 socials-icons">
                             <ul class="socials-sharing">
@@ -812,7 +812,7 @@ if (self !== top) {
         </div>
     </div>
 </div>
-<script>document.write(`<input id="embed_code_field" type="hidden" value="<iframe scrolling=&quot;no&quot; allowTransparency=&quot;true&quot; allowfullscreen frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://josephanimate2021.github.io/lvm-static/embedVideo?movieId=${id}&quot; ></iframe>
+<script>document.write(`<input id="embed_code_field" type="hidden" value="<iframe scrolling=&quot;no&quot; allowTransparency=&quot;true&quot; allowfullscreen frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://josephanimate2021.github.io/lvm-static/embedVideo?movieId=${id}&api=http://localhost:4343/&quot; ></iframe>
 "/>`);</script>
 <script>
     var flashPlayerUrl = 'https://localhost:4664/animation/414827163ad4eb60/player.swf',
@@ -839,7 +839,7 @@ if (self !== top) {
         previewPlayer,
         flashVar = {
             duration: 29        };
-    var videoCopyableUrl = `https://josephanimate2021.github.io/lvm-static/player?movieId=${id}&api=${goapi}&utm_source=linkshare&utm_medium=linkshare&utm_campaign=usercontent`;
+    var videoCopyableUrl = `https://josephanimate2021.github.io/lvm-static/offline-player?movieId=${id}&utm_source=linkshare&utm_medium=linkshare&utm_campaign=usercontent`;
 
     function setupPreviewPlayer() {
         var previewPlayerRetryCount = 5;
@@ -896,9 +896,9 @@ if (self !== top) {
                 action: AMPLITUDE_EVENT_PROPERTIES.PREVIEW_ACTION_LEGACY_TO_HTML5
             }
         );
+        document.getElementById('video-info').style.display = "block";
         document.getElementById('flash').style.display = "none";
         document.getElementById('html5').style.display = "block";
-        document.getElementById('video-info').style.display = "block";
     });
     if (!window.MediaSource) {
         // MSE unsupported, hide all other notifications and display only the browser compatibility message
