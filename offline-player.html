@@ -882,9 +882,9 @@ if (self !== top) {
                 action: AMPLITUDE_EVENT_PROPERTIES.PREVIEW_ACTION_HTML5_TO_LEGACY
             }
         );
+        document.getElementById('video-info').style.display = "none";
         document.getElementById('html5').style.display = "none";
         document.getElementById('flash').style.display = "block";
-        document.getElementById('video-info').style.display = "none";
     });
 
     $('[data-action="user-opt-in"]').on('click', function(e) {
@@ -906,8 +906,8 @@ if (self !== top) {
                 action: AMPLITUDE_EVENT_PROPERTIES.PREVIEW_ACTION_LEGACY_TO_HTML5
             }
         );
-        document.getElementById('video-info').style.display = "block";
         document.getElementById('flash').style.display = "none";
+        document.getElementById('video-info').style.display = "blcok";
         document.getElementById('html5').style.display = "block";
     });
     if (!window.MediaSource) {
