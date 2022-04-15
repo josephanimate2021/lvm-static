@@ -451,7 +451,7 @@ if (self !== top) {
                                       <source src="https://josephanimate2021.github.io/DharMannArchives/RUDE%20CASHIER%20Won't%20Sell%20To%20KID%20-%20DELETING%20AFTER%2048%20HOURS!!%20_%20Dhar%20Mann.mp4" type="video/mp4">
                                     </video>
                                 </div>
-                                <div class="video-info hidden-xs" data-video-id="09NT7zVNrDlw" data-is-owner="no" data-owner="05_ECIL1n9t4" data-duration="286">
+                                <div id="video-info" class="video-info hidden-xs" data-video-id="09NT7zVNrDlw" data-is-owner="no" data-owner="05_ECIL1n9t4" data-duration="286">
                                     <div class="video-info-content">
                                         <h1 class="title">Your Animation</h1>
                                         <p class="description"></p>
@@ -874,6 +874,7 @@ if (self !== top) {
         );
         document.getElementById('html5').style.display = "none";
         document.getElementById('flash').style.display = "block";
+        document.getElementById('video-info').style.display = "none";
     });
 
     $('[data-action="user-opt-in"]').on('click', function(e) {
@@ -897,6 +898,7 @@ if (self !== top) {
         );
         document.getElementById('flash').style.display = "none";
         document.getElementById('html5').style.display = "block";
+        document.getElementById('video-info').style.display = "block";
     });
     if (!window.MediaSource) {
         // MSE unsupported, hide all other notifications and display only the browser compatibility message
