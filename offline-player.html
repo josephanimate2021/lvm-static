@@ -86,16 +86,16 @@ function showPencil() {
         case "true": {
             document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/go_full?movieId=${id}"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
             // Make Site Header Modifications
-            document.getElementById('vyond-img').innerHTML = '<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">\
-                    <span class="sr-only">Toggle navigation</span>\
-                    <span class="icon-bar"></span>\
-                    <span class="icon-bar"></span>\
-                    <span class="icon-bar"></span>\
-                  </button>\
+            document.getElementById('vyond-img').innerHTML = `<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
                   
-            <a class="navbar-brand" href="http://localhost:4343/" title="Wrapper: Revision">\
-                      <img alt="Wrapper: Revision" src="http://localhost:4343/pages/img/list_logo.png">\
-                  </a>';
+            <a class="navbar-brand" href="http://localhost:4343/" title="Wrapper: Revision">
+                      <img alt="Wrapper: Revision" src="http://localhost:4343/pages/img/list_logo.png">
+                  </a>`;
             document.getElementById('btn').innerHTML = '<a class="hidden-sm hidden-md hidden-lg" href="http://localhost:4343/go_full">Make a Video</a><span class="site-nav-btn hidden-xs"><a class="btn btn-green" href="http://localhost:4343/go_full">Make a video</a></span>';
             break;
         }
