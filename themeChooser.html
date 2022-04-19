@@ -49,11 +49,21 @@ switch (url) {
     case "http://localhost:4343/": {
         var returnUrl = "http://localhost:4343/videomaker/full/?tray=";
         var returnCharUrl = "http://localhost:4343/charactercreator/?themeId=";
+        var homeUrl = "http://localhost:4343/";
+        var homeTitle = "Vyond Legacy Offline";
+        var videomakerUrl = "./themeChooser?return=http://localhost:4343/";
+        var updates = "Vyond Legacy Offline is currently in heavy development right now. please expect everything to not work like expected like importing and eta.</div></div>
+        var lvmNameHashtag = "VyondLegacyOffline";
         break;
     }
     default: {
         var returnUrl = "https://vyondlegacyacsapi.herokuapp.com/genorateId?theme=";
         var returnCharUrl = "/lvm-static/browseChars?themeId=";
+        var homeUrl = "/lvm-static/";
+        var homeTitle = "LVM Static";
+        var videomakerUrl = "./themeChooser";
+        var updates = 'This project is still in development, this banner will be removed once more things are polished up and finalized. <a href="/lvmStaticUpdates">Update Center &gt;</a></div></div>';
+        var lvmNameHashtag = "LvmStatic";
         break;
     }
 }
@@ -124,8 +134,8 @@ if (self !== top) {
                     <span class="icon-bar"></span>
                   </button>
                   
-            <a class="navbar-brand" href="/lvm-static/" title="Vyond Reimaged">
-                      <img alt="Vyond Reimaged" src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/img/vyond/vyond_logo_legacy.png">
+            <script>document.write(`<a class="navbar-brand" href="${homeUrl}" title="${homeTitle}">`);</script>
+                      <script>document.write(`<img alt="${homeTitle}" src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/img/vyond/vyond_logo_legacy.png">`);</script>
                   </a></div>
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -172,20 +182,20 @@ if (self !== top) {
             <a href="https://discord.gg/zeYXwAcnpn" onclick="amplitudeTrackCtaHelp('help_center');" target="_blank">Help Center</a>
         </li>
         <li>
-            <a href="/lvmStaticUpdates" onclick="amplitudeTrackCtaHelp('whats_new');" target="_blank">Updates</a>
+            <script>document.write(`<a href="/updates#${lvmNameHashtag}" onclick="amplitudeTrackCtaHelp('whats_new');" target="_blank">Updates</a>`);</script>
         </li>
     </ul>
-</li>
+</li><script>document.write(`
                     <li>
-                        <a class="hidden-sm hidden-md hidden-lg" href="/lvm-static/themeChooser">Make a Video</a>
-                        <span class="site-nav-btn hidden-xs"><a class="btn btn-orange" href="./themeChooser">Make a Video</a></span>
+                        <a class="hidden-sm hidden-md hidden-lg" href="${videomakerUrl}">Make a Video</a>
+                        <span class="site-nav-btn hidden-xs"><a class="btn btn-orange" href="${videomakerUrl}">Make a Video</a></span>
                     </li>
 
 
 
                 </ul>
 
-<ul class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav navbar-right">`);</script>
 <li class="dropdown">
     
     <ul class="dropdown-menu dropdown-menu-help">
@@ -218,11 +228,11 @@ if (self !== top) {
                 </ul>
             </div>
     </div>
-<div class="free-trial-banner">
+<div class="free-trial-banner"><script>document.write(`
     
-    This project is still in development, this banner will be removed once more things are polished up and finalized. <a href="/lvmStaticUpdates">Update Center &gt;</a></div></div>
+    ${updates}
 
-<script>
+<script>`);</script>
     jQuery('.logout-link').click(function(){
         amplitudeTrackEvent(AMPLITUDE_EVENT.LOGOUT, null);
     });
