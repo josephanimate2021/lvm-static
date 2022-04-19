@@ -39,7 +39,25 @@ var user_role = 11;
 var I18N_LANG = 'en_US';
 var GT = new Gettext({'locale_data': json_locale_data});
 </script>
-
+<script>
+// some of this code was taken from regularspark. but it works here lol :)
+const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+});
+let url = params.return;
+switch (url) {
+    case "http://localhost:4343/": {
+        var returnUrl = "http://localhost:4343/videomaker/full/?tray=";
+        var returnCharUrl = "http://localhost:4343/charactercreator/?themeId=";
+        break;
+    }
+    default: {
+        var returnUrl = "https://vyondlegacyacsapi.herokuapp.com/genorateId?theme=";
+        var returnCharUrl = "/lvm-static/browseChars?themeId=";
+        break;
+    }
+}
+</script>
 <script src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/js/jquery/jquery.flexslider.min.js.gz.js"></script>
 <script src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/js/trial_upsell.js.gz.js"></script>
 <script src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/js/sessionChecker.js.gz.js"></script><script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/956549168/?random=1646709697296&amp;cv=9&amp;fst=1646709697296&amp;num=1&amp;bg=ffffff&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;eid=376635471&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1032&amp;u_aw=1920&amp;u_cd=24&amp;u_his=2&amp;u_tz=-480&amp;u_java=false&amp;u_nplug=3&amp;u_nmime=4&amp;gtm=2wg370&amp;sendb=1&amp;ig=1&amp;frm=0&amp;url=https%3A%2F%2Fowenthegoanimator.github.io%2FVyond-Legacy-ACS%2Fvideomaker%2F&amp;tiba=Make%20a%20Video%20on%20Vyond%20Reimaged&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4"></script>
@@ -268,10 +286,10 @@ _wq.push({ id: '70x3iky0kr', onReady: function(video) {
                     Traditional 2D animation featuring hundreds of vibrant templates, backdrops, characters and actions covering a wide range of industries, occupations, activities and business concepts.                </div>
 
                 <div class="theme__content__cta hidden-mobile">
-                        <a class="btn btn-orange" href="https://vyondlegacyacsapi.herokuapp.com/genorateId?theme=business">Select</a>
+                        <script>document.write(`<a class="btn btn-orange" href="${returnUrl}business">Select</a>`);</script>
     
                     <br>
-                        <a class="theme__cc-link" href="/lvm-static/browseChars?themeId=business">
+                        <script>document.write(`<a class="theme__cc-link" href="${returnCharUrl}business">`);</script>
                         Character Creator                    </a>
                     </div>
             </div>
@@ -300,10 +318,10 @@ _wq.push({ id: '70x3iky0kr', onReady: function(video) {
                     Classic whiteboard animation (aka video scribing) powered by Vyond simplicity! The dynamic drawing motion keeps audiences captivated while our huge library of templates ensures relevance.                </div>
 
                 <div class="theme__content__cta hidden-mobile">
-                        <a class="btn btn-orange" href="https://vyondlegacyacsapi.herokuapp.com/genorateId?theme=whiteboard">Select</a>
+                        <script>document.write(`<a class="btn btn-orange" href="${returnUrl}whiteboard">Select</a>`);</script>
     
                     <br>
-                        <a class="theme__cc-link" href="/lvm-static/browseChars?themeId=whiteboard">
+                        <script>document.write(`<a class="theme__cc-link" href="${returnCharUrl}whiteboard">`);</script>
                         Character Creator                    </a>
                     </div>
             </div>
@@ -330,7 +348,7 @@ _wq.push({ id: '70x3iky0kr', onReady: function(video) {
                     Let the power of video bring your data to life! Design and movement and built into every template, to create and sustain engagememt. Customize further to make your key points really pop.                </div>
 
                 <div class="theme__content__cta hidden-mobile">
-                        <a class="btn btn-orange" href="https://vyondlegacyacsapi.herokuapp.com/genorateId?theme=infographics">Select</a><br>
+                        <script>document.write(`<a class="btn btn-orange" href="${returnUrl}infographics">Select</a><br>`);</script>
                         
                 </div>
             </div>
