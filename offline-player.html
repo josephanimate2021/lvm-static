@@ -395,13 +395,13 @@ if (self !== top) {
             <a href="https://discord.gg/zeYXwAcnpn" onclick="amplitudeTrackCtaHelp('help_center');" target="_blank">Help Center</a>
         </li>
         <li>
-            <a href="/Vyond-Reimaged/updates" onclick="amplitudeTrackCtaHelp('whats_new');" target="_blank">Updates</a>
+            <a href="/updates#VyondLegacyOffline" onclick="amplitudeTrackCtaHelp('whats_new');" target="_blank">Updates</a>
         </li>
     </ul>
 </li>
                     <li id="btn">
-                        <a class="hidden-sm hidden-md hidden-lg" href="/lvm-static/themeChooser">Make a Video</a>
-                        <span class="site-nav-btn hidden-xs"><a class="btn btn-orange" href="/lvm-static/themeChooser">Make a video</a></span>
+                        <a class="hidden-sm hidden-md hidden-lg" href="/lvm-static/themeChooser?return=http://localhost:4343/">Make a Video</a>
+                        <span class="site-nav-btn hidden-xs"><a class="btn btn-orange" href="/lvm-static/themeChooser?return=http://localhost:4343/">Make a video</a></span>
                     </li>
 
 
@@ -473,7 +473,7 @@ if (self !== top) {
                                       <source src="https://josephanimate2021.github.io/DharMannArchives/RUDE%20CASHIER%20Won't%20Sell%20To%20KID%20-%20DELETING%20AFTER%2048%20HOURS!!%20_%20Dhar%20Mann.mp4" type="video/mp4">
                                     </video>
                                 </div>
-                                <div id="video-info" class="video-info hidden-xs" data-video-id="09NT7zVNrDlw" data-is-owner="no" data-owner="05_ECIL1n9t4" data-duration="286">
+                                <div class="video-info hidden-xs" data-video-id="09NT7zVNrDlw" data-is-owner="no" data-owner="05_ECIL1n9t4" data-duration="286">
                                     <div class="video-info-content">
                                         <h1 class="title">Your Animation</h1>
                                         <p class="description"></p>
@@ -894,7 +894,6 @@ if (self !== top) {
                 action: AMPLITUDE_EVENT_PROPERTIES.PREVIEW_ACTION_HTML5_TO_LEGACY
             }
         );
-        document.getElementById('video-info').style.display = "none";
         document.getElementById('html5').style.display = "none";
         document.getElementById('flash').style.display = "block";
     });
@@ -919,7 +918,6 @@ if (self !== top) {
             }
         );
         document.getElementById('flash').style.display = "none";
-        document.getElementById('video-info').style.display = "blcok";
         document.getElementById('html5').style.display = "block";
     });
     if (!window.MediaSource) {
