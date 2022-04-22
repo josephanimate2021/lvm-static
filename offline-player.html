@@ -81,7 +81,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 let id = params.movieId;
 var goapi = "http://localhost:4343/";
 function showPencil() {
-    document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/videomaker/editcheck/?movieId=${id}">Edit</span></a>`;
+    document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/videomaker/editcheck/?movieId=${id}"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
 }
 </script>
 
