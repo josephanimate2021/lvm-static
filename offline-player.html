@@ -79,31 +79,9 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
 });
 let id = params.movieId;
-let modded = params.lvpIsModded;
 var goapi = "http://localhost:4343/";
 function showPencil() {
-    switch (modded) {
-        case "true": {
-            document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/go_full?movieId=${id}"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
-            // Make Site Header Modifications
-            document.getElementById('vyond-img').innerHTML = `<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  
-            <a class="navbar-brand" href="http://localhost:4343/" title="Wrapper: Revision">
-                      <img alt="Wrapper: Revision" src="http://localhost:4343/pages/img/list_logo.png">
-                  </a>`;
-            document.getElementById('btn').innerHTML = '<a class="hidden-sm hidden-md hidden-lg" href="http://localhost:4343/go_full">Make a Video</a><span class="site-nav-btn hidden-xs"><a class="btn btn-green" href="http://localhost:4343/go_full">Make a video</a></span>';
-            break;
-        }
-        default: {
-            document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/videomaker/editcheck/?movieId=${id}"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
-            break;
-        }
-    }
+    document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/videomaker/editcheck/?movieId=${id}">Edit</span></a>`;
 }
 </script>
 
@@ -336,9 +314,9 @@ if (self !== top) {
 <div class="page-container">
 
 
-<div class="site-header" id="header">
+<div class="site-header">
     <div class="navbar site-nav site-nav--legacy" role="navigation">
-            <div class="navbar-header" id="vyond-img">
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -346,8 +324,8 @@ if (self !== top) {
                     <span class="icon-bar"></span>
                   </button>
                   
-            <a class="navbar-brand" href="/lvm-static/" title="Vyond">
-                      <img alt="Vyond Accesible" src="https://josephanimate2021.github.io/static/55910a7cd204c37c/go/img/vyond/vyond_logo_legacy.png">
+            <a class="navbar-brand" href="http://localhost:4343/" title="Vyond">
+                      <img alt="Vyond Legacy Offline" src="https://localhost:4664/static/55910a7cd204c37c/go/img/vyond/vyond_logo_legacy.png">
                   </a></div>
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -399,7 +377,7 @@ if (self !== top) {
         </li>
     </ul>
 </li>
-                    <li id="btn">
+                    <li>
                         <a class="hidden-sm hidden-md hidden-lg" href="/lvm-static/themeChooser?return=http://localhost:4343/">Make a Video</a>
                         <span class="site-nav-btn hidden-xs"><a class="btn btn-orange" href="/lvm-static/themeChooser?return=http://localhost:4343/">Make a video</a></span>
                     </li>
@@ -455,10 +433,10 @@ if (self !== top) {
                 <div class="player-container col-sm-7">
                     <div class="notification browser-no-mse hidden">
                         <span class="icon glyph-halfling glyph-info-sign"></span>
-                        There is now a new way to modify the LVP! if you click <script>document.write(`<a href="offline-player?movieId=${id}&lvpIsModded=true">here</a>`);</script>, you will be able to use this LVP anywhere without Vyond Legacy Offline and this LVP will be your new modification home & video player!</div>
+                        We are optimizing this video to be compatible with your browser, please wait a few minutes then refresh this page. If you encounter any technical problems, switch to our <a data-action="user-opt-out">legacy video player</a>. <a href="https://support.vyond.com/hc/en-us/articles/206949976" target="_blank">Learn more.</a>                    </div>
                     <div class="notification browser-no-mse-no-flash hidden">
                         <span class="icon glyph-halfling glyph-info-sign"></span>
-                        If You Hate Wrapper: Offline, you can use lvm static today! click <a href="./">here</a> to start using LVM Static Today!</div>
+                        We are optimizing this video to be compatible with your browser, please wait a few minutes then refresh this page. <a href="https://support.vyond.com/hc/en-us/articles/206949976" target="_blank">Learn more.</a>                    </div>
                    <div class="video-player">
                         <div class="video-player-container">
                             <script>document.write(`<div class="video-player-viewport" style="background-image:url(&#39;${goapi}movie_thumbs/${id}.png&#39;)">`);</script> 
@@ -618,9 +596,9 @@ if (self !== top) {
             <div class="row settings-row">
                 <div class="col-sm-9">
                     <div class="settings-label hidden-xs">Share</div>
-                    <div class="using-draft"><span class="icon glyph-pro glyph-lock inline"></span>Draft</div>
-                    <div class="using-private"><span class="icon glyph-pro glyph-lock inline"></span>Private</div>
-                    <div class="using-public"><span class="icon glyph-pro glyph-unlock inline"></span>Public</div>
+                    <div class="using-draft">Draft</div>
+                    <div class="using-private">Private</div>
+                    <div class="using-public">Public</div>
                 </div>
             </div>
         </div>
@@ -660,12 +638,12 @@ if (self !== top) {
             <div class="settings-row">
                     <div class="row">
                         <div class="col-sm-6">
-                            <script>document.write(`<input id="copyable-url" class="form-control gtm-ga-event" type="url" readonly="true" value="https://josephanimate2021.github.io/lvm-static/offline-player?movieId=${id}&utm_source=linkshare&amp;utm_medium=linkshare&amp;utm_campaign=usercontent" onclick="this.select()" data-gtmv-action="Share - Click text field" data-gtmv-category="" data-gtmv-label="25238467 - Guest">`);</script>
+                            <script>document.write(`<input id="copyable-url" class="form-control gtm-ga-event" type="url" readonly="true" value="https://josephanimate2021.github.io/lvm-static/player?movieId=${id}&api=${goapi}&utm_source=linkshare&amp;utm_medium=linkshare&amp;utm_campaign=usercontent" onclick="this.select()" data-gtmv-action="Share - Click text field" data-gtmv-category="" data-gtmv-label="25238467 - Guest">`);</script>
                         </div>
                         <div class="col-sm-6 socials-icons">
                             <ul class="socials-sharing">
                                 <li>
-                                    <script>document.write(`<a class="glyph-pro glyph-embed-close" data-remote="/lvm-static/ajax/getEmbedOverlay?movieId=${id}" data-action="video-embed" title="Embed code">`);</script>
+                                    <script>document.write(`<a class="glyph-pro glyph-embed-close" data-remote="/ajax/getEmbedOverlay?movieId=${id}" data-action="video-embed" title="Embed code">`);</script>
                                         <span class="sr-only sr-only-focusable">Embed code</span>
                                     </a>
                                 </li>
@@ -834,11 +812,11 @@ if (self !== top) {
         </div>
     </div>
 </div>
-<script>document.write(`<input id="embed_code_field" type="hidden" value="<iframe scrolling=&quot;no&quot; allowTransparency=&quot;true&quot; allowfullscreen frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://josephanimate2021.github.io/lvm-static/embedVideo?movieId=${id}&api=http://localhost:4343/&quot; ></iframe>
+<script>document.write(`<input id="embed_code_field" type="hidden" value="<iframe scrolling=&quot;no&quot; allowTransparency=&quot;true&quot; allowfullscreen frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://josephanimate2021.github.io/lvm-static/embedVideo?movieId=${id}&quot; ></iframe>
 "/>`);</script>
 <script>
     var flashPlayerUrl = 'https://josephanimate2021.github.io/animation/66453a3ba2cc5e1b/player.swf',
-        flashPlayerVars = {"movieOwner":"Mugen Yujo","movieOwnerId":"0yjsQQB5bx50","movieId":id,"movieLid":"0","movieTitle":"Mugen+Yujo+-+S1+E1+-+To+Be+Dared","movieDesc":"Daniel+is+dared+to+to+a+dangerous+thing%2C+and+accepts+the+dare%2C+but+will+he+still+accept+it%3F++Find+out+next+time+on+Mugen+Yujo%21%0A%0ACopyright+%28C%29+Mugen+Yujo%2C+2014.","userId":"","username":"","uemail":"","ut":"-1","numContact":"","apiserver":"http://localhost:4343/","duration":"29","playcount":1,"thumbnailURL":`http://localhost:4343/movie_thumbs/${id}.png`,"copyable":"0","isPublished":"1","ctc":"go","tlang":"en_US","is_private_shared":"0","autostart":"0","appCode":"go","is_slideshow":"0","originalId":"0zEt_fo4L-5k","is_emessage":"0","storePath":"https:\/\/josephanimate2021.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephanimate2021.github.io\/static\/55910a7cd204c37c\/<client_theme>","animationPath":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/lightspeed.goanimate.com\/animation\/a6a59f12d985fe21\/","isEmbed":"0","refuser":null,"utm_source":null,"uid":null,"isTemplate":"0","showButtons":"1","chain_mids":"","averageRating":"0","ratingCount":"0","fb_app_url":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/goanimate.com\/","ad":1,"endStyle":0,"isWide":"1","pwm":1,"s3base":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/s3.amazonaws.com\/fs.goanimate.com\/,http:\/\/assets.goanimate.com\/","initcb":"flashPlayerLoaded","free_trial":1,"showshare":false},
+        flashPlayerVars = {"movieOwner":"Mugen Yujo","movieOwnerId":"0yjsQQB5bx50","movieId":id,"movieLid":"0","movieTitle":"Mugen+Yujo+-+S1+E1+-+To+Be+Dared","movieDesc":"Daniel+is+dared+to+to+a+dangerous+thing%2C+and+accepts+the+dare%2C+but+will+he+still+accept+it%3F++Find+out+next+time+on+Mugen+Yujo%21%0A%0ACopyright+%28C%29+Mugen+Yujo%2C+2014.","userId":"","username":"","uemail":"","ut":"-1","numContact":"","apiserver":goapi,"duration":"29","playcount":1,"thumbnailURL":`${goapi}movie_thumbs/${id}.png`,"copyable":"0","isPublished":"1","ctc":"go","tlang":"en_US","is_private_shared":"0","autostart":"0","appCode":"go","is_slideshow":"0","originalId":"0zEt_fo4L-5k","is_emessage":"0","storePath":"https:\/\/josephanimate2021.github.io\/store\/3a981f5cb2739137\/<store>","clientThemePath":"https:\/\/josephanimate2021.github.io\/static\/55910a7cd204c37c\/<client_theme>","animationPath":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/lightspeed.goanimate.com\/animation\/a6a59f12d985fe21\/","isEmbed":"0","refuser":null,"utm_source":null,"uid":null,"isTemplate":"0","showButtons":"1","chain_mids":"","averageRating":"0","ratingCount":"0","fb_app_url":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/goanimate.com\/","ad":1,"endStyle":0,"isWide":"1","pwm":1,"s3base":"https:\/\/web.archive.org\/web\/20160412001103\/http:\/\/s3.amazonaws.com\/fs.goanimate.com\/,http:\/\/assets.goanimate.com\/","initcb":"flashPlayerLoaded","free_trial":1,"showshare":false},
         h5PlayerElem = null,
         sceneDetails = {};
 </script>
@@ -861,7 +839,7 @@ if (self !== top) {
         previewPlayer,
         flashVar = {
             duration: 29        };
-    var videoCopyableUrl = `https://josephanimate2021.github.io/lvm-static/offline-player?movieId=${id}&utm_source=linkshare&utm_medium=linkshare&utm_campaign=usercontent`;
+    var videoCopyableUrl = `https://josephanimate2021.github.io/lvm-static/player?movieId=${id}&api=${goapi}&utm_source=linkshare&utm_medium=linkshare&utm_campaign=usercontent`;
 
     function setupPreviewPlayer() {
         var previewPlayerRetryCount = 5;
