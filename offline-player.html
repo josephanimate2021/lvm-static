@@ -79,7 +79,12 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
 });
 let id = params.movieId;
-var goapi = "http://localhost:4343/";
+let api = params.goapi;
+if (api == "null") {
+    var goapi = "https://vlooffical.herokuapp.com/";
+} else {
+    let goapi = params.goapi;
+}
 function showPencil() {
     document.getElementById('pencil').innerHTML = `<a href="http://localhost:4343/videomaker/full/editcheck/?movieId=${id}"><span class="glyph-pro glyph-pencil"> Edit</span></a>`;
 }
