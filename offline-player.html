@@ -80,7 +80,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 });
 let id = params.movieId;
 let api = params.goapi;
-if (api == "null") {
+if (api == "null" && "undefined") {
     var goapi = "https://vlooffical.herokuapp.com/";
 } else {
     let goapi = params.goapi;
