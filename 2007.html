@@ -21,7 +21,7 @@
       var animation = config.animationPath;
       var api;
       var lvm = document.getElementsByTagName('lvm')[0];
-      var mesg = document.getElementsByTagName('lvm')[0];
+      var mesg = document.getElementsByTagName('messages')[0];
       var title = document.getElementsByTagName('title')[0];
       function embedObject() {
         switch (pthm) {
@@ -73,7 +73,7 @@
         }
       };
       function studioLoaded(arg) {
-        console.log(arg)
+        alert(arg)
       }
       function initPreviewPlayer(xml) {
         confirm('Before proceeding, please make sure all your changes have been saved.') && window.open(`https://woretro.herokuapp.com/player?movieId=${id}`,'MsgWindow','width=1280,height=723,left='+(screen.width/2-640)+',top='+(screen.height/2-360))
@@ -95,6 +95,7 @@
     </script>
   </head>
   <body style="margin:0px" onload="embedObject()">
+    <messages></messages>
     <lvm></lvm>
   </body>
 </html>
