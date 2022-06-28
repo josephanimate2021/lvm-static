@@ -20,8 +20,8 @@
       var static = config.clientThemePath;
       var animation = config.animationPath;
       var api;
-      var lvm = document.getElementById('lvm');
-      var mesg = document.getElementById('lvm');
+      var lvm = document.getElementsByTagName('lvm')[0];
+      var mesg = document.getElementsByTagName('lvm')[0];
       function embedObject() {
         switch (pthm) {
           case "anistick": {
@@ -88,6 +88,6 @@
     </script>
   </head>
   <body style="margin:0px" onload="embedObject()">
-    <div id="lvm"></div>
+    <lvm></lvm>
   </body>
 </html>
