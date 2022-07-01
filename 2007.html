@@ -8,7 +8,24 @@
       });
       let id = params.newId;
       let mId = params.movieId;
-      let theme = params.tray;
+      let themePicker = params.tray;
+      var theme;
+      switch (themePicker) {
+        case "":
+        case "null":
+        case "undefined": {
+          theme = 'retro';
+          break;
+        }
+        case "family": {
+          theme = 'custom';
+          break;
+        }
+        default: {
+          theme = themePicker;
+          break;
+        }
+      }
       let pthm = params.platform;
       let act = params.action;
       var config = {
