@@ -1,2 +1,2 @@
-# lvm-static
-a static application designed to get the lvm working correctly 
+# TAKE THIS PROJECT DOWN RIGHT NOW FROM YOUR GITHUB ACCOUNT!
+Just do it. Nobody gives a shit about your coding. 
