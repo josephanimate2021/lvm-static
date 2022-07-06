@@ -40,10 +40,9 @@
           }
         }
       }
-      const callTutorial = (new URLSearchParams(window.location.search)).get("reloadTutorial");
       interactiveTutorial = {
         neverDisplay: function() {
-          return callTutorial ? false : true;
+          return true;
         }
       };
       function studioLoaded(arg) {
