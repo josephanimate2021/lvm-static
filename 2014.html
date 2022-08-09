@@ -44,11 +44,7 @@
           }
         }
       }
-      interactiveTutorial = {
-        neverDisplay: function() {
-          return tutorialReload ? false : true;
-        }
-      };
+      interactiveTutorial.isShowTutorial = tutorialReload ? true : false; 
       function studioLoaded(arg) {
         console.log(arg)
       }
