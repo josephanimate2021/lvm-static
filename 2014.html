@@ -57,15 +57,11 @@
         confirm('Before proceeding, please make sure all your changes have been saved.') && window.open(`${apiServer}/player?movieId=${id}`,'MsgWindow','width=1280,height=723,left='+(screen.width/2-640)+',top='+(screen.height/2-360))
       };
       function exitStudio() {
-        switch (plat) {
-          case "online":
-          case "offline": {
-            window.location=`${res}`;
-            break;
-          } default: {
-            window.location=`/lvm-static/video?movieId=${id}&swfPathUsed=https://josephanimate2021.github.io/animation/877/&storePathUsed=https://josephanimate2021.github.io/store/50/<store>&staticPathUsed=https://josephanimate2021.github.io/static/477/<client_theme>&trayUsed=${theme}&api=${apiServer}/`;
-            break;
-          }
+        if (plat == "online" && plat == "offline") {
+          window.location=`${res}`;
+        } else {
+          window.location=`/lvm-static/video?movieId=${id}&swfPathUsed=https://josephanimate2021.github.io/animation/877/&storePathUsed=https://josephanimate2021.github.io/store/50/<store>&staticPathUsed=https://josephanimate2021.github.io/static/477/<client_theme>&trayUsed=${theme}&api=${apiServer}/`;
+        }
       }
     </script>
   </head>
