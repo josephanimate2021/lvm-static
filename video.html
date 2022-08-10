@@ -141,6 +141,9 @@ let goapi = params.api;
 let path = params.swfPathUsed;
 let stPath = params.storePathUsed;
 let ctPath = params.staticPathUsed;
+let plat = params.platform;
+let res = params.return;
+if (plat == "online") location.href = res;
 function showButtons() {
 	document.getElementById('btn').innerHTML = `<span class="divider">|</span><a class="button" href="/lvm-static/editVideo?movieId=${id}&swfPathUsed=${path}&storePathUsed=${stPath}&staticPathUsed=${ctPath}&api=${goapi}&startingPoint=video">Edit</a><span class="divider">|</span>`;
 }
