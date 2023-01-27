@@ -7,7 +7,10 @@
 ///
 const previewer = document.getElementById('playerdiv');
 const studio = document.getElementById('Studio');
-var previewPlayerTempData = "";
+var previewPlayerTempData = "",
+    movieDataXmlStr = null,
+    filmXmlStr = null,
+    previewStartFrame = 0;
 ///
 /// Previewer
 ///
@@ -35,16 +38,22 @@ function get(type) {
 	}).catch(e => console.log(e));
 }
 function initPreviewPlayer(dataXmlStr, startFrame) {
+	previewStartFrame = startFrame;
 	// New variable to be used by loadPreviewer()
 	movieDataXmlStr = dataXmlStr;
 	// Movie XML
 	filmXmlStr = dataXmlStr.split("<filmxml>")[1].split("</filmxml>")[0];
+	if (typeof startFrame == 'undefined') {
+		startFrame = 1;
+	} else {
+		startFrame = Math.max(1, parseInt(startFrame));
+	}
 	// setup preview popup
 	const attrs = {
 		data: get("animationPath") + "/player.swf",
 		type: "application/x-shockwave-flash",
-		width: "100%",
-		height: "100%",
+		width: "870",
+		height: "420",
 	};
 	const params = {
 		flashvars: {
@@ -54,6 +63,8 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 			autostart: 1,
 			isWide: 1,
 			clientThemePath: get("clientThemePath") + "/<client_theme>",
+			isInitFromExternal: 1,
+			startFrame: previewStartFrame
 		},
 		allowScriptAccess: "always",
 		allowFullScreen: "true",
