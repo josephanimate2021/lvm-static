@@ -1,6 +1,3 @@
-// vars
-const previewModal = document.getElementById('id01');
-const previewer = document.getElementById('playerdiv');
 // functions for creating an object string
 function toAttrString(table) {
 	return typeof table == "object"
@@ -65,6 +62,6 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 			animationPath: get("animationPath") + "/"
 		}
 	};
-	previewer.innerHTML = `${toObjectString(attrs, params)}`;
-	previewModal.style.display='block';
+	document.getElementById('playerdiv').innerHTML = `${toObjectString(attrs, params)}`;
+	document.getElementById('id01').style.display='block';
 }
