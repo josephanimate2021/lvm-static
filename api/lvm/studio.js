@@ -11,6 +11,17 @@ const previewer = $("#playerdiv");
 ///
 /// Previewer
 ///
+function toAttrString(table) {
+	return typeof table == "object"
+		? Object.keys(table)
+				.filter((key) => table[key] !== null)
+				.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(table[key])}`)
+				.join("&")
+		: table.replace(/"/g, '\\"');
+}
+function toParamString(table) {
+	return Object.keys(table).map((key) => toAttrString(table[key])).join(" ");
+}
 function initPreviewPlayer(dataXmlStr, startFrame) {
 	// New variable to be used by loadPreviewer()
 	movieDataXmlStr = dataXmlStr;
@@ -33,7 +44,7 @@ function loadPreviewer(startFrame) {
 	if (movieDataXmlStr === null) return;
 	// I don't know
 	savePreviewData(movieDataXmlStr);
-	const flashvars = new URLSearchParams({
+	const flashvars = {
 		apiserver: "/",
 		isEmbed: 1,
 		tlang: "en_US",
@@ -43,8 +54,8 @@ function loadPreviewer(startFrame) {
 		storePath: get("storePath") + "/<store>", 
 		clientThemePath: get("clientThemePath") + "/<client_theme>", 
 		animationPath: get("animationPath") + "/"
-	}).toString();
-	previewer.find("object param[name='flashvars']").attr("value", flashvars);
+	}
+	previewer.find("object param[name='flashvars']").attr("value", toParamString(flashvars));
 }
 function savePreviewData(a) {
 	// Set temp data variable
