@@ -12,13 +12,13 @@ var previewPlayerTempData = "",
 ///
 /// Previewer
 ///
-function get(type, subtype = false) {
+function get(type, subtype = false, previewStartFrame) {
 	if (!subtype) {
 		fetch(`/ajax/getParams?type=${type}`).then(info => {
 			return info;
 		}).catch(e => console.log(e));
-	} else {
-		fetch(`/ajax/getParams?type=${type}&subtype=${subtype}`).then(info => {
+	} else if (subtype == "previewPlayer") {
+		fetch(`/ajax/getParams?type=${type}&subtype=${subtype}&startFrame=${previewStartFrame}`).then(info => {
 			return info;
 		}).catch(e => console.log(e));
 	}
@@ -35,7 +35,7 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 		startFrame = Math.max(1, parseInt(startFrame));
 	}
 	// setup preview popup
-	document.getElementById('playerdiv').innerHTML = `${get("object", "previewPlayer")}`;
+	document.getElementById('playerdiv').innerHTML = `${get("object", "previewPlayer", previewStartFrame)}`;
 	document.getElementById('player-modal').style.display = 'block';
 	// Load the Video Previewer
 	loadPreviewer();
