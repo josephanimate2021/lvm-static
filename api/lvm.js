@@ -5,6 +5,7 @@
 ///
 /// Variables
 ///
+var previewer = document.getElementById('playerdiv');
 var previewPlayerTempData = "";
 ///
 /// Previewer
@@ -15,7 +16,7 @@ function initPreviewPlayer(dataXmlStr, startFrame, containsChapter, themeList) {
 	// Movie XML
 	filmXmlStr = dataXmlStr.split("<filmxml>")[1].split("</filmxml>")[0];
 	// setup preview popup
-	$("#playerdiv").append(`<iframe style="border: 0px; width: 870px; height: 420px;" src="/player?isInitFromExternal=1&startFrame=${startFrame}"></iframe>`);
+	previewer.innerHTML = `<iframe style="border: 0px; width: 870px; height: 420px;" src="/player?isInitFromExternal=1&startFrame=${startFrame}"></iframe>`;
 	$("#player-modal").show();
 	// Load the Video Previewer
 	loadPreviewer();
@@ -49,6 +50,6 @@ function tutorialCompleted() {
 }
 // Hide Video Previewer popup
 function hidePreviewer() {
-	$("#playerdiv").append(``);
+	previewer.innerHTML = ``;
 	$("#player-modal").hide();
 }
