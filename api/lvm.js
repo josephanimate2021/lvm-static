@@ -12,28 +12,16 @@ var previewPlayerTempData = "",
 ///
 /// Previewer
 ///
-function toAttrString(table) {
-	return typeof table == "object"
-		? Object.keys(table)
-				.filter((key) => table[key] !== null)
-				.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(table[key])}`)
-				.join("&")
-		: table.replace(/"/g, '\\"');
-}
-function toParamString(table) {
-	return Object.keys(table)
-		.map((key) => `<param name="${key}" value="${toAttrString(table[key])}">`)
-		.join(" ");
-}
-function toObjectString(attrs, params) {
-	return `<object ${Object.keys(attrs)
-		.map((key) => `${key}="${attrs[key].replace(/"/g, '\\"')}"`)
-		.join(" ")}>${toParamString(params)}</object>`;
-}
-function get(type) {
-	fetch(`/ajax/getParams?type=${type}`).then(info => {
-		return info;
-	}).catch(e => console.log(e));
+function get(type, subtype = false) {
+	if (!subtype) {
+		fetch(`/ajax/getParams?type=${type}`).then(info => {
+			return info;
+		}).catch(e => console.log(e));
+	} else {
+		fetch(`/ajax/getParams?type=${type}&subtype=${subtype}`).then(info => {
+			return info;
+		}).catch(e => console.log(e));
+	}
 }
 function initPreviewPlayer(dataXmlStr, startFrame) {
 	previewStartFrame = startFrame;
@@ -47,27 +35,7 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 		startFrame = Math.max(1, parseInt(startFrame));
 	}
 	// setup preview popup
-	const attrs = {
-		data: get("animationPath") + "/player.swf",
-		type: "application/x-shockwave-flash",
-		width: "870",
-		height: "420",
-	};
-	const params = {
-		flashvars: {
-			apiserver: "/",
-			storePath: get("storePath") + "/<store>",
-			ut: 60,
-			autostart: 1,
-			isWide: 1,
-			clientThemePath: get("clientThemePath") + "/<client_theme>",
-			isInitFromExternal: 1,
-			startFrame: previewStartFrame
-		},
-		allowScriptAccess: "always",
-		allowFullScreen: "true",
-	};
-	document.getElementById('playerdiv').innerHTML = `${toObjectString(attrs, params)}`;
+	document.getElementById('playerdiv').innerHTML = `${get("object", "previewPlayer")}`;
 	document.getElementById('player-modal').style.display = 'block';
 	// Load the Video Previewer
 	loadPreviewer();
