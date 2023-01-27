@@ -54,15 +54,17 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 		allowScriptAccess: "always"
 	}; 
 	const params = {
-		apiserver: "/",
-		isEmbed: 1,
-		tlang: "en_US",
-		isInitFromExternal: 1,
-		startFrame: startFrame,
-		autostart: 1,
-		storePath: flashvars.storePath, 
-		clientThemePath: flashvars.clientThemePath, 
-		animationPath: get("animationPath") + "/",
+		flashvars: {
+			apiserver: "/",
+			isEmbed: 1,
+			tlang: "en_US",
+			isInitFromExternal: 1,
+			startFrame: startFrame,
+			autostart: 1,
+			storePath: flashvars.storePath, 
+			clientThemePath: flashvars.clientThemePath, 
+			animationPath: get("animationPath") + "/"
+		}
 	};
 	document.getElementById('id01').style.display='block';
 	document.getElementById('playerdiv').innerHTML = `${toObjectString(attrs, params)}`;
