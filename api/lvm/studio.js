@@ -1,21 +1,20 @@
+// vars
+const previewModal = document.getElementById('id01');
+const previewer = document.getElementById('playerdiv');
 // functions for creating an object string
 function toAttrString(table) {
 	return typeof table == "object"
 		? Object.keys(table)
-				.filter((key) => table[key] !== null)
+		                .filter((key) => table[key] !== null)
 				.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(table[key])}`)
 				.join("&")
 		: table.replace(/"/g, '\\"');
 }
 function toParamString(table) {
-	return Object.keys(table)
-		.map((key) => `<param name="${key}" value="${toAttrString(table[key])}">`)
-		.join(" ");
+	return Object.keys(table).map((key) => `<param name="${key}" value="${toAttrString(table[key])}">`).join(" ");
 }
 function toObjectString(attrs, params) {
-	return `<object ${Object.keys(attrs)
-		.map((key) => `${key}="${attrs[key].replace(/"/g, '\\"')}"`)
-		.join(" ")}>${toParamString(params)}</object>`;
+	return `<object ${Object.keys(attrs).map((key) => `${key}="${attrs[key].replace(/"/g, '\\"')}"`).join(" ")}>${toParamString(params)}</object>`;
 }
 // interactive tutorial stuff
 const tutorialReload = (new URLSearchParams(window.location.search)).get("tutorial");
@@ -66,6 +65,6 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 			animationPath: get("animationPath") + "/"
 		}
 	};
-	document.getElementById('id01').style.display='block';
-	document.getElementById('playerdiv').innerHTML = `${toObjectString(attrs, params)}`;
+	previewer.innerHTML = `${toObjectString(attrs, params)}`;
+	previewModal.style.display='block';
 }
