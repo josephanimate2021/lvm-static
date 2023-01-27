@@ -17,7 +17,12 @@ function toObjectString(attrs, params) {
 		.map((key) => `${key}="${attrs[key].replace(/"/g, '\\"')}"`)
 		.join(" ")}>${toParamString(params)}</object>`;
 }
-// functions for interactive tutorial
+// interactive tutorial stuff
+var tStatus = true;
+fetch('/ajax/getTutorialShowStatus').then(status => {
+	tStatus = status ? false : true;
+}).catch(e => console.log(e));
+interactiveTutorial.isShowTutorial = tStatus;
 function tutorialStarted() {}
 function tutorialStep(sn) {}
 function tutorialCompleted() {
@@ -26,10 +31,6 @@ function tutorialCompleted() {
 		url: '/ajax/tutorialStatus/completed'
 	});
 }
-// setup interactive tutorial
-fetch('/ajax/getTutorialShowStatus').then(status => {
-	interactiveTutorial.isShowTutorial = status ? false : true;
-}).catch(e => console.log(e));
 // get some params not included in the flashvars.
 function get(type) {
 	fetch(`/ajax/getParams?type=${type}`).then(info => {
