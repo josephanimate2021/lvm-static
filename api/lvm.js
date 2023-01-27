@@ -65,9 +65,9 @@ function hidePreviewer() {
   $("#player-modal").hide();
 }
 function hideTutorial() {
-  $("#tutorial-modal").hide();
+  $("#video-tutorial").hide();
 }
-var videoTutorial = new VideoTutorial($("#tutorial-modal"));
+var videoTutorial = new VideoTutorial($("#video-tutorial"));
 VideoTutorial.tutorials.composition = {
   title: 'Composition Tutorial',
   wistiaId: 'nuy96pslyp',
