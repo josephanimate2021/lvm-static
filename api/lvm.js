@@ -5,26 +5,63 @@
 ///
 /// Variables
 ///
+const previewer = document.getElementById('playerdiv');
+const studio = document.getElementById('Studio');
 var previewPlayerTempData = "";
 ///
 /// Previewer
 ///
+function toAttrString(table) {
+	return typeof table == "object"
+		? Object.keys(table)
+				.filter((key) => table[key] !== null)
+				.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(table[key])}`)
+				.join("&")
+		: table.replace(/"/g, '\\"');
+}
+function toParamString(table) {
+	return Object.keys(table)
+		.map((key) => `<param name="${key}" value="${toAttrString(table[key])}">`)
+		.join(" ");
+}
+function toObjectString(attrs, params) {
+	return `<object ${Object.keys(attrs)
+		.map((key) => `${key}="${attrs[key].replace(/"/g, '\\"')}"`)
+		.join(" ")}>${toParamString(params)}</object>`;
+}
+function get(type) {
+	fetch(`/ajax/getParams?type=${type}`).then(info => {
+		return info;
+	}).catch(e => console.log(e));
+}
 function initPreviewPlayer(dataXmlStr, startFrame) {
 	// New variable to be used by loadPreviewer()
 	movieDataXmlStr = dataXmlStr;
 	// Movie XML
 	filmXmlStr = dataXmlStr.split("<filmxml>")[1].split("</filmxml>")[0];
 	// setup preview popup
-	document.getElementById('playerdiv').innerHTML = `<iframe style="border: 0px; width: 870px; height: 420px;" src="/player?isInitFromExternal=1&startFrame=${
-	startFrame}"></iframe>`;
+	const attrs = {
+		data: get("animationPath") + "/player.swf",
+		type: "application/x-shockwave-flash",
+		width: "100%",
+		height: "100%",
+	};
+	const params = {
+		flashvars: {
+			apiserver: "/",
+			storePath: get("storePath") + "/<store>",
+			ut: 60,
+			autostart: 1,
+			isWide: 1,
+			clientThemePath: get("clientThemePath") + "/<client_theme>",
+		},
+		allowScriptAccess: "always",
+		allowFullScreen: "true",
+	};
+	previewer.innerHTML = toObjectString(attrs, params);
 	document.getElementById('player-modal').style.display = 'block';
 	// Load the Video Previewer
 	loadPreviewer();
-}
-function setupTutorial() {
-	fetch('/ajax/getTutorialShowStatus').then(status => {
-		return status;
-	});
 }
 function loadPreviewer() {
 	// I think this is in case of an error??
@@ -53,11 +90,20 @@ function exitStudio() {
 // interactive tutorial
 interactiveTutorial = {
 	neverDisplay: function() {
-		return true;
+		const tutorialReload = (new URLSearchParams(window.location.search)).get("tutorial");
+		if (!tutorialReload) {
+			fetch('/ajax/getTutorialShowStatus').then(status => {
+				return status ? true : false;
+			}).catch(e => console.log(e));
+		} else return tutorialReload ? false : true;
 	}
 }
 // Hide Video Previewer popup
 function hidePreviewer() {
-	document.getElementById('playerdiv').innerHTML = '';
 	document.getElementById('player-modal').style.display = 'none';
+	studio.onExternalPreviewPlayerCancel();
+}
+function publishStudio() {
+	document.getElementById('player-modal').style.display = 'none';
+	studio.onExternalPreviewPlayerPublish();
 }
