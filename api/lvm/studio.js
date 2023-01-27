@@ -33,18 +33,18 @@ function loadPreviewer(startFrame) {
 	if (movieDataXmlStr === null) return;
 	// I don't know
 	savePreviewData(movieDataXmlStr);
-	const params = new URLSearchParams({
+	const flashvars = new URLSearchParams({
 		apiserver: "/",
 		isEmbed: 1,
 		tlang: "en_US",
 		isInitFromExternal: 1,
 		startFrame: previewStartFrame,
 		autostart: 1,
-		storePath: flashvars.storePath, 
-		clientThemePath: flashvars.clientThemePath, 
+		storePath: get("storePath") + "/<store>", 
+		clientThemePath: get("clientThemePath") + "/<client_theme>", 
 		animationPath: get("animationPath") + "/"
 	}).toString();
-	previewer.find("object param[name='flashvars']").attr("value", params);
+	previewer.find("object param[name='flashvars']").attr("value", flashvars);
 }
 function savePreviewData(a) {
 	// Set temp data variable
