@@ -6,23 +6,8 @@
 /// Variables
 ///
 var previewPlayerTempData = "";
-///
-/// functions for creating an object string
-///
-function toAttrString(table) {
-	return typeof table == "object"
-		? Object.keys(table)
-		                .filter((key) => table[key] !== null)
-				.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(table[key])}`)
-				.join("&")
-		: table.replace(/"/g, '\\"');
-}
-function toParamString(table) {
-	return Object.keys(table).map((key) => `<param name="${key}" value="${toAttrString(table[key])}">`).join(" ");
-}
-function toObjectString(attrs, params) {
-	return `<object ${Object.keys(attrs).map((key) => `${key}="${attrs[key].replace(/"/g, '\\"')}"`).join(" ")}>${toParamString(params)}</object>`;
-}
+var previewStartFrame = "";
+const previewer = $("#playerdiv");
 ///
 /// Previewer
 ///
@@ -34,40 +19,32 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 	// Show preview popup
 	$("#id01").show();
 	// Load the Video Previewer
-	loadPreviewer();
+	loadPreviewer(startFrame);
 }
 function get(type) {
 	fetch(`/ajax/getParams?type=${type}`).then(info => {
 		return info;
 	}).catch(e => console.log(e));
 }
-function loadPreviewer() {
+function loadPreviewer(startFrame) {
+	if (typeof startFrame == 'undefined') previewStartFrame = 1;
+	else previewStartFrame = Math.max(1, parseInt(startFrame));
 	// I think this is in case of an error??
 	if (movieDataXmlStr === null) return;
 	// I don't know
 	savePreviewData(movieDataXmlStr);
-	const attrs = {
-		height: 360,
-		width: 640,
-		data: get("animationPath") + "/player.swf",
-		quality: "medium",
-		type: "application/x-shockwave-flash",
-		allowScriptAccess: "always"
-	}; 
-	const params = {
-		flashvars: {
-			apiserver: "/",
-			isEmbed: 1,
-			tlang: "en_US",
-			isInitFromExternal: 1,
-			startFrame: startFrame,
-			autostart: 1,
-			storePath: flashvars.storePath, 
-			clientThemePath: flashvars.clientThemePath, 
-			animationPath: get("animationPath") + "/"
-		}
-	};
-	document.getElementById('playerdiv').innerHTML = `${toObjectString(attrs, params)}`;
+	const params = new URLSearchParams({
+		apiserver: "/",
+		isEmbed: 1,
+		tlang: "en_US",
+		isInitFromExternal: 1,
+		startFrame: previewStartFrame,
+		autostart: 1,
+		storePath: flashvars.storePath, 
+		clientThemePath: flashvars.clientThemePath, 
+		animationPath: get("animationPath") + "/"
+	}).toString();
+	previewer.find("object param[name='flashvars']").attr("value", params);
 }
 function savePreviewData(a) {
 	// Set temp data variable
@@ -92,10 +69,10 @@ const tutorialReload = (new URLSearchParams(window.location.search)).get("tutori
 if (!tutorialReload) {
 	var tStatus = true;
 	fetch('/ajax/getTutorialShowStatus').then(status => {
-		tStatus = status ? false : true;
+		tStatus = status ? true : false;
 	}).catch(e => console.log(e));
 	interactiveTutorial.isShowTutorial = tStatus;
-} else interactiveTutorial.isShowTutorial = tutorialReload ? false : true;
+} else interactiveTutorial.isShowTutorial = tutorialReload ? true : false;
 function tutorialStarted() {
 }
 function tutorialStep(sn) {
