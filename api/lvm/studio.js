@@ -7,7 +7,6 @@
 ///
 var previewPlayerTempData = "";
 var previewStartFrame = "";
-const previewer = $("#playerdiv");
 ///
 /// Previewer
 ///
@@ -57,7 +56,7 @@ function loadPreviewer(startFrame) {
 			animationPath: get("animationPath") + "/"
 		}
 	}
-	previewer.find("object param[name='flashvars']").attr("value", toParamString(params));
+	$("#playerdiv").find("object param[name='flashvars']").attr("value", toParamString(params));
 }
 function savePreviewData(a) {
 	// Set temp data variable
