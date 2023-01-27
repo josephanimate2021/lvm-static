@@ -41,6 +41,8 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 	if (typeof startFrame == 'undefined') startFrame = 1;
 	else startFrame = Math.max(1, parseInt(startFrame));
 	if (dataXmlStr === null) return;
+	movieDataXmlStr = dataXmlStr;
+	filmXmlStr = dataXmlStr.split("<filmxml>")[1].split("</filmxml>")[0];
 	const attrs = {
 		height: 360,
 		width: 640,
@@ -65,3 +67,4 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 	document.getElementById('playerdiv').innerHTML = `${toObjectString(attrs, params)}`;
 	document.getElementById('id01').style.display='block';
 }
+function retrievePreviewPlayerData() { return movieDataXmlStr }
