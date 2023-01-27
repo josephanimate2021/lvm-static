@@ -32,7 +32,7 @@ fetch('/ajax/getTutorialShowStatus').then(status => {
 }).catch(e => console.log(e));
 // get some params not included in the flashvars.
 function get(type) {
-	fetch(`/ajax/getParams?${type}=true`).then(info => {
+	fetch(`/ajax/getParams?type=${type}`).then(info => {
 		return info;
 	}).catch(e => console.log(e));
 }
