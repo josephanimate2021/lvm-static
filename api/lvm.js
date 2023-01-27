@@ -31,18 +31,6 @@ function loadPreviewer() {
 	// I don't know
 	savePreviewData(movieDataXmlStr);
 }
-function savePreviewData(a) {
-	// Set temp data variable
-	previewPlayerTempData = a
-}
-function retrievePreviewPlayerData() {
-	// Store in separate variable
-	var recentPreviewPlayerTempData = previewPlayerTempData;
-	// Clear original variable
-	previewPlayerTempData = "";
-	// Return recent temp data
-	return recentPreviewPlayerTempData;
-}
 ///
 /// Other stuff
 ///
