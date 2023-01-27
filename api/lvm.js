@@ -12,7 +12,7 @@ var previewPlayerTempData = "",
 ///
 /// Previewer
 ///
-function get(type, subtype = false, previewStartFrame) {
+function get(type, previewStartFrame, subtype = false) {
 	if (!subtype) {
 		fetch(`/ajax/getParams?type=${type}`).then(info => {
 			return info;
@@ -35,7 +35,7 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 		startFrame = Math.max(1, parseInt(startFrame));
 	}
 	// setup preview popup
-	document.getElementById('playerdiv').innerHTML = `${get("object", "previewPlayer", previewStartFrame)}`;
+	document.getElementById('playerdiv').innerHTML = `${get("object", previewStartFrame, "previewPlayer")}`;
 	document.getElementById('player-modal').style.display = 'block';
 	// Load the Video Previewer
 	loadPreviewer();
