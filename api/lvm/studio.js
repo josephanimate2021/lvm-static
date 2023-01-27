@@ -1,4 +1,14 @@
-// functions for creating an object string
+////
+//// This JS contains important Video Studio stuff
+////
+	
+///
+/// Variables
+///
+var previewPlayerTempData = "";
+///
+/// functions for creating an object string
+///
 function toAttrString(table) {
 	return typeof table == "object"
 		? Object.keys(table)
@@ -13,36 +23,29 @@ function toParamString(table) {
 function toObjectString(attrs, params) {
 	return `<object ${Object.keys(attrs).map((key) => `${key}="${attrs[key].replace(/"/g, '\\"')}"`).join(" ")}>${toParamString(params)}</object>`;
 }
-// interactive tutorial stuff
-const tutorialReload = (new URLSearchParams(window.location.search)).get("tutorial");
-if (!tutorialReload) {
-	var tStatus = true;
-	fetch('/ajax/getTutorialShowStatus').then(status => {
-		tStatus = status ? false : true;
-	}).catch(e => console.log(e));
-	interactiveTutorial = {
-		neverDisplay: function() {
-			return tStatus;
-		}
-	}
-} else interactiveTutorial = {
-	neverDisplay: function() {
-		return tutorialReload ? false : true;
-	}
+///
+/// Previewer
+///
+function initPreviewPlayer(dataXmlStr, startFrame) {
+	// New variable to be used by loadPreviewer()
+	movieDataXmlStr = dataXmlStr;
+	// Movie XML
+	filmXmlStr = dataXmlStr.split("<filmxml>")[1].split("</filmxml>")[0];
+	// Show preview popup
+	$("#id01").show();
+	// Load the Video Previewer
+	loadPreviewer();
 }
-function studioLoaded(arg) { console.log(arg) }
-// get some params not included in the flashvars.
 function get(type) {
 	fetch(`/ajax/getParams?type=${type}`).then(info => {
 		return info;
 	}).catch(e => console.log(e));
 }
-function initPreviewPlayer(dataXmlStr, startFrame) {
-	if (typeof startFrame == 'undefined') startFrame = 1;
-	else startFrame = Math.max(1, parseInt(startFrame));
-	if (dataXmlStr === null) return;
-	movieDataXmlStr = dataXmlStr;
-	filmXmlStr = dataXmlStr.split("<filmxml>")[1].split("</filmxml>")[0];
+function loadPreviewer() {
+	// I think this is in case of an error??
+	if (movieDataXmlStr === null) return;
+	// I don't know
+	savePreviewData(movieDataXmlStr);
 	const attrs = {
 		height: 360,
 		width: 640,
@@ -65,6 +68,53 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 		}
 	};
 	document.getElementById('playerdiv').innerHTML = `${toObjectString(attrs, params)}`;
-	document.getElementById('id01').style.display='block';
 }
-function retrievePreviewPlayerData() { return movieDataXmlStr }
+function savePreviewData(a) {
+	// Set temp data variable
+	previewPlayerTempData = a
+}
+function retrievePreviewPlayerData() {
+	// Store in separate variable
+	var recentPreviewPlayerTempData = previewPlayerTempData;
+	// Clear original variable
+	previewPlayerTempData = "";
+	// Return recent temp data
+	return recentPreviewPlayerTempData;
+}
+///
+/// Other stuff
+///
+function exitStudio() {
+	window.location = "/";
+}
+// interactive tutorial
+const tutorialReload = (new URLSearchParams(window.location.search)).get("tutorial");
+if (!tutorialReload) {
+	var tStatus = true;
+	fetch('/ajax/getTutorialShowStatus').then(status => {
+		tStatus = status ? false : true;
+	}).catch(e => console.log(e));
+	interactiveTutorial.isShowTutorial = tStatus;
+} else interactiveTutorial.isShowTutorial = tutorialReload ? false : true;
+function tutorialStarted() {
+}
+function tutorialStep(sn) {
+}
+function tutorialCompleted() {
+	$.ajax({
+		type: 'POST',
+                url: '/ajax/tutorialStatus/completed'
+	});
+}
+function hideTutorial() {
+	$("#tutorial-modal").hide();
+}
+var videoTutorial = new VideoTutorial($("#tutorial-modal"));
+VideoTutorial.tutorials.composition = {
+	title: 'Composition Tutorial',
+        wistiaId: 'nuy96pslyp',
+};
+VideoTutorial.tutorials.enterexit = {
+	title: 'Enter and Exit Effects Tutorial',
+        wistiaId: 'fvjsa3jnzc',
+}
