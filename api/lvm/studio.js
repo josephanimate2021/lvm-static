@@ -65,5 +65,5 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 		animationPath: get("animationPath") + "/",
 	};
 	document.getElementById('id01').style.display='block';
-	document.getElementById('playerdiv').innerHTML = toObjectString(attrs, params);
+	document.getElementById('playerdiv').innerHTML = `${toObjectString(attrs, params)}`;
 }
