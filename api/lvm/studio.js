@@ -18,19 +18,23 @@ function toObjectString(attrs, params) {
 		.join(" ")}>${toParamString(params)}</object>`;
 }
 // interactive tutorial stuff
-var tStatus = true;
-fetch('/ajax/getTutorialShowStatus').then(status => {
-	tStatus = status ? false : true;
-}).catch(e => console.log(e));
-interactiveTutorial.isShowTutorial = tStatus;
-function tutorialStarted() {}
-function tutorialStep(sn) {}
-function tutorialCompleted() {
-	$.ajax({
-		type: 'POST',
-		url: '/ajax/tutorialStatus/completed'
-	});
+const tutorialReload = (new URLSearchParams(window.location.search)).get("tutorial");
+if (!tutorialReload) {
+	var tStatus = true;
+	fetch('/ajax/getTutorialShowStatus').then(status => {
+		tStatus = status ? false : true;
+	}).catch(e => console.log(e));
+	interactiveTutorial = {
+		neverDisplay: function() {
+			return tStatus;
+		}
+	}
+} else interactiveTutorial = {
+	neverDisplay: function() {
+		return tutorialReload ? false : true;
+	}
 }
+function studioLoaded(arg) { console.log(arg) }
 // get some params not included in the flashvars.
 function get(type) {
 	fetch(`/ajax/getParams?type=${type}`).then(info => {
@@ -60,6 +64,6 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 		clientThemePath: flashvars.clientThemePath, 
 		animationPath: get("animationPath") + "/",
 	};
-	$('#id01').css("display", "block");
-	$('#playerdiv').append(toObjectString(attrs, params));
+	document.getElementById('id01').style.display='block';
+	document.getElementById('playerdiv').innerHTML = toObjectString(attrs, params);
 }
