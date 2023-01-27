@@ -60,6 +60,6 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 		clientThemePath: flashvars.clientThemePath, 
 		animationPath: get("animationPath") + "/",
 	};
-	$('#previewWindow').css("display", "block");
-	$('playerdiv').append(toObjectString(attrs, params));
+	$('#id01').css("display", "block");
+	$('#playerdiv').append(toObjectString(attrs, params));
 }
