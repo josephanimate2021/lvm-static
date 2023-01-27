@@ -5,8 +5,6 @@
 ///
 /// Variables
 ///
-const previewer = document.getElementById('playerdiv');
-const studio = document.getElementById('Studio');
 var previewPlayerTempData = "",
     movieDataXmlStr = null,
     filmXmlStr = null,
@@ -69,7 +67,7 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 		allowScriptAccess: "always",
 		allowFullScreen: "true",
 	};
-	previewer.innerHTML = toObjectString(attrs, params);
+	document.getElementById('playerdiv').innerHTML = `${toObjectString(attrs, params)}`;
 	document.getElementById('player-modal').style.display = 'block';
 	// Load the Video Previewer
 	loadPreviewer();
@@ -112,9 +110,9 @@ interactiveTutorial = {
 // Hide Video Previewer popup
 function hidePreviewer() {
 	document.getElementById('player-modal').style.display = 'none';
-	studio.onExternalPreviewPlayerCancel();
+	document.getElementById('Studio').onExternalPreviewPlayerCancel();
 }
 function publishStudio() {
 	document.getElementById('player-modal').style.display = 'none';
-	studio.onExternalPreviewPlayerPublish();
+	document.getElementById('Studio').onExternalPreviewPlayerPublish();
 }
