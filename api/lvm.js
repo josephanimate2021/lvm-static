@@ -77,12 +77,12 @@ interactiveTutorial = {
 }
 // Hide Video Previewer popup
 function hidePreviewer() {
+	document.getElementById("obj")[0].onExternalPreviewPlayerCancel();
 	document.getElementById('player-modal').style.display = 'none';
-	document.getElementById("obj").onExternalPreviewPlayerCancel();
 }
 function publishStudio() {
+	document.getElementById("obj")[0].onExternalPreviewPlayerPublish();
 	document.getElementById('player-modal').style.display = 'none';
-	document.getElementById("obj").onExternalPreviewPlayerPublish();
 }
 function showImporter() {
 	document.getElementById('import-modal').style.display = 'block';
