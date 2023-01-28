@@ -78,9 +78,9 @@ interactiveTutorial = {
 // Hide Video Previewer popup
 function hidePreviewer() {
 	document.getElementById('player-modal').style.display = 'none';
-	document.getElementById("Studio").onExternalPreviewPlayerCancel();
+	document.getElementById("obj").onExternalPreviewPlayerCancel();
 }
 function publishStudio() {
 	document.getElementById('player-modal').style.display = 'none';
-	document.getElementById("Studio").onExternalPreviewPlayerPublish();
+	document.getElementById("obj").onExternalPreviewPlayerPublish();
 }
