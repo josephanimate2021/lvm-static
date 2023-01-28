@@ -70,7 +70,8 @@ interactiveTutorial = {
 		const tutorialReload = (new URLSearchParams(window.location.search)).get("tutorial");
 		if (!tutorialReload) {
 			fetch('/ajax/getTutorialShowStatus').then(status => {
-				return status ? true : false;
+				if (status == "0") return true;
+				else return false;
 			}).catch(e => console.log(e));
 		} else return tutorialReload ? false : true;
 	}
