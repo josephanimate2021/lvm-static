@@ -13,8 +13,10 @@ var previewPlayerTempData = "",
 /// Previewer
 ///
 function get(type) {
-	fetch(`/ajax/getParams?type=${type}`).then(info => {
-		return info;
+	fetch(`/ajax/getParams?type=${type}`).then(data => {
+		data.json().then(info => {
+			return info.data;
+		}).catch(e => console.log(e));
 	}).catch(e => console.log(e));
 }
 function initPreviewPlayer(dataXmlStr, startFrame) {
@@ -29,11 +31,13 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 		startFrame = Math.max(1, parseInt(startFrame));
 	}
 	// setup preview popup
-	fetch(`/ajax/getParams?type=object&subtype=previewPlayer&startFrame=${previewStartFrame}`).then(object => {
-		document.getElementById('playerdiv').innerHTML = object;
-		document.getElementById('player-modal').style.display = 'block';
-		// Load the Video Previewer
-		loadPreviewer();
+	fetch(`/ajax/getParams?type=object&subtype=previewPlayer&startFrame=${previewStartFrame}`).then(data => {
+		data.json().then(object => {
+			document.getElementById('playerdiv').innerHTML = object.data;
+			document.getElementById('player-modal').style.display = 'block';
+			// Load the Video Previewer
+			loadPreviewer();
+		}).catch(e => console.log(e));
 	}).catch(e => console.log(e));
 }
 function loadPreviewer() {
