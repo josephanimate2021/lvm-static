@@ -12,16 +12,10 @@ var previewPlayerTempData = "",
 ///
 /// Previewer
 ///
-function get(type, previewStartFrame, subtype = false) {
-	if (!subtype) {
-		fetch(`/ajax/getParams?type=${type}`).then(info => {
-			return info;
-		}).catch(e => console.log(e));
-	} else if (subtype == "previewPlayer") {
-		fetch(`/ajax/getParams?type=${type}&subtype=${subtype}&startFrame=${previewStartFrame}`).then(info => {
-			return info;
-		}).catch(e => console.log(e));
-	}
+function get(type) {
+	fetch(`/ajax/getParams?type=${type}`).then(info => {
+		return info;
+	}).catch(e => console.log(e));
 }
 function initPreviewPlayer(dataXmlStr, startFrame) {
 	previewStartFrame = startFrame;
@@ -35,10 +29,12 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 		startFrame = Math.max(1, parseInt(startFrame));
 	}
 	// setup preview popup
-	document.getElementById('playerdiv').innerHTML = `${get("object", previewStartFrame, "previewPlayer")}`;
-	document.getElementById('player-modal').style.display = 'block';
-	// Load the Video Previewer
-	loadPreviewer();
+	fetch(`/ajax/getParams?type=object&subtype=previewPlayer&startFrame=${previewStartFrame}`).then(object => {
+		document.getElementById('playerdiv').innerHTML = object;
+		document.getElementById('player-modal').style.display = 'block';
+		// Load the Video Previewer
+		loadPreviewer();
+	}).catch(e => console.log(e));
 }
 function loadPreviewer() {
 	// I think this is in case of an error??
