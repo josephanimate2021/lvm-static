@@ -71,8 +71,7 @@ interactiveTutorial = {
 		if (!tutorialReload) {
 			fetch("/ajax/getTutorialShowStatus").then(info => {
 				info.json().then(status => {
-					if (status.data == "0") return true;
-					else return false;
+					return status;
 				});
 			});
 		} else return tutorialReload ? false : true;
