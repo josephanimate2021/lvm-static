@@ -84,3 +84,6 @@ function publishStudio() {
 	document.getElementById('player-modal').style.display = 'none';
 	document.getElementById("obj").onExternalPreviewPlayerPublish();
 }
+function showImporter() {
+	document.getElementById('import-modal').style.display = 'block';
+}
