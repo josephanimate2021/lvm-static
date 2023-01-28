@@ -69,12 +69,12 @@ interactiveTutorial = {
 	neverDisplay: function() {
 		const tutorialReload = (new URLSearchParams(window.location.search)).get("tutorial");
 		if (!tutorialReload) {
-			fetch('/ajax/getTutorialShowStatus').then(status => {
-				status.json().then(info => {
-					if (info.data == "0") return true;
+			fetch("/ajax/getTutorialShowStatus").then(info => {
+				info.json().then(status => {
+					if (status.data == "0") return true;
 					else return false;
-				}).catch(e => console.log(e));
-			}).catch(e => console.log(e));
+				});
+			});
 		} else return tutorialReload ? false : true;
 	}
 }
