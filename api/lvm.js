@@ -69,12 +69,12 @@ interactiveTutorial = {
 	neverDisplay: function() {
 		const tutorialReload = (new URLSearchParams(window.location.search)).get("tutorial");
 		if (!tutorialReload) {
-			fetch("/ajax/getTutorialShowStatus").then(info => {
-				info.json().then(status => {
-					return status;
+			fetch("/ajax/settings/list").then(info => {
+				info.json().then(data => {
+					return data.tutorial;
 				});
 			});
-		} else return tutorialReload ? false : true;
+		} else return false;
 	}
 }
 // Hide Video Previewer popup
