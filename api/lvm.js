@@ -91,5 +91,10 @@ function publishStudio() {
 	player.hide();
 }
 function showImporter() {
+	studio.importerStatus("proccessing");
 	importer.show();
+}
+function importDone() {
+	studio.importerStatus("done");
+	importer.hide();
 }
