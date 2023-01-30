@@ -5,13 +5,10 @@
 ///
 /// Variables
 ///
-var previewPlayerTempData = "";
-var movieDataXmlStr = null;
-var filmXmlStr = null;
-var previewStartFrame = 0;
-const player = $("#player-modal");
-const importer = $("#import-modal");
-const studio = $("#obj")[0];
+var previewPlayerTempData = "",
+    movieDataXmlStr = null,
+    filmXmlStr = null,
+    previewStartFrame = 0;
 ///
 /// Previewer
 ///
@@ -37,7 +34,7 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 	fetch(`/ajax/getParams?type=object&subtype=previewPlayer&startFrame=${previewStartFrame}`).then(data => {
 		data.json().then(object => {
 			document.getElementById('playerdiv').innerHTML = object.data;
-			player.show();
+			document.getElementById('player-modal').style.display = 'block';
 			// Load the Video Previewer
 			loadPreviewer();
 		}).catch(e => console.log(e));
@@ -82,22 +79,13 @@ interactiveTutorial = {
 }
 // Hide Video Previewer popup
 function hidePreviewer() {
-	studio.onExternalPreviewPlayerCancel();
-	player.hide();
+	document.getElementById("obj")[0].onExternalPreviewPlayerCancel();
+	document.getElementById('player-modal').style.display = 'none';
 }
 function publishStudio() {
-	studio.onExternalPreviewPlayerPublish();
-	player.hide();
+	document.getElementById("obj")[0].onExternalPreviewPlayerPublish();
+	document.getElementById('player-modal').style.display = 'none';
 }
 function showImporter() {
-	studio.importerStatus("proccessing");
-	importer.show();
-}
-function importDone() {
-	studio.importerStatus("done");
-	importer.hide();
-}
-function hideImporter() {
-	studio.importerStatus("clear");
-	importer.hide();
+	document.getElementById('import-modal').style.display = 'block';
 }
