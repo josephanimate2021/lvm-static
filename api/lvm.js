@@ -98,3 +98,7 @@ function importDone() {
 	studio.importerStatus("done");
 	importer.hide();
 }
+function hideImporter() {
+	studio.importerStatus("clear");
+	importer.hide();
+}
