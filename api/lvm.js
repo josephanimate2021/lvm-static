@@ -5,14 +5,13 @@
 ///
 /// Variables
 ///
-var previewPlayerTempData = "",
-    movieDataXmlStr = null,
-    filmXmlStr = null,
-    previewStartFrame = 0;
-const previewer = document.getElementById('playerdiv'),
-      player = $("#player-modal"),
-      importer = $("#import-modal"),
-      studio = $("#obj")[0];
+var previewPlayerTempData = "";
+var movieDataXmlStr = null;
+var filmXmlStr = null;
+var previewStartFrame = 0;
+const player = $("#player-modal");
+const importer = $("#import-modal");
+const studio = $("#obj")[0];
 ///
 /// Previewer
 ///
@@ -37,7 +36,7 @@ function initPreviewPlayer(dataXmlStr, startFrame) {
 	// setup preview popup
 	fetch(`/ajax/getParams?type=object&subtype=previewPlayer&startFrame=${previewStartFrame}`).then(data => {
 		data.json().then(object => {
-			previewer.innerHTML = object.data;
+			document.getElementById('playerdiv').innerHTML = object.data;
 			player.show();
 			// Load the Video Previewer
 			loadPreviewer();
