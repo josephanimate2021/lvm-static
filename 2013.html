@@ -1,3 +1,4 @@
+<!-- this is for localhost only. -->
 <html>
   <head>
     <title>Video Editor</title>
@@ -8,7 +9,7 @@
       function embedObject() {
         switch (params.action) {
           case "create": {
-            document.getElementById('lvm').innerHTML = `<object data="https://josephanimate2021.github.io/animation/857/go_full.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="loadas=0&amp;asId=&amp;originalId=&amp;apiserver=${params.api}/&amp;storePath=https%3A%2F%2Fjosephanimate2021.github.io%2Fstore%2F50%2F%3Cstore%3E&amp;clientThemePath=https%3A%2F%2Fjosephanimate2021.github.io%2Fstatic%2F477%2F%3Cclient_theme%3E&amp;appCode=go&ctc=go&isEmbed=1&isLogin=Y&username=Jerry&tray=${params.tray}&userId=2292&isWide=0&page=&siteId=go&tlang=en_US&ut=40&lid=7"><param name="movie" value="https://josephanimate2021.github.io/animation/857/go_full.swf"></object>`;
+            document.getElementById('lvm').innerHTML = `<object id="obj" data="http://localhost:4343/static/animation/old_full.swf?v=458" type="application/x-shockwave-flash" width="100%" height="100%"><param name="flashvars" value="appCode=go&ctc=go&isEmbed=1&isLogin=Y&userName=Jerry&userEmail=jerryguy69420%40gmail.com&tray=custom&userId=2292&isWide=1&page=&siteId=go&tlang=en_US&ut=40&lid=7&apiserver=http%3A%2F%2Flocalhost%3A4343%2F&storePath=http%3A%2F%2Flocalhost%3A4343%2Fstatic%2Fstore%2F%3Cstore%3E&clientThemePath=http%3A%2F%2Flocalhost%3A4343%2Fstatic%2F%3Cclient_theme%3E&older=1"> <param name="allowScriptAccess" value="always"></object>		`;
             break;
           }
           case "edit": {
