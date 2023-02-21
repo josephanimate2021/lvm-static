@@ -20,9 +20,9 @@
         tlang: "en_US",
         ut: 40,
         lid: 7,
-        bs: params.bs,
-        original_asset_id: params.id,
-        themeId: params.themeId,
+        bs: params.bs || "adam",
+        original_asset_id: params.id || "",
+        themeId: params.themeId || "family",
         apiserver: "http://localhost:4343/",
         storePath: "http://localhost:4343/static/store/<store>",
         clientThemePath: "http://localhost:4343/static/<client_theme>"
