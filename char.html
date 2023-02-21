@@ -11,20 +11,21 @@
         ctc: "go",
         isEmbed: 1,
         isLogin: "Y",
-        userName:"Jerry",
-        userEmail:"jerryguy69420@gmail.com",
-        nextUrl: "http://localhost:4343/",
-        themeId: params.themeId || "family",
-        bs: params.bs || "adam",
+        username:"Jerry",
+        usemail:"jerryguy69420@gmail.com",
         userId:  2292,
+        m_mode: "school",
         page: "",
         siteId: "go",
         tlang: "en_US",
         ut: 40,
         lid: 7,
+        bs: params.bs,
+        original_asset_id: req.query["id"] || "",
+        themeId: params.themeId,
         apiserver: "http://localhost:4343/",
         storePath: "http://localhost:4343/static/store/<store>",
-        clientThemePath: "http://localhost:4343/477/<client_theme>"
+        clientThemePath: "http://localhost:4343/static/<client_theme>"
       }).toString();
       function embedObject() {
         document.getElementById('lvm').innerHTML = `<object data="http://localhost:4343/animation/${params.v}/cc.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="${flashvars}"><param name="movie" value="http://localhost:4343/animation/${params.v}/cc.swf"></object>`;
