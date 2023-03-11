@@ -54,6 +54,25 @@
         storePath: "http://localhost:4343/static/store/<store>",
         clientThemePath: `http://localhost:4343/${params.staticVer || "477"}/<client_theme>`
       }).toString();
+      if (params.v == "414827163ad4eb60") flashvars = new URLSearchParams({
+        appCode: "go",
+        collab: 0,
+        ctc: "go",
+        goteam_draft_only: 1,
+        isLogin: "Y",
+        isWide: IS_WIDE,
+        lid: 0,
+        nextUrl: "/",
+        page: "",
+        retut: 1,
+        siteId: "school",
+        tray: params.tray || "custom",
+        tlang: "en_US",
+        ut: 60,
+        apiserver: "http://localhost:4343/",
+        storePath: "http://localhost:4343/static/store/<store>",
+        clientThemePath: `http://localhost:4343/${params.staticVer || "477"}/<client_theme>`
+      }).toString();
       function embedObject() {
         document.getElementById('lvm').innerHTML = `<object data="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="${flashvars}"><param name="movie" value="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf"></object>`;
       }
