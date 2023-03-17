@@ -86,9 +86,6 @@
 				aniVer: params.v,
 				clientThemePath: `http://localhost:4343/${params.staticVer || "477"}/<client_theme>`
 			}).toString();
-			function embedObject() {
-				document.getElementById('lvm').innerHTML = `<object data="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="${flashvars}"><param name="movie" value="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf"></object>`;
-			}
 			interactiveTutorial = {
 				neverDisplay: function() {
 					return tutorialReload ? false : true;
@@ -104,7 +101,7 @@
 			}
 		</script>
 	</head>
-	<body style="margin:0px" onload="embedObject()">
+	<body style="margin:0px">
 		<main>
 			<nav id="importer">
 				<nav id="import_head">
@@ -116,7 +113,8 @@
 				</nav>
 				<div id="importer-queue"></div>
 			</nav>
-			<div id="lvm"></div>
+			<script>document.write(`<object data="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="${flashvars}"><param name="movie" value="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf"></object>`)</script>
 		</main>
 	</body>
+	<script src="http://localhost:4343/pages/js/importer.js"></script>
 </html>
