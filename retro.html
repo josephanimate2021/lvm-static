@@ -18,16 +18,8 @@
 			const params = new Proxy(new URLSearchParams(window.location.search), {
 				get: (searchParams, prop) => searchParams.get(prop),
 			});
-			var tutorialReload;
 			let themePicker = params.tray;
 			let apiServer = params.api || "http://localhost:4343";
-			let atn = params.action;
-			let mId = params.movieId;
-			let res = params.return;
-			let tut = params.tutorial;
-			let plat = params.platform;
-			let wide = params.isWide;
-			if (tut == "0") tutorialReload = true;
 			var theme;
 			switch (themePicker) {
 				case "":
@@ -86,19 +78,6 @@
 				aniVer: params.v,
 				clientThemePath: `http://localhost:4343/${params.staticVer || "477"}/<client_theme>`
 			}).toString();
-			interactiveTutorial = {
-				neverDisplay: function() {
-					return tutorialReload ? false : true;
-				}
-			};
-			function studioLoaded(arg) {
-				console.log(arg)
-			}
-			function initPreviewPlayer(xml) { // i don't know.
-			};
-			function exitStudio() {
-				window.location=`http://localhost:4343`;
-			}
 		</script>
 	</head>
 	<body style="margin:0px">
@@ -117,4 +96,5 @@
 		</main>
 	</body>
 	<script src="http://localhost:4343/pages/js/importer.js"></script>
+	<script src="http://localhost:4343/pages/js/studio.js"></script>
 </html>
