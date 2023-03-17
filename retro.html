@@ -40,7 +40,7 @@
 				lid: 7,
 				apiserver: "http://localhost:4343/",
 				storePath: STORE_URL + "/<store>",
-				clientThemePath: CLIENT_URL + `/<client_theme>`;
+				clientThemePath: CLIENT_URL + `/<client_theme>`
 			}
 			if (
 				params.v == "414827163ad4eb60" || params.v == "857" || params.v == "808" || params.v == "810" || params.v == "930" || params.v == "2013" 
@@ -90,13 +90,15 @@
 		<div id="previewer" style="display:none">
 			<div id="preview-inside">
 				<h2 id="preview-video">Preview Video</h2>
-				<script>document.write(`
-				<object id="preview_player" data="http://localhost:4343/animation/${params.v}/player.swf" type="application/x-shockwave-flash"
-					width="640" height="360">
-					<param name="flashvars" />
-					<param name="allowScriptAccess" value="always" />
-					<param name="allowFullScreen" value="true" />
-				</object>`)</script>
+				<script>
+					const params = new Proxy(new URLSearchParams(window.location.search), {
+						get: (searchParams, prop) => searchParams.get(prop),
+					});
+					document.write(`
+					<object id="preview_player" data="http://localhost:4343/animation/${params.v}/player.swf" type="application/x-shockwave-flash"
+					width="640" height="360"><param name="flashvars" /><param name="allowScriptAccess" value="always" />
+					<param name="allowFullScreen" value="true" /></object>`);
+				</script>
 				<div class="buttons">
 					<button class="preview-button edit" type="button" onclick="hidePreviewer();">Back to editing</button>
 					<button class="preview-button save" type="button" onclick="publishStudio();">Save Now</button>
