@@ -1,6 +1,13 @@
 <html>
   <head>
     <title>Video Editor</title>
+    <link rel="stylesheet" type="text/css" href="http://localhost:4343/pages/css/modern-normalize.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost:4343/pages/css/global.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost:4343/pages/css/flash.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost:4343/pages/css/importer.css">
+    <script src="http://localhost:4343/pages/js/jquery.js"></script>
+		<script src="http://localhost:4343/pages/js/filesize.js"></script>
+		<script src="http://localhost:4343/pages/js/global.js"></script>
     <script>
       // some of this code was taken from regularspark. but it works here lol :)
       const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -94,5 +101,15 @@
       }
     </script>
   </head>
-  <body style="margin:0px" onload="embedObject()"><div id="lvm"></div></body>
+  <body style="margin:0px" onload="embedObject()">
+    <nav id="importer">
+      <nav id="import_head">
+        <button id="import-toggle" onclick="document.getElementById('importer-files').click()" class="import-button">UPLOAD FILES</button>
+        <h3 class="close-button" onclick="hideImporter()">✖</h3>
+        <form><input id="importer-files" type="file" name="file" title="Upload Files" accept=".mp3,.wav,.ogg,.wma,.swf,.gif,.png,.jpg,.mp4" style="display:none" /></form>
+      </nav>
+      <div id="importer-queue"></div>
+    </nav>
+    <div id="lvm"></div>
+  </body>
 </html>
