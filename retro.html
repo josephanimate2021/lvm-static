@@ -90,14 +90,13 @@
 		<div id="previewer" style="display:none">
 			<div id="preview-inside">
 				<h2 id="preview-video">Preview Video</h2>
-				<script>
-					const params = new Proxy(new URLSearchParams(window.location.search), {
-						get: (searchParams, prop) => searchParams.get(prop),
-					});
-					document.write(`
-					<object id="preview_player" data="http://localhost:4343/animation/${params.v}/player.swf" type="application/x-shockwave-flash"
-					width="640" height="360"><param name="flashvars" /><param name="allowScriptAccess" value="always" />
-					<param name="allowFullScreen" value="true" /></object>`);
+				<script>document.write(`
+				<object id="preview_player" data="http://localhost:4343/animation/${params.v}/player.swf" type="application/x-shockwave-flash"
+					width="640" height="360">
+					<param name="flashvars" />
+					<param name="allowScriptAccess" value="always" />
+					<param name="allowFullScreen" value="true" />
+				</object>`);
 				</script>
 				<div class="buttons">
 					<button class="preview-button edit" type="button" onclick="hidePreviewer();">Back to editing</button>
