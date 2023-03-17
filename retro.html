@@ -92,7 +92,7 @@
 				</nav>
 				<div id="importer-queue"></div>
 			</nav>
-			<script>document.write(`<object data="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="${flashvars}"><param name="movie" value="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf"></object>`)</script>
+			<script>document.write(`<object id="obj" data="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="${flashvars}"><param name="movie" value="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf"></object>`)</script>
 		</main><script>document.write(`
 		<div id="previewer" style="display:none">
 			<div id="preview-inside">
@@ -114,5 +114,4 @@
 		</div>`)</script>
 	</body>
 	<script src="http://localhost:4343/pages/js/studio.js"></script>
-	<script src="http://localhost:4343/pages/js/importer.js"></script>
 </html>
