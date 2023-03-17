@@ -1,29 +1,46 @@
 <html>
 	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" href="http://localhost:4343/favicon.ico" type="image/png" />
 		<title>Video Editor</title>
 		<link rel="stylesheet" type="text/css" href="http://localhost:4343/pages/css/modern-normalize.css">
 		<link rel="stylesheet" type="text/css" href="http://localhost:4343/pages/css/global.css">
 		<link rel="stylesheet" type="text/css" href="http://localhost:4343/pages/css/flash.css">
 		<link rel="stylesheet" type="text/css" href="http://localhost:4343/pages/css/importer.css">
 		<style>
-			body {
-				background: #eee;
+			#importer-files {
+				display: none
 			}
-
 		</style>
 		<script src="http://localhost:4343/pages/js/jquery.js"></script>
 		<script src="http://localhost:4343/pages/js/filesize.js"></script>
 		<script src="http://localhost:4343/pages/js/global.js"></script>
 		<script>
-			const STORE_URL = "http://localhost:4343/static/store";
-			const IS_STUDIO = true;
+			// some of this code was taken from regularspark. but it works here lol :)
 			const params = new Proxy(new URLSearchParams(window.location.search), {
 				get: (searchParams, prop) => searchParams.get(prop),
 			});
-			const CLIENT_URL = `http://localhost:4343/${params.staticVer || "477"}`;
-			let flashvars = {
+			var tutorialReload;
+			let themePicker = params.tray;
+			let apiServer = params.api || "http://localhost:4343";
+			let atn = params.action;
+			let mId = params.movieId;
+			let res = params.return;
+			let tut = params.tutorial;
+			let plat = params.platform;
+			let wide = params.isWide;
+			if (tut == "0") tutorialReload = true;
+			var theme;
+			switch (themePicker) {
+				case "":
+				case "null":
+				case "undefined": {
+					theme = 'retro';
+					break;
+				} case "family": {
+					theme = 'custom';
+					break;
+				} default: theme = themePicker;
+			}
+			let flashvars = new URLSearchParams({
 				appCode: "go",
 				ctc: "go",
 				isEmbed: 1,
@@ -31,6 +48,8 @@
 				username:"Jerry",
 				uemail:"jerryguy69420@gmail.com",
 				nextUrl: "javascript:exitStudio()",
+				tray: theme,
+				movieId: params.movieId || "",
 				userId:  2292,
 				isWide: 0,
 				page: "",
@@ -39,13 +58,13 @@
 				ut: 40,
 				lid: 7,
 				apiserver: "http://localhost:4343/",
-				storePath: STORE_URL + "/<store>",
-				clientThemePath: CLIENT_URL + `/<client_theme>`
-			}
+				storePath: "http://localhost:4343/static/store/<store>",
+				clientThemePath: `http://localhost:4343/${params.staticVer || "477"}/<client_theme>`
+			}).toString();
 			if (
 				params.v == "414827163ad4eb60" || params.v == "857" || params.v == "808" || params.v == "810" || params.v == "930" || params.v == "2013" 
 				|| params.v == "877" || params.v == "503"
-			) flashvars = {
+			) flashvars = new URLSearchParams({
 				appCode: "go",
 				collab: 0,
 				ctc: "go",
@@ -54,25 +73,37 @@
 				isWide: 0,
 				lid: 7,
 				nextUrl: "javascript:exitStudio()",
+				movieId: params.movieId || "",
 				page: "",
 				retut: 1,
 				// loads community library on newer lvms
 				siteId: "11",
+				tray: params.tray || "custom",
 				tlang: "en_US",
 				ut: 60,
-				aniVer: params.v,
 				apiserver: "http://localhost:4343/",
-				storePath: STORE_URL + "/<store>",
-				clientThemePath: CLIENT_URL + `/<client_theme>`
-			};
-			Object.assign(flashvars, params);
-			const obj = new URLSearchParams(flashvars).toString();
+				storePath: "http://localhost:4343/static/store/<store>",
+				aniVer: params.v,
+				clientThemePath: `http://localhost:4343/${params.staticVer || "477"}/<client_theme>`
+			}).toString();
 			function embedObject() {
-				document.getElementById('lvm').innerHTML = `<object data="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="${obj}"><param name="movie" value="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf"></object>`;
+				document.getElementById('lvm').innerHTML = `<object data="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="${flashvars}"><param name="movie" value="http://localhost:4343/animation/${params.v}/${params.type || "go"}_full.swf"></object>`;
+			}
+			interactiveTutorial = {
+				neverDisplay: function() {
+					return tutorialReload ? false : true;
+				}
+			};
+			function studioLoaded(arg) {
+				console.log(arg)
+			}
+			function initPreviewPlayer(xml) { // i don't know.
+			};
+			function exitStudio() {
+				window.location=`http://localhost:4343`;
 			}
 		</script>
 	</head>
-
 	<body style="margin:0px" onload="embedObject()">
 		<main>
 			<nav id="importer">
@@ -80,34 +111,12 @@
 					<button id="import-toggle" onclick="document.getElementById('importer-files').click()" class="import-button">UPLOAD FILES</button>
 					<h3 class="close-button" onclick="hideImporter()">✖</h3>
 					<form>
-						<input id="importer-files" type="file" name="file" title="Upload Files" accept=".mp3,.wav,.ogg,.wma,.swf,.gif,.png,.jpg,.mp4" style="display:none" />
+						<input id="importer-files" type="file" name="file" title="Upload Files" accept=".mp3,.wav,.ogg,.wma,.swf,.gif,.png,.jpg,.mp4"/>
 					</form>
 				</nav>
 				<div id="importer-queue"></div>
 			</nav>
 			<div id="lvm"></div>
 		</main>
-		<div id="previewer" style="display:none">
-			<div id="preview-inside">
-				<h2 id="preview-video">Preview Video</h2>
-				<script>document.write(`
-				<object id="preview_player" data="http://localhost:4343/animation/${params.v}/player.swf" type="application/x-shockwave-flash"
-					width="640" height="360">
-					<param name="flashvars" />
-					<param name="allowScriptAccess" value="always" />
-					<param name="allowFullScreen" value="true" />
-				</object>`);
-				</script>
-				<div class="buttons">
-					<button class="preview-button edit" type="button" onclick="hidePreviewer();">Back to editing</button>
-					<button class="preview-button save" type="button" onclick="publishStudio();">Save Now</button>
-				</div>
-
-				<a class="close-button" onclick="hidePreviewer()">×</a>
-			</div>
-		</div>
 	</body>
-
-	<script src="http://localhost:4343/pages/js/importer.js"></script>
-	<script src="http://localhost:4343/pages/js/studio.js"></script>
 </html>
