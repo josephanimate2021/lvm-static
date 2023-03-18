@@ -10,9 +10,6 @@
 				display: none
 			}
 		</style>
-		<script src="http://localhost:4343/pages/js/jquery.js"></script>
-		<script src="http://localhost:4343/pages/js/filesize.js"></script>
-		<script src="http://localhost:4343/pages/js/global.js"></script>
 		<script>
 			const IS_STUDIO = true;
 			const STORE_URL = 'http://localhost:4343/static/store';
@@ -82,7 +79,6 @@
 				clientThemePath: `http://localhost:4343/${params.staticVer || "477"}/<client_theme>`
 			}).toString();
 		</script>
-		<script src="http://localhost:4343/pages/js/studio.js"></script>
 	</head>
 	<body style="margin:0px">
 		<main>
@@ -117,4 +113,7 @@
 			</div>
 		</div>`)</script>
 	</body>
+	<script src="http://localhost:4343/pages/js/jquery.js"></script>
+	<script src="http://localhost:4343/pages/js/filesize.js"></script>
+	<script src="http://localhost:4343/pages/js/studio.js"></script>
 </html>
