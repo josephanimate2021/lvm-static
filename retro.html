@@ -14,10 +14,13 @@
 		<script src="http://localhost:4343/pages/js/filesize.js"></script>
 		<script src="http://localhost:4343/pages/js/global.js"></script>
 		<script>
+			const IS_STUDIO = true;
+			const STORE_URL = 'http://localhost:4343/static/store';
 			// some of this code was taken from regularspark. but it works here lol :)
 			const params = new Proxy(new URLSearchParams(window.location.search), {
 				get: (searchParams, prop) => searchParams.get(prop),
 			});
+			const CLIENT_URL = `http://localhost:4343/${params.staticVer || "477"}`;
 			let themePicker = params.tray;
 			let apiServer = params.api || "http://localhost:4343";
 			var theme;
