@@ -12,12 +12,12 @@
 		</style>
 		<script>
 			const IS_STUDIO = true;
-			const STORE_URL = 'https://wrapper-retro.joseph-animate.repl.co/static/store';
+			const STORE_URL = 'https://josephanimate2021.github.io/Wrapper-Classic/server/static/store';
 			// some of this code was taken from regularspark. but it works here lol :)
 			const params = new Proxy(new URLSearchParams(window.location.search), {
 				get: (searchParams, prop) => searchParams.get(prop),
 			});
-			const CLIENT_URL = `https://wrapper-retro.joseph-animate.repl.co/${params.staticVer || "477"}`;
+			const CLIENT_URL = `https://josephanimate2021.github.io/Wrapper-Classic/server/${params.staticVer || "477"}`;
 			let themePicker = params.tray;
 			let apiServer = params.api || "https://wrapper-retro.joseph-animate.repl.co/";
 			var theme;
@@ -50,8 +50,8 @@
 				ut: 40,
 				lid: 7,
 				apiserver: "https://wrapper-retro.joseph-animate.repl.co/",
-				storePath: "https://wrapper-retro.joseph-animate.repl.co/static/store/<store>",
-				clientThemePath: `https://wrapper-retro.joseph-animate.repl.co/${params.staticVer || "477"}/<client_theme>`
+				storePath: "https://josephanimate2021.github.io/Wrapper-Classic/server/static/store/<store>",
+				clientThemePath: `https://josephanimate2021.github.io/Wrapper-Classic/server/${params.staticVer || "477"}/<client_theme>`
 			}).toString();
 			if (
 				params.v == "414827163ad4eb60" || params.v == "857" || params.v == "808" || params.v == "810" || params.v == "930" || params.v == "2013" 
@@ -74,9 +74,9 @@
 				tlang: "en_US",
 				ut: 60,
 				apiserver: "https://wrapper-retro.joseph-animate.repl.co/",
-				storePath: "https://wrapper-retro.joseph-animate.repl.co/static/store/<store>",
+				storePath: "https://josephanimate2021.github.io/Wrapper-Classic/server/static/store/<store>",
 				aniVer: params.v,
-				clientThemePath: `https://wrapper-retro.joseph-animate.repl.co/${params.staticVer || "477"}/<client_theme>`
+				clientThemePath: `https://josephanimate2021.github.io/Wrapper-Classic/server/${params.staticVer || "477"}/<client_theme>`
 			}).toString();
 		</script>
 	</head>
@@ -92,13 +92,13 @@
 				</nav>
 				<div id="importer-queue"></div>
 			</nav>
-			<script>document.write(`<object id="obj" data="https://wrapper-retro.joseph-animate.repl.co/animation/${params.v}/${params.type || "go"}_full.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="${flashvars}"><param name="movie" value="https://wrapper-retro.joseph-animate.repl.co/animation/${params.v}/${params.type || "go"}_full.swf"></object>`)</script>
+			<script>document.write(`<object id="obj" data="https://josephanimate2021.github.io/Wrapper-Classic/server/animation/${params.v}/${params.type || "go"}_full.swf" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="${flashvars}"><param name="movie" value="https://josephanimate2021.github.io/Wrapper-Classic/server/animation/${params.v}/${params.type || "go"}_full.swf"></object>`)</script>
 		</main><script>document.write(`
 		<div id="previewer" style="display:none">
 			<div id="preview-inside">
 				<h2 id="preview-video">Preview Video</h2>
 			
-				<object id="preview_player" data="https://wrapper-retro.joseph-animate.repl.co/animation/${params.v}/player.swf" type="application/x-shockwave-flash"
+				<object id="preview_player" data="https://josephanimate2021.github.io/Wrapper-Classic/server/animation/${params.v}/player.swf" type="application/x-shockwave-flash"
 					width="640" height="360">
 					<param name="flashvars" />
 					<param name="allowScriptAccess" value="always" />
