@@ -26,7 +26,7 @@
         themeId: params.themeId || "family",
         apiserver,
         storePath: apiserver == "http://localhost:4343/" ? "http://localhost:4343/static/store/<store>" : `${apiserver}static/store/<store>`,
-        clientThemePath: apiserver == "http://localhost:4343/" ? "http://localhost:4343/static/<client_theme>" : `${apiserver}<client_theme>`
+        clientThemePath: apiserver == "http://localhost:4343/" ? "http://localhost:4343/static/<client_theme>" : `${apiserver}477/<client_theme>`
       }).toString();
       function embedObject() {
         document.getElementById('lvm').innerHTML = `<object data="${apiserver == "http://localhost:4343/" ? `http://localhost:4343/animation/${params.v}/cc.swf` : `${apiserver}animation/${params.v}/cc.swf`}" type="application/x-shockwave-flash" id="Studio" width="100%" height="100%"><param name="align" value="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="window"><param name="flashvars" value="${flashvars}"><param name="movie" value="${apiserver == "http://localhost:4343/" ? `http://localhost:4343/animation/${params.v}/cc.swf` : `${apiserver}animation/${params.v}/cc.swf`}"></object>`;
